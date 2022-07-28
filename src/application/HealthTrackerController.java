@@ -15,21 +15,27 @@ import javafx.scene.Node;
 
 public class HealthTrackerController {
 	
-	/*
-	 * @FXML private TextField nameTextField;
-	 * 
-	 * @FXML private Label introductionLabel;
-	 * 
-	 * @FXML private ChoiceBox<String> genderChoiceBox;
-	 * 
-	 * @FXML private TextField ageTextField;
-	 * 
-	 * @FXML private TextField currentweightTextField;
-	 * 
-	 * @FXML private TextField heightTextField;
-	 * 
-	 * @FXML private ChoiceBox<String> activityChoiceBox;
-	 */
+	 @FXML 
+	 private TextField nameTextField;
+	 
+	 @FXML 
+	 private ChoiceBox<Integer> genderChoiceBox;
+	  
+	 @FXML 
+	 private Label introductionLabel;
+
+	 @FXML 
+	 private TextField ageTextField;
+
+	 @FXML 
+	 private TextField currentweightTextField;
+
+	 @FXML 
+	 private TextField heightTextField;
+	 
+	 @FXML 
+	 private ChoiceBox<String> activityChoiceBox;
+	 
     
 	private Stage stage;
 	private Scene scene;

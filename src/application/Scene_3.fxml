@@ -9,12 +9,6 @@
    <children>
       <HBox prefHeight="100.0" prefWidth="200.0">
          <children>
-            <Label text="Gender:" />
-            <ChoiceBox prefWidth="150.0" />
-         </children>
-      </HBox>
-      <HBox prefHeight="100.0" prefWidth="200.0">
-         <children>
             <Label text="Age:" />
             <TextField />
          </children>
@@ -42,4 +36,3 @@
       <Button mnemonicParsing="false" onAction="#switchToScene4" text="Done" />
    </children>
 </VBox>
-

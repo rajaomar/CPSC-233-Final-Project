@@ -15,5 +15,11 @@
             <Button mnemonicParsing="false" onAction="#switchToScene2" text="Enter" />
          </children>
       </HBox>
+      <HBox prefHeight="100.0" prefWidth="200.0">
+         <children>
+            <Label text="Gender: " />
+            <ChoiceBox fx:id="genderChoiceBox" prefWidth="150.0" />
+         </children>
+      </HBox>
    </children>
 </VBox>
