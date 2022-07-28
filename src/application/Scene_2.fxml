@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.HealthTrackerController">
+   <children>
+      <Label fx:id="introductionLabel" text="Nice to meet you!" />
+      <Label text="To get started we will ask you some basic questions about yourself" />
+      <Button mnemonicParsing="false" onAction="#switchToScene3" text="Okay" />
+   </children>
+</VBox>

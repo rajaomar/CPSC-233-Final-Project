@@ -1,19 +1,22 @@
 package application;
-	
+
 import javafx.application.Application;
+import javafx.fxml.FXMLLoader;
 import javafx.stage.Stage;
 import javafx.scene.Scene;
-import javafx.scene.layout.BorderPane;
+import javafx.scene.layout.VBox;
 
 
 public class Main extends Application {
 	@Override
 	public void start(Stage primaryStage) {
 		try {
-			BorderPane root = new BorderPane();
+			
+			VBox root = FXMLLoader.load(getClass().getResource("Scene_1.fxml"));
+			
 			Scene scene = new Scene(root,400,400);
-			primaryStage.setTitle("Group 42");
 			primaryStage.setScene(scene);
+			primaryStage.setTitle("Health Tracker");
 			primaryStage.show();
 		} catch(Exception e) {
 			e.printStackTrace();
