@@ -7,13 +7,13 @@ import javafx.scene.Scene;
 import javafx.scene.layout.VBox;
 
 
+
 public class Main extends Application {
 	@Override
 	public void start(Stage primaryStage) {
 		try {
 			
-			VBox root = FXMLLoader.load(getClass().getResource("Scene_1.fxml"));
-			
+			VBox root = FXMLLoader.load(getClass().getResource("Scene_1.fxml"));		
 			Scene scene = new Scene(root,400,400);
 			primaryStage.setScene(scene);
 			primaryStage.setTitle("Health Tracker");

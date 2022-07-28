@@ -19,7 +19,7 @@ public class HealthTrackerController {
 	 private TextField nameTextField;
 	 
 	 @FXML 
-	 private ChoiceBox<Integer> genderChoiceBox;
+	 private ChoiceBox<String> genderChoiceBox;
 	  
 	 @FXML 
 	 private Label introductionLabel;
