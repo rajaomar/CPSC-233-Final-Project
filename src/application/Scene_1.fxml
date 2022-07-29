@@ -8,28 +8,23 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.collections.FXCollections?>
 
-<VBox xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.HealthTrackerController">
+<AnchorPane prefHeight="510.0" prefWidth="510.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.HealthTrackerController">
    <children>
-      <Label text="Hi there! What is your name?" />
-      <HBox prefHeight="100.0" prefWidth="200.0">
-         <children>
-            <Label text="Name:" />
-            <TextField fx:id="nameTextField" />
-            <Button mnemonicParsing="false" onAction="#switchToScene2" text="Enter" />
-         </children>
-      </HBox>
-      <HBox prefHeight="100.0" prefWidth="200.0">
-         <children>
-            <Label text="Gender: " />
-           		<ChoiceBox fx:id="genderChoiceBox" prefWidth="150.0">
-            		<items>
-             		<FXCollections fx:factory="observableArrayList">
-             			<String fx:value="Male" />
-             			<String fx:value="Female" />
-           	  		</FXCollections>
-            	</items>	
-            </ChoiceBox>
-         </children>
-      </HBox> 
+      <Label layoutX="5.0" prefHeight="40.0" prefWidth="500.0" text="Welcome to the weight loss calculator, please enter the following details so we can begin." />
+      <Label fx:id="validName" layoutX="360.0" layoutY="47.0" text="" />
+      <Label layoutX="122.0" layoutY="47.0" text="Last name" />
+      <TextField fx:id="nameTextField" layoutX="181.0" layoutY="43.0" />
+      <Button layoutX="235.0" layoutY="154.0" mnemonicParsing="false" onAction="#switchToScene2" text="Next" />
+      <Label layoutX="127.0" layoutY="94.0" text="Gender: " />
+     		<ChoiceBox fx:id="genderChoiceBox" layoutX="180.0" layoutY="90.0" prefWidth="150.0">
+      		<items>
+       		<FXCollections fx:factory="observableArrayList">
+       			<String fx:value="Male" />
+       			<String fx:value="Female" />
+     	  		</FXCollections>
+      	</items>	
+      </ChoiceBox>
+      <Label fx:id="validGender" layoutX="360.0" layoutY="94.0" text="" />
+      <Label fx:id="errorInputs" layoutX="46.0" layoutY="231.0" prefHeight="17.0" prefWidth="419.0" /> 
    </children>
-</VBox>
+</AnchorPane>
