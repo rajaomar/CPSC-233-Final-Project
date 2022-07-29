@@ -55,7 +55,7 @@ public class HealthTrackerController {
 	private VBox root;
 
 	public void switchToScene2(ActionEvent event) throws IOException {
-		
+
 		validName.setText("");
 		// usersName.setText(""); fix this
 		String name = nameTextField.getText();
@@ -71,7 +71,7 @@ public class HealthTrackerController {
 					scene = new Scene(root);
 					stage.setScene(scene);
 					stage.show();
-				//	usersName.setText(name); fix this
+					// usersName.setText(name); fix this
 				} else {
 					validName.setText("");
 					validGender.setTextFill(Color.color(1, 0, 0));
@@ -97,14 +97,6 @@ public class HealthTrackerController {
 
 	public void switchToScene4(ActionEvent event) throws IOException {
 		root = FXMLLoader.load(getClass().getResource("Scene_4.fxml"));
-		stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-		scene = new Scene(root);
-		stage.setScene(scene);
-		stage.show();
-	}
-
-	public void switchToScene5(ActionEvent event) throws IOException {
-		root = FXMLLoader.load(getClass().getResource("Scene_5.fxml"));
 		stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
 		scene = new Scene(root);
 		stage.setScene(scene);
