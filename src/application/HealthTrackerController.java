@@ -57,7 +57,7 @@ public class HealthTrackerController {
 	public void switchToScene2(ActionEvent event) throws IOException {
 		
 		validName.setText("");
-		// usersName.setText("");
+		// usersName.setText(""); fix this
 		String name = nameTextField.getText();
 		AnchorPane root = FXMLLoader.load(getClass().getResource("Scene_2.fxml"));
 		stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
@@ -71,7 +71,7 @@ public class HealthTrackerController {
 					scene = new Scene(root);
 					stage.setScene(scene);
 					stage.show();
-				//	usersName.setText(name);
+				//	usersName.setText(name); fix this
 				} else {
 					validName.setText("");
 					validGender.setTextFill(Color.color(1, 0, 0));
