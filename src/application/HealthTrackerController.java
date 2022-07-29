@@ -7,6 +7,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.control.ChoiceBox;
+import javafx.scene.control.DatePicker;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
@@ -49,6 +50,21 @@ public class HealthTrackerController {
 
 	@FXML
 	public Label usersName;
+
+	@FXML
+	private ChoiceBox<String> activityLevelChoiceBox;
+
+	@FXML
+	private TextField weightToLose;
+
+	@FXML
+	private DatePicker startDate;
+
+	@FXML
+	private DatePicker targetDate;
+
+	@FXML
+	private Label sceneThreeErrorLabel;
 
 	private Stage stage;
 	private Scene scene;
@@ -97,9 +113,24 @@ public class HealthTrackerController {
 
 	public void switchToScene4(ActionEvent event) throws IOException {
 		root = FXMLLoader.load(getClass().getResource("Scene_4.fxml"));
+		sceneThreeErrorLabel.setText("");
 		stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-		scene = new Scene(root);
-		stage.setScene(scene);
-		stage.show();
+		if (ageTextField.toString().matches("[0-9]+")) {
+			int userAge = Integer.parseInt(ageTextField.toString());
+			if (userAge <= 9) {
+				sceneThreeErrorLabel.setText("You are too young to lose weight, grow up first.");
+			}
+			if (userAge >= 80) {
+				sceneThreeErrorLabel.setText("You are too old to lose weight.");
+			}
+			if (userAge > 9 && userAge < 80) {
+				sceneThreeErrorLabel.setText("");
+				scene = new Scene(root);
+				stage.setScene(scene);
+				stage.show();
+			}
+
+		}
+
 	}
 }
