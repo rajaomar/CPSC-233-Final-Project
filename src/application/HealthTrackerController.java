@@ -112,25 +112,13 @@ public class HealthTrackerController {
 	}
 
 	public void switchToScene4(ActionEvent event) throws IOException {
-		root = FXMLLoader.load(getClass().getResource("Scene_4.fxml"));
-		sceneThreeErrorLabel.setText("");
+		AnchorPane root = FXMLLoader.load(getClass().getResource("Scene_4.fxml"));
 		stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-		if (ageTextField.toString().matches("[0-9]+")) {
-			int userAge = Integer.parseInt(ageTextField.toString());
-			if (userAge <= 9) {
-				sceneThreeErrorLabel.setText("You are too young to lose weight, grow up first.");
-			}
-			if (userAge >= 80) {
-				sceneThreeErrorLabel.setText("You are too old to lose weight.");
-			}
-			if (userAge > 9 && userAge < 80) {
-				sceneThreeErrorLabel.setText("");
-				scene = new Scene(root);
-				stage.setScene(scene);
-				stage.show();
-			}
 
-		}
-
+		sceneThreeErrorLabel.setText("");
+		scene = new Scene(root);
+		stage.setScene(scene);
+		stage.show();
 	}
+
 }

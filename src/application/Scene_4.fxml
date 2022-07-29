@@ -1,13 +1,36 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.text.*?>
+<?import javafx.geometry.*?>
 <?import java.lang.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.layout.VBox?>
 
-<VBox xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.HealthTrackerController">
+<AnchorPane prefHeight="500.0" prefWidth="500.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.HealthTrackerController">
    <children>
-      <Label text="Based on the given information your daily calorie intake should be: _" />
+      <Label layoutX="209.0" layoutY="303.0" text="Your weight goal requires:" />
+      <VBox layoutX="146.0" layoutY="66.0" prefHeight="47.0" prefWidth="208.0">
+         <children>
+            <Label text="BMI (Body Mass Index)" />
+            <Label text="BMR (Basal Metabolic Rate)">
+               <VBox.margin>
+                  <Insets top="10.0" />
+               </VBox.margin>
+            </Label>
+            <Label text="Obesity Class:">
+               <VBox.margin>
+                  <Insets top="10.0" />
+               </VBox.margin>
+            </Label>
+         </children>
+      </VBox>
+      <Label layoutX="185.0" layoutY="24.0" text="Your health facts:">
+         <font>
+            <Font size="17.0" />
+         </font>
+      </Label>
+      <Label layoutX="172.0" layoutY="362.0" text="Label" />
+      <Label layoutX="230.0" layoutY="369.0" text="Target date:" />
    </children>
-</VBox>
-
+</AnchorPane>
