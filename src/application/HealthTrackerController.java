@@ -88,7 +88,7 @@ public class HealthTrackerController {
 	}
 
 	public void switchToScene3(ActionEvent event) throws IOException {
-		root = FXMLLoader.load(getClass().getResource("Scene_3.fxml"));
+		AnchorPane root = FXMLLoader.load(getClass().getResource("Scene_3.fxml"));
 		stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
 		scene = new Scene(root);
 		stage.setScene(scene);
