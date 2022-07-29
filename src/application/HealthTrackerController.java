@@ -9,6 +9,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
+import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
 import javafx.stage.Stage;
@@ -46,17 +47,20 @@ public class HealthTrackerController {
 	@FXML
 	private Label errorInputs;
 
+	@FXML
+	public Label usersName;
+
 	private Stage stage;
 	private Scene scene;
 	private VBox root;
 
 	public void switchToScene2(ActionEvent event) throws IOException {
-
+		
 		validName.setText("");
+		// usersName.setText("");
 		String name = nameTextField.getText();
-		root = FXMLLoader.load(getClass().getResource("Scene_2.fxml"));
+		AnchorPane root = FXMLLoader.load(getClass().getResource("Scene_2.fxml"));
 		stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-
 		if (name == "" && genderChoiceBox.getValue() == null) {
 			errorInputs.setTextFill(Color.color(1, 0, 0));
 			errorInputs.setText("Please enter your name and pick a gender");
@@ -67,6 +71,7 @@ public class HealthTrackerController {
 					scene = new Scene(root);
 					stage.setScene(scene);
 					stage.show();
+				//	usersName.setText(name);
 				} else {
 					validName.setText("");
 					validGender.setTextFill(Color.color(1, 0, 0));

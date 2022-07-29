@@ -5,10 +5,11 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.layout.VBox?>
 
-<VBox xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.HealthTrackerController">
+<AnchorPane prefHeight="342.0" prefWidth="466.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.HealthTrackerController">
    <children>
-      <Label fx:id="introductionLabel" text="Nice to meet you!" />
-      <Label text="To get started we will ask you some basic questions about yourself" />
-      <Button mnemonicParsing="false" onAction="#switchToScene3" text="Okay" />
+      <Label fx:id="introductionLabel" layoutX="14.0" layoutY="20.0" text="Nice to meet you!" />
+      <Label layoutX="57.0" layoutY="72.0" text="To get started we will ask you some basic questions about yourself" />
+      <Button layoutX="191.0" layoutY="136.0" mnemonicParsing="false" onAction="#switchToScene3" text="Next" />
+      <Label fx:id="usersName" layoutX="138.0" layoutY="20.0" text="" />
    </children>
-</VBox>
+</AnchorPane>
