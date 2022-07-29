@@ -4,6 +4,7 @@ import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.stage.Stage;
 import javafx.scene.Scene;
+import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.VBox;
 
 
@@ -13,8 +14,8 @@ public class Main extends Application {
 	public void start(Stage primaryStage) {
 		try {
 			
-			VBox root = FXMLLoader.load(getClass().getResource("Scene_1.fxml"));		
-			Scene scene = new Scene(root,400,400);
+			AnchorPane root = FXMLLoader.load(getClass().getResource("Scene_1.fxml"));		
+			Scene scene = new Scene(root,500,500);
 			primaryStage.setScene(scene);
 			primaryStage.setTitle("Health Tracker");
 			primaryStage.show();
