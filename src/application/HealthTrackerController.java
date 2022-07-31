@@ -85,6 +85,7 @@ public class HealthTrackerController {
 	private Stage stage;
 	private Scene scene;
 	private VBox root;
+	private boolean gender = false;
 
 	public void switchToScene2(ActionEvent event) throws IOException {
 
@@ -103,6 +104,8 @@ public class HealthTrackerController {
 					scene = new Scene(root);
 					stage.setScene(scene);
 					stage.show();
+					if ((genderChoiceBox.getValue()) == "Male")
+						gender = true;
 					Label usersNameLabel = new Label();
 					usersNameLabel.setText(name);
 					usersNameLabel.setTranslateY(20);
@@ -197,7 +200,6 @@ public class HealthTrackerController {
 							sceneThreeErrorLabel.setTextFill(Color.color(1, 0, 0));
 							sceneThreeErrorLabel.setText("Please enter a valid height.");
 						}
-
 					} else {
 						sceneThreeErrorLabel.setTextFill(Color.color(1, 0, 0));
 						sceneThreeErrorLabel.setText("Please enter a valid height.");
@@ -214,42 +216,43 @@ public class HealthTrackerController {
 			sceneThreeErrorLabel.setTextFill(Color.color(1, 0, 0));
 			sceneThreeErrorLabel.setText("Please enter all the required details.");
 		}
-		if (validCalc)
-			makeLabelsAndUser(root);
-
+		if (validCalc) {			
+			doCalc(root);
+			
+		}
 	}
 
-	void makeLabelsAndUser(AnchorPane root) {
-		Person user = new Person(); // need to use the other constructor for this, this is just to remind myself
-		// where i left off 
-		
+	void doCalc(AnchorPane root) {
 		Label newBmiLabel = new Label();
-		//newBmiLabel.setText("i am bmi");
+		// newBmiLabel.setText("i am bmi");
 		newBmiLabel.setTranslateY(69.5);
 		newBmiLabel.setTranslateX(139);
 		Label newBmrLabel = new Label();
-		//newBmrLabel.setText("i am bmr");
+		// newBmrLabel.setText("i am bmr");
 		newBmrLabel.setTranslateY(88);
 		newBmrLabel.setTranslateX(161.5);
 		Label obesityClassLabel = new Label();
-		//obesityClassLabel.setText("i am obesity");
+		// obesityClassLabel.setText("i am obesity");
 		obesityClassLabel.setTranslateY(104.5);
 		obesityClassLabel.setTranslateX(84.8);
 		Label targetCaloriesLabel = new Label();
-		//targetCaloriesLabel.setText("i am target calories");
+		// targetCaloriesLabel.setText("i am target calories");
 		targetCaloriesLabel.setTranslateY(192);
 		targetCaloriesLabel.setTranslateX(105);
 		Label dailyWeightLoss = new Label();
-		//dailyWeightLoss.setText("2.2");
+		// dailyWeightLoss.setText("2.2");
 		dailyWeightLoss.setTranslateY(288);
 		dailyWeightLoss.setTranslateX(5);
 		Label weeklyWeightLoss = new Label();
-		//weeklyWeightLoss.setText("1.1");
+		// weeklyWeightLoss.setText("1.1");
 		weeklyWeightLoss.setTranslateY(305);
 		weeklyWeightLoss.setTranslateX(5);
-		Label[] labels = {newBmrLabel,newBmiLabel,obesityClassLabel,targetCaloriesLabel,dailyWeightLoss,weeklyWeightLoss};
-		for (Label label:labels) root.getChildren().add(label);
-		
+		Label[] labels = { newBmrLabel, newBmiLabel, obesityClassLabel, targetCaloriesLabel, dailyWeightLoss,
+				weeklyWeightLoss };
+		for (Label label : labels)
+			root.getChildren().add(label);
+			System.out.println(gender);
+		}
 	}
 
-}
+
