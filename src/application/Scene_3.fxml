@@ -44,38 +44,27 @@
                </VBox.margin></TextField>
          </children>
       </VBox>
-      <VBox layoutX="210.0" layoutY="123.0" prefHeight="62.0" prefWidth="186.0">
-         <children>
-            <HBox prefHeight="100.0" prefWidth="200.0">
-               <children>
-                  <Label prefHeight="17.0" prefWidth="135.0" text="Weight that you want to " />
-                  <ChoiceBox prefHeight="25.0" prefWidth="49.0" />
-               </children>
-            </HBox>
-            <TextField fx:id="weightToLose" prefHeight="25.0" prefWidth="114.0">
-               <VBox.margin>
-                  <Insets top="20.0" />
-               </VBox.margin>
-            </TextField>
-         </children>
-      </VBox>
-      <Button layoutX="210.0" layoutY="435.0" mnemonicParsing="false" onAction="#switchToScene4" text="Done" />
-      <VBox layoutX="18.0" layoutY="316.0" prefHeight="25.0" prefWidth="140.0">
-         <children>
-            <Label text="Starting date:" />
-            <DatePicker fx:id="startDate" />
-         </children>
-      </VBox>
       <Label layoutX="351.0" layoutY="71.0" text="kg" />
       <Label layoutX="160.0" layoutY="179.0" text="cm" />
-      <Label layoutX="402.0" layoutY="179.0" text="kg" />
       <Label layoutX="160.0" layoutY="71.0" text="years" />
-      <VBox layoutX="208.0" layoutY="316.0" prefHeight="25.0" prefWidth="140.0">
+      <VBox layoutX="208.0" layoutY="316.0" prefHeight="25.0" prefWidth="140.0" />
+      <Button layoutX="210.0" layoutY="435.0" mnemonicParsing="false" onAction="#switchToScene4" text="Done" />
+      <VBox layoutX="207.0" layoutY="131.0" prefHeight="62.0" prefWidth="303.0">
          <children>
-            <Label text="Target date:" />
-            <DatePicker fx:id="targetDate" />
+            <VBox prefHeight="51.0" prefWidth="303.0">
+               <children>
+                  <Label prefHeight="17.0" prefWidth="160.0" text="Total weight you want to lose" />
+                  <TextField fx:id="weightToLose" maxWidth="-Infinity" prefHeight="18.0" prefWidth="140.0">
+                     <VBox.margin>
+                        <Insets top="20.0" />
+                     </VBox.margin>
+                  </TextField>
+               </children>
+            </VBox>
          </children>
       </VBox>
-      <Label fx:id="sceneThreeErrorLabel" layoutX="29.0" layoutY="385.0" prefHeight="42.0" prefWidth="452.0" />
+      <ChoiceBox fx:id="weeklyWeightLoss" layoutX="458.0" layoutY="213.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="25.0" prefWidth="46.0" />
+      <ChoiceBox fx:id="weightChange" layoutX="371.0" layoutY="213.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="25.0" prefWidth="46.0" />
+      <Label layoutX="206.0" layoutY="217.0" prefHeight="17.0" prefWidth="285.0" text="Weight that you would like to                 weekly:" />
    </children>
 </AnchorPane>

@@ -58,13 +58,12 @@ public class HealthTrackerController {
 	private TextField weightToLose;
 
 	@FXML
-	private DatePicker startDate;
-
+	private ChoiceBox<String> weeklyWeightLoss;
+	
 	@FXML
-	private DatePicker targetDate;
+	private ChoiceBox<String> weightChange;
 
-	@FXML
-	private Label sceneThreeErrorLabel;
+	
 
 	private Stage stage;
 	private Scene scene;
@@ -114,8 +113,6 @@ public class HealthTrackerController {
 	public void switchToScene4(ActionEvent event) throws IOException {
 		AnchorPane root = FXMLLoader.load(getClass().getResource("Scene_4.fxml"));
 		stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-
-		sceneThreeErrorLabel.setText("");
 		scene = new Scene(root);
 		stage.setScene(scene);
 		stage.show();
