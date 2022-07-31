@@ -19,10 +19,11 @@ public class Person {
 	public Person(String name, int age, int height, int weight, int toLoseWeight, int toGainWeight,
 			String personsActivityLevel, Date startingDate, Date endingDate) {
 		super();
+			
 		this.name = name;
 		this.age = age;
 		this.height = height;
-		this.weight = weight;
+		this.weight= weight;
 		this.toLoseWeight = toLoseWeight;
 		this.toGainWeight = toGainWeight;
 		this.personsActivityLevel = personsActivityLevel;
