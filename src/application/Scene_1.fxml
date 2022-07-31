@@ -25,6 +25,7 @@
       	</items>	
       </ChoiceBox>
       <Label fx:id="validGender" layoutX="360.0" layoutY="94.0" text="" />
-      <Label fx:id="errorInputs" layoutX="46.0" layoutY="232.0" prefHeight="17.0" prefWidth="419.0" /> 
+      <Label fx:id="errorInputs" layoutX="46.0" layoutY="232.0" prefHeight="17.0" prefWidth="419.0" />
+      <Label fx:id="test" layoutX="99.0" layoutY="282.0" text="Label" /> 
    </children>
 </AnchorPane>

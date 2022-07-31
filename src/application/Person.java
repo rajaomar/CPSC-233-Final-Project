@@ -3,40 +3,29 @@ package application;
 import java.util.Date;
 
 public class Person {
-	private String name;
 	private int age;
 	private int height;
 	private int weight;
-	private int toLoseWeight;
-	private int toGainWeight;
+	private double weeklyWeightChange;
+	private String gainOrLoss;
+	private int amountOfWeightToChange;
 	private String personsActivityLevel;
-	private Date startingDate;
-	private Date endingDate;
 
 	public Person() {
 	}
 
-	public Person(String name, int age, int height, int weight, int toLoseWeight, int toGainWeight,
-			String personsActivityLevel, Date startingDate, Date endingDate) {
+	public Person(int age, int height, int weight, double weeklyWeightChange, String gainOrLoss,
+			int amountOfWeightToChange, String personsActivityLevel) {
 		super();
-			
-		this.name = name;
-		this.age = age;
-		this.height = height;
-		this.weight= weight;
-		this.toLoseWeight = toLoseWeight;
-		this.toGainWeight = toGainWeight;
-		this.personsActivityLevel = personsActivityLevel;
-		this.startingDate = startingDate;
-		this.endingDate = endingDate;
-	}
 
-	public String getName() {
-		return name;
-	}
+		this.setAge(age);
+		this.setHeight(height);
+		this.setWeight(weight);
+		this.setWeeklyWeightChange(weeklyWeightChange);
+		this.setGainOrLoss(gainOrLoss);
+		this.setAmountOfWeightToChange(amountOfWeightToChange);
+		this.setPersonsActivityLevel(personsActivityLevel);
 
-	public void setName(String name) {
-		this.name = name;
 	}
 
 	public int getAge() {
@@ -63,20 +52,28 @@ public class Person {
 		this.weight = weight;
 	}
 
-	public int getToLoseWeight() {
-		return toLoseWeight;
+	public double getWeeklyWeightChange() {
+		return weeklyWeightChange;
 	}
 
-	public void setToLoseWeight(int toLoseWeight) {
-		this.toLoseWeight = toLoseWeight;
+	public void setWeeklyWeightChange(double weeklyWeightChange) {
+		this.weeklyWeightChange = weeklyWeightChange;
 	}
 
-	public int getToGainWeight() {
-		return toGainWeight;
+	public String getGainOrLoss() {
+		return gainOrLoss;
 	}
 
-	public void setToGainWeight(int toGainWeight) {
-		this.toGainWeight = toGainWeight;
+	public void setGainOrLoss(String gainOrLoss) {
+		this.gainOrLoss = gainOrLoss;
+	}
+
+	public int getAmountOfWeightToChange() {
+		return amountOfWeightToChange;
+	}
+
+	public void setAmountOfWeightToChange(int amountOfWeightToChange) {
+		this.amountOfWeightToChange = amountOfWeightToChange;
 	}
 
 	public String getPersonsActivityLevel() {
@@ -86,21 +83,4 @@ public class Person {
 	public void setPersonsActivityLevel(String personsActivityLevel) {
 		this.personsActivityLevel = personsActivityLevel;
 	}
-
-	public Date getStartingDate() {
-		return new Date(startingDate.getTime());
-	}
-
-	public void setStartingDate(Date startingDate) {
-		this.startingDate = new Date(startingDate.getTime());
-	}
-
-	public Date getEndingDate() {
-		return new Date(endingDate.getTime());
-	}
-
-	public void setEndingDate(Date endingDate) {
-		this.endingDate = new Date(endingDate.getTime());
-	}
-
 }

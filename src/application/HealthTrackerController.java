@@ -1,6 +1,7 @@
 package application;
 
 import java.io.IOException;
+import java.util.ArrayList;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -78,6 +79,9 @@ public class HealthTrackerController {
 	@FXML
 	private Label weightLossDaily;
 
+	@FXML
+	public Label test;
+
 	private Stage stage;
 	private Scene scene;
 	private VBox root;
@@ -88,6 +92,7 @@ public class HealthTrackerController {
 		String name = nameTextField.getText();
 		AnchorPane root = FXMLLoader.load(getClass().getResource("Scene_2.fxml"));
 		stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+
 		if (name == "" && genderChoiceBox.getValue() == null) {
 			errorInputs.setTextFill(Color.color(1, 0, 0));
 			errorInputs.setText("Please enter your name and pick a gender");
@@ -98,6 +103,11 @@ public class HealthTrackerController {
 					scene = new Scene(root);
 					stage.setScene(scene);
 					stage.show();
+					Label usersNameLabel = new Label();
+					usersNameLabel.setText(name);
+					usersNameLabel.setTranslateY(20);
+					usersNameLabel.setTranslateX(110);
+					root.getChildren().add(usersNameLabel);
 				} else {
 					validName.setText("");
 					validGender.setTextFill(Color.color(1, 0, 0));
@@ -147,8 +157,9 @@ public class HealthTrackerController {
 													if (weightChange.getValue() != null) {
 														scene = new Scene(root);
 														stage.setScene(scene);
-														validCalc = true;
 														stage.show();
+														validCalc = true;
+
 													} else {
 														sceneThreeErrorLabel.setTextFill(Color.color(1, 0, 0));
 														sceneThreeErrorLabel.setText(
@@ -203,13 +214,42 @@ public class HealthTrackerController {
 			sceneThreeErrorLabel.setTextFill(Color.color(1, 0, 0));
 			sceneThreeErrorLabel.setText("Please enter all the required details.");
 		}
+		if (validCalc)
+			makeLabelsAndUser(root);
 
-		if (validCalc) {
-			doCalc();
-		}
 	}
 
-	void doCalc() {
+	void makeLabelsAndUser(AnchorPane root) {
+		Person user = new Person(); // need to use the other constructor for this, this is just to remind myself
+		// where i left off 
+		
+		Label newBmiLabel = new Label();
+		//newBmiLabel.setText("i am bmi");
+		newBmiLabel.setTranslateY(69.5);
+		newBmiLabel.setTranslateX(139);
+		Label newBmrLabel = new Label();
+		//newBmrLabel.setText("i am bmr");
+		newBmrLabel.setTranslateY(88);
+		newBmrLabel.setTranslateX(161.5);
+		Label obesityClassLabel = new Label();
+		//obesityClassLabel.setText("i am obesity");
+		obesityClassLabel.setTranslateY(104.5);
+		obesityClassLabel.setTranslateX(84.8);
+		Label targetCaloriesLabel = new Label();
+		//targetCaloriesLabel.setText("i am target calories");
+		targetCaloriesLabel.setTranslateY(192);
+		targetCaloriesLabel.setTranslateX(105);
+		Label dailyWeightLoss = new Label();
+		//dailyWeightLoss.setText("2.2");
+		dailyWeightLoss.setTranslateY(288);
+		dailyWeightLoss.setTranslateX(5);
+		Label weeklyWeightLoss = new Label();
+		//weeklyWeightLoss.setText("1.1");
+		weeklyWeightLoss.setTranslateY(305);
+		weeklyWeightLoss.setTranslateX(5);
+		Label[] labels = {newBmrLabel,newBmiLabel,obesityClassLabel,targetCaloriesLabel,dailyWeightLoss,weeklyWeightLoss};
+		for (Label label:labels) root.getChildren().add(label);
 		
 	}
+
 }

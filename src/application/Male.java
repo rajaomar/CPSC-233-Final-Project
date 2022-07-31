@@ -7,7 +7,6 @@ public class Male extends Person {
 	private int daysNeeded;
 
 	public Male() {
-		super();
 	}
 
 	public int getBmr() {
