@@ -266,13 +266,12 @@ public class HealthTrackerController {
 			y = 1;
 		if (genderChoiceBox.getValue().equals("female"))
 			y = 2;
-
-		Person user = new Person(y, Integer.parseInt(ageTextField.getText()),
+		
+		Person user = new Person(genderChoiceBox.getValue(), Integer.parseInt(ageTextField.getText()),
 				Integer.parseInt(heightTextField.getText()), Integer.parseInt(currentweightTextField.getText()),
-				Double.parseDouble(weeklyWeightChange.getValue()), gainOrLoss(weightChange.getValue()),
-				Integer.parseInt(weightToLose.getText()), activityLevel(activityLevelChoiceBox.getValue()));
-		newBmrLabel.setText(user.getBmr()+"");
-
+				Double.parseDouble(weeklyWeightChange.getValue()), weightChange.getValue(),
+				Integer.parseInt(weightToLose.getText()), activityLevelChoiceBox.getValue());
+		System.out.println(user.getBmr());
 	}
 }
 

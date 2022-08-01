@@ -111,7 +111,7 @@ public class Person {
 		this.daysNeeded = (int) (this.amountOfWeightToChange / this.weeklyWeightChange);
 
 	}
-
+	
 	public int getAge() {
 		return age;
 	}
