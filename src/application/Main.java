@@ -16,7 +16,7 @@ public class Main extends Application {
 			AnchorPane root = FXMLLoader.load(getClass().getResource("Scene_1.fxml"));		
 			Scene scene = new Scene(root,500,500);
 			primaryStage.setScene(scene);
-			primaryStage.setTitle("Health Tracker");
+			primaryStage.setTitle("Calorie Calculator");
 			primaryStage.show();
 			System.out.println();
 		} catch(Exception e) {

@@ -8,60 +8,15 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.collections.FXCollections?>
 
-<AnchorPane prefHeight="534.0" prefWidth="526.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.HealthTrackerController">
+<AnchorPane prefHeight="556.0" prefWidth="686.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.HealthTrackerController">
    <children>
-      <VBox layoutX="14.0" layoutY="109.0" prefHeight="62.0" prefWidth="140.0">
-         <children>
-            <Label text="Your Age" />
-            <TextField fx:id="ageTextField" prefHeight="25.0" prefWidth="119.0">
-               <VBox.margin>
-                  <Insets top="20.0" />
-               </VBox.margin></TextField>
-         </children>
-      </VBox>
-      <VBox layoutX="14.0" layoutY="196.0" prefHeight="62.0" prefWidth="140.0">
-         <children>
-            <Label text="Height" />
-            <TextField fx:id="heightTextField" prefHeight="17.0" prefWidth="128.0">
-               <VBox.margin>
-                  <Insets top="20.0" />
-               </VBox.margin></TextField>
-         </children>
-      </VBox>
-      <VBox layoutX="14.0" layoutY="281.0" prefHeight="82.0" prefWidth="172.0">
-         <children>
-            <Label text="Activity Level: " />
-            <ChoiceBox fx:id="activityLevelChoiceBox" prefHeight="25.0" prefWidth="174.0">
-              <items>
-              <FXCollections fx:factory="observableArrayList">
-              <String fx:value="Sedentary (little to no exercise + work a desk job)" />
-              <String fx:value="Lightly Active (light exercise 1-3 days / week)" />
-              <String fx:value="Moderately Active (moderate exercise 3-5 days / week)" />
-              <String fx:value="Very Active (heavy exercise 6-7 days / week)" />
-              <String fx:value="Extremely Active (strenuous training 2x / day)" />
-           
-              
-              </FXCollections>
-              </items>
-               <VBox.margin>
-                  <Insets top="20.0" />
-               </VBox.margin></ChoiceBox>
-         </children>
-      </VBox>
-      <VBox layoutX="243.0" layoutY="29.0" prefHeight="51.0" prefWidth="140.0">
-         <children>
-            <Label text="Current Weight" />
-            <TextField fx:id="currentweightTextField" prefHeight="25.0" prefWidth="139.0">
-               <VBox.margin>
-                  <Insets top="20.0" />
-               </VBox.margin></TextField>
-         </children>
-      </VBox>
-      <Label layoutX="384.0" layoutY="77.0" text="kg" />
-      <Label layoutX="154.0" layoutY="242.0" text="cm" />
-      <Label layoutX="156.0" layoutY="154.0" text="years" />
-      <Button layoutX="210.0" layoutY="435.0" mnemonicParsing="false" onAction="#switchToScene4" text="Done" />
-      <ChoiceBox fx:id="weeklyWeightChange" layoutX="290.0" layoutY="192.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="25.0" prefWidth="46.0">
+      <Label layoutX="12.0" layoutY="38.0" text="Please enter all values in whole numbers, decimal values are not accepted as of now" />
+      <VBox layoutX="243.0" layoutY="46.0" prefHeight="51.0" prefWidth="140.0" />
+      <Label layoutX="174.0" layoutY="156.0" text="kg" />
+      <Label layoutX="173.0" layoutY="233.0" prefHeight="25.0" prefWidth="16.0" text="cm" />
+      <Label layoutX="175.0" layoutY="192.0" prefHeight="25.0" prefWidth="28.0" text="years" />
+      <Button layoutX="16.0" layoutY="408.0" mnemonicParsing="false" onAction="#switchToScene4" text="Done" />
+      <ChoiceBox fx:id="weeklyWeightChange" layoutX="88.0" layoutY="271.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="25.0" prefWidth="139.0">
       <items>
               <FXCollections fx:factory="observableArrayList">
               <String fx:value="0.25" />
@@ -72,7 +27,7 @@
               </FXCollections>
               </items>
       </ChoiceBox>
-      <ChoiceBox fx:id="weightChange" layoutX="429.0" layoutY="192.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="25.0" prefWidth="46.0">
+      <ChoiceBox fx:id="weightChange" layoutX="342.0" layoutY="271.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="25.0" prefWidth="82.0">
       <items>
               <FXCollections fx:factory="observableArrayList">
               <String fx:value="gain" />
@@ -80,35 +35,49 @@
               </FXCollections>
               </items>
       </ChoiceBox>
-      <Label fx:id="sceneThreeErrorLabel" alignment="CENTER" contentDisplay="CENTER" layoutX="22.0" layoutY="362.0" prefHeight="17.0" prefWidth="466.0" />
+      <Label fx:id="sceneThreeErrorLabel" alignment="CENTER" contentDisplay="CENTER" layoutX="101.0" layoutY="412.0" prefHeight="17.0" prefWidth="466.0" />
       <VBox layoutX="255.0" layoutY="283.0" prefHeight="51.0" prefWidth="303.0">
          <children>
-            <Label prefHeight="17.0" prefWidth="249.0" text="Amount of weight you want to lose/gain:" />
-            <HBox prefHeight="25.0" prefWidth="153.0">
-               <children>
-                  <TextField fx:id="weightToChange" maxWidth="-Infinity" prefHeight="18.0" prefWidth="140.0" />
-                  <Label text="kg" />
-               </children>
-            </HBox>
+            <HBox prefHeight="25.0" prefWidth="153.0" />
          </children>
       </VBox>
-      <Label layoutX="245.0" layoutY="196.0" prefHeight="17.0" prefWidth="45.0" text="Weight:" />
-      <Label layoutX="338.0" layoutY="196.0" prefHeight="17.0" prefWidth="91.0" text="that you want to" />
-      <Label layoutX="476.0" layoutY="196.0" prefHeight="17.0" prefWidth="45.0" text="weekly" />
-      <VBox layoutX="14.0" layoutY="34.0" prefHeight="51.0" prefWidth="140.0">
-         <children>
-            <Label text="Your gender:" />
-            <ChoiceBox fx:id="genderChoiceBox" prefHeight="25.0" prefWidth="70.0">
-            <items>
-              <FXCollections fx:factory="observableArrayList">
-              <String fx:value="male" />
-              <String fx:value="female" />
-           
+      <Label layoutX="11.0" layoutY="275.0" prefHeight="17.0" prefWidth="75.0" text="Weight (kg):" />
+      <Label layoutX="243.0" layoutY="275.0" prefHeight="17.0" prefWidth="91.0" text="that you want to" />
+      <Label layoutX="433.0" layoutY="275.0" prefHeight="17.0" prefWidth="45.0" text="weekly" />
+      <VBox layoutX="12.0" layoutY="46.0" prefHeight="25.0" prefWidth="82.0" />
+      <ChoiceBox fx:id="genderChoiceBox" layoutX="95.0" layoutY="109.0" prefHeight="25.0" prefWidth="75.0">
+      <items>
+        <FXCollections fx:factory="observableArrayList">
+        <String fx:value="male" />
+        <String fx:value="female" />
+     
               
-              </FXCollections>
-              </items>
-            </ChoiceBox>
-         </children>
-      </VBox>
+        </FXCollections>
+        </items>
+      </ChoiceBox>
+      <TextField fx:id="ageTextField" layoutX="92.0" layoutY="189.0" prefHeight="25.0" prefWidth="75.0" />
+      <Label layoutX="12.0" layoutY="196.0" text="Your Age:" />
+      <Label layoutX="11.0" layoutY="233.0" prefHeight="17.0" prefWidth="39.0" text="Height:" />
+      <Label layoutX="11.0" layoutY="317.0" text="Activity Level: " />
+      <ChoiceBox fx:id="activityLevelChoiceBox" layoutX="86.0" layoutY="313.0" prefHeight="25.0" prefWidth="174.0">
+        <items>
+        <FXCollections fx:factory="observableArrayList">
+        <String fx:value="Sedentary (little to no exercise + work a desk job)" />
+        <String fx:value="Lightly Active (light exercise 1-3 days / week)" />
+        <String fx:value="Moderately Active (moderate exercise 3-5 days / week)" />
+        <String fx:value="Very Active (heavy exercise 6-7 days / week)" />
+        <String fx:value="Extremely Active (strenuous training 2x / day)" />
+     
+              
+        </FXCollections>
+        </items>
+      </ChoiceBox>
+      <Label layoutX="15.0" layoutY="354.0" prefHeight="17.0" prefWidth="249.0" text="Amount of weight you want to lose/gain:" />
+      <Label layoutX="9.0" layoutY="152.0" prefHeight="25.0" prefWidth="82.0" text="Current Weight" />
+      <TextField fx:id="weightToChange" layoutX="243.0" layoutY="347.0" maxWidth="-Infinity" prefHeight="18.0" prefWidth="140.0" />
+      <Label layoutX="394.0" layoutY="348.0" prefHeight="29.0" prefWidth="26.0" text="kg" />
+      <TextField fx:id="heightTextField" layoutX="92.0" layoutY="229.0" prefHeight="25.0" prefWidth="75.0" />
+      <TextField fx:id="currentweightTextField" layoutX="94.0" layoutY="152.0" prefHeight="25.0" prefWidth="75.0" />
+      <Label layoutX="8.0" layoutY="107.0" prefHeight="29.0" prefWidth="75.0" text="Your gender:" />
    </children>
 </AnchorPane>
