@@ -3,22 +3,23 @@ package application;
 import java.util.Date;
 
 public class Person {
-	private int gender;
+	private String gender;
 	private int age;
 	private int height;
 	private int weight;
 	private double weeklyWeightChange;
-	private int gainOrLoss;
+	private String gainOrLoss;
 	private int amountOfWeightToChange;
-	private int personsActivityLevel;
+	private String personsActivityLevel;
 	private int caloriesBurntEveryday;
 	private int dailyIntake;
 	private int bmr;
 	private int daysNeeded;
 	private double bmi;
 
-	public Person(int gender, int age, int height, int weight, double weeklyWeightChange, int gainOrLoss,
-			int amountOfWeightToChange, int personsActivityLevel) {
+	public Person(String gender, int age, int height, int weight, double weeklyWeightChange, String gainOrLoss,
+			int amountOfWeightToChange, String personsActivityLevel) {
+		this.setGender(gender);
 		this.setAge(age);
 		this.setHeight(height);
 		this.setWeight(weight);
@@ -26,77 +27,85 @@ public class Person {
 		this.setGainOrLoss(gainOrLoss);
 		this.setAmountOfWeightToChange(amountOfWeightToChange);
 		this.setPersonsActivityLevel(personsActivityLevel);
+		 String option1 = "Sedentary (little to no exercise + work a desk job)";
+		 String option2 = "Lightly Active (light exercise 1-3 days / week)";
+		 String option3 = "Moderately Active (moderate exercise 3-5 days / week)";
+		 String option4 = "Very Active (heavy exercise 6-7 days / week)";
+		 String option5 = "Extremely Active (strenuous training 2x / day)";
+		 String male_selected = "male";
+		 String female_selected = "female";
 
-		if (this.getGender() == 1
-				&& this.personsActivityLevel == 1) {
-			double y = (10 * this.getWeight()) + (6.25 * this.getHeight()) - (5 * this.getAge() + 5);
-			this.bmr = (int) y;
-		}
-		if (this.getGender() == 1
-				&& this.personsActivityLevel == 2) {
-			this.setBmr((int) ((int) (1.375)
-					* (66.47 + (13.75 * this.getWeight()) + (5.003 * this.getHeight()) - (6.755 * this.getAge()))));
-		}
-		if (this.getGender() == 1
-				&& this.personsActivityLevel == 3) {
-			this.setBmr((int) ((int) (1.55)
-					* (66.47 + (13.75 * this.getWeight()) + (5.003 * this.getHeight()) - (6.755 * this.getAge()))));
-		}
-		if (this.getGender() == 1 && this.personsActivityLevel == 4) {
-			this.setBmr((int) ((int) (1.725)
-					* (66.47 + (13.75 * this.getWeight()) + (5.003 * this.getHeight()) - (6.755 * this.getAge()))));
-		}
-		if (this.getGender() == 1
-				&& this.personsActivityLevel == 5) {
-			this.setBmr((int) ((int) (1.9)
-					* (66.47 + (13.75 * this.getWeight()) + (5.003 * this.getHeight()) - (6.755 * this.getAge()))));
-		}
-
-		if (this.getGender() == 2
-				&& this.personsActivityLevel == 1) {
+		if (this.getGender().equals(male_selected)
+				&& this.personsActivityLevel.equals(option1)) {
 			this.setBmr((int) ((int) (1.2)
 					* (66.47 + (13.75 * this.getWeight()) + (5.003 * this.getHeight()) - (6.755 * this.getAge()))));
 		}
-		if (this.getGender() == 2
-				&& this.personsActivityLevel == 2) {
+		if (this.getGender().equals(male_selected)
+				&& this.personsActivityLevel.equals(option2)) {
 			this.setBmr((int) ((int) (1.375)
 					* (66.47 + (13.75 * this.getWeight()) + (5.003 * this.getHeight()) - (6.755 * this.getAge()))));
 		}
-		if (this.getGender() == 2
-				&& this.personsActivityLevel == 3) {
+		if (this.getGender().equals(male_selected)
+				&& this.personsActivityLevel.equals(option3)) {
 			this.setBmr((int) ((int) (1.55)
 					* (66.47 + (13.75 * this.getWeight()) + (5.003 * this.getHeight()) - (6.755 * this.getAge()))));
 		}
-		if (this.getGender() == 2
-				&& this.personsActivityLevel == 4) {
+		if (this.getGender().equals(male_selected)
+				&& this.personsActivityLevel.equals(option4)) {
 			this.setBmr((int) ((int) (1.725)
 					* (66.47 + (13.75 * this.getWeight()) + (5.003 * this.getHeight()) - (6.755 * this.getAge()))));
 		}
-		if (this.getGender() == 2
-				&& this.personsActivityLevel == 5) {
+		if (this.getGender().equals(male_selected)
+				&& this.personsActivityLevel.equals(option5)) {
 			this.setBmr((int) ((int) (1.9)
 					* (66.47 + (13.75 * this.getWeight()) + (5.003 * this.getHeight()) - (6.755 * this.getAge()))));
 		}
 
-		if (weeklyWeightChange == 0.25 && gainOrLoss == 2)
+		if (this.getGender().equals(female_selected)
+				&& this.personsActivityLevel.equals(option1)) {
+			this.setBmr((int) ((int) (1.2)
+					* (66.47 + (13.75 * this.getWeight()) + (5.003 * this.getHeight()) - (6.755 * this.getAge()))));
+		}
+		if (this.getGender().equals(female_selected)
+				&& this.personsActivityLevel.equals(option2)) {
+			this.setBmr((int) ((int) (1.375)
+					* (66.47 + (13.75 * this.getWeight()) + (5.003 * this.getHeight()) - (6.755 * this.getAge()))));
+		}
+		if (this.getGender().equals(female_selected)
+				&& this.personsActivityLevel.equals(option3)) {
+			this.setBmr((int) ((int) (1.55)
+					* (66.47 + (13.75 * this.getWeight()) + (5.003 * this.getHeight()) - (6.755 * this.getAge()))));
+		}
+		if (this.getGender().equals(female_selected)
+				&& this.personsActivityLevel.equals(option4)) {
+			this.setBmr((int) ((int) (1.725)
+					* (66.47 + (13.75 * this.getWeight()) + (5.003 * this.getHeight()) - (6.755 * this.getAge()))));
+		}
+		if (this.getGender().equals(female_selected)
+				&& this.personsActivityLevel.equals(option5)) {
+			this.setBmr((int) ((int) (1.9)
+					* (66.47 + (13.75 * this.getWeight()) + (5.003 * this.getHeight()) - (6.755 * this.getAge()))));
+		}
+
+		if (weeklyWeightChange == 0.25 && gainOrLoss == "loss")
 			this.dailyIntake = setBmr(getBmr() - 250);
-		if (weeklyWeightChange == 0.5 && gainOrLoss == 2)
+		if (weeklyWeightChange == 0.5 && gainOrLoss == "loss")
 			this.dailyIntake = setBmr(getBmr() - 500);
-		if (weeklyWeightChange == 0.25 && gainOrLoss == 2)
+		if (weeklyWeightChange == 0.25 && gainOrLoss == "loss")
 			this.dailyIntake = setBmr(getBmr() - 1000);
 
-		if (weeklyWeightChange == 0.25 && gainOrLoss == 1)
+		if (weeklyWeightChange == 0.25 && gainOrLoss == "gain")
 			this.dailyIntake = setBmr(getBmr() + 250);
-		if (weeklyWeightChange == 0.5 && gainOrLoss == 1)
+		if (weeklyWeightChange == 0.5 && gainOrLoss == "gain")
 			this.dailyIntake = setBmr(getBmr() + 500);
-		if (weeklyWeightChange == 0.25 && gainOrLoss == 1)
+		if (weeklyWeightChange == 0.25 && gainOrLoss == "gain")
 			this.dailyIntake = setBmr(getBmr() + 1000);
 
-		if (weeklyWeightChange == 0.25 && gainOrLoss == 2)
+		if (weeklyWeightChange == 0.25 && gainOrLoss == "loss")
 			this.caloriesBurntEveryday = 250;
-		if (weeklyWeightChange == 0.5 && gainOrLoss == 2)
+		if (weeklyWeightChange == 0.5 && gainOrLoss == "loss")
 			this.caloriesBurntEveryday = 500;
-		if (weeklyWeightChange == 0.25 && gainOrLoss == 2)
+		if (weeklyWeightChange == 0.25 && gainOrLoss == "loss")
 			this.caloriesBurntEveryday = 1000;
 
 		this.daysNeeded = (int) (this.amountOfWeightToChange / this.weeklyWeightChange);
@@ -129,19 +138,18 @@ public class Person {
 
 	public double getWeeklyWeightChange() {
 		return weeklyWeightChange;
-		
 	}
 
 	public void setWeeklyWeightChange(double weeklyWeightChange) {
 		this.weeklyWeightChange = weeklyWeightChange;
 	}
 
-	public int getGainOrLoss() {
+	public String getGainOrLoss() {
 		return gainOrLoss;
 	}
 
-	public void setGainOrLoss(int gainOrLoss2) {
-		this.gainOrLoss = gainOrLoss2;
+	public void setGainOrLoss(String gainOrLoss) {
+		this.gainOrLoss = gainOrLoss;
 	}
 
 	public int getAmountOfWeightToChange() {
@@ -152,11 +160,11 @@ public class Person {
 		this.amountOfWeightToChange = amountOfWeightToChange;
 	}
 
-	public int getPersonsActivityLevel() {
+	public String getPersonsActivityLevel() {
 		return personsActivityLevel;
 	}
 
-	public void setPersonsActivityLevel(int personsActivityLevel) {
+	public void setPersonsActivityLevel(String personsActivityLevel) {
 		this.personsActivityLevel = personsActivityLevel;
 	}
 
@@ -184,33 +192,33 @@ public class Person {
 		this.daysNeeded = daysNeeded;
 	}
 
-	
-	public int getGender() {
+	/**
+	 * @return the gender
+	 */
+	public String getGender() {
 		return gender;
 	}
 
-	
-	public int setGender(int gender) {
-		return this.gender = gender;
+	/**
+	 * @param gender the gender to set
+	 */
+	public void setGender(String gender) {
+		this.gender = gender;
 	}
 
-	
+	/**
+	 * @return the bmr
+	 */
 	public int getBmr() {
 		return bmr;
 	}
 
-
+	/**
+	 * @param bmr the bmr to set
+	 */
 	public int setBmr(int bmr) {
 		this.bmr = bmr;
 		return bmr;
-	}
-
-	public String toString() {
-		return (this.gender +" "+ this.age +" "+ this.height +" "+ this.weight
-				+" "+ this.weeklyWeightChange +" "+ this.gainOrLoss
-				+" "+ this.amountOfWeightToChange
-				+" "+ this.personsActivityLevel+" "+this.getBmr());
-
 	}
 
 }
