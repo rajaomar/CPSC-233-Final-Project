@@ -19,6 +19,7 @@ public class Main extends Application {
 			primaryStage.setScene(scene);
 			primaryStage.setTitle("Health Tracker");
 			primaryStage.show();
+			System.out.println();
 		} catch(Exception e) {
 			e.printStackTrace();
 		}

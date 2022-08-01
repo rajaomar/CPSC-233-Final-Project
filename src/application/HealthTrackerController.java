@@ -139,7 +139,6 @@ public class HealthTrackerController {
 															stage.setScene(scene);
 															stage.show();
 															validCalc = true;
-
 														} else {
 															sceneThreeErrorLabel.setTextFill(Color.color(1, 0, 0));
 															sceneThreeErrorLabel.setText(
@@ -203,6 +202,35 @@ public class HealthTrackerController {
 		}
 	}
 
+	int activityLevel(String string) {
+		int x = 0;
+		if (activityLevelChoiceBox.getValue().equals("Sedentary (little to no exercise + work a desk job)")) {
+			x = 1;
+		}
+		if (activityLevelChoiceBox.getValue().equals("Lightly Active (light exercise 1-3 days / week)")) {
+			x = 2;
+		}
+		if (activityLevelChoiceBox.getValue().equals("Moderately Active (moderate exercise 3-5 days / week)")) {
+			x = 3;
+		}
+		if (activityLevelChoiceBox.getValue().equals("Very Active (heavy exercise 6-7 days / week)")) {
+			x = 4;
+		}
+		if (activityLevelChoiceBox.getValue().equals("Extremely Active (strenuous training 2x / day)")) {
+			x = 5;
+		}
+		return x;
+	}
+
+	int gainOrLoss(String string1) {
+		int z = 0;
+		if (weightChange.getValue().equals("gain"))
+			z = 1;
+		if (weightChange.getValue().equals("loss"))
+			z = 2;
+		return z;
+	}
+
 	void doCalc(AnchorPane root, String gender) {
 		Label newBmiLabel = new Label();
 		// newBmiLabel.setText("i am bmi");
@@ -232,13 +260,37 @@ public class HealthTrackerController {
 				weeklyWeightLoss };
 		for (Label label : labels)
 			root.getChildren().add(label);
+		int y = 0;
+		if (genderChoiceBox.getValue().equals("male"))
+			y = 1;
+		if (genderChoiceBox.getValue().equals("female"))
+			y = 2;
 
 		Person user = new Person(genderChoiceBox.getValue(), Integer.parseInt(ageTextField.getText()),
 				Integer.parseInt(heightTextField.getText()), Integer.parseInt(currentweightTextField.getText()),
 				Double.parseDouble(weeklyWeightChange.getValue()), weightChange.getValue(),
 				Integer.parseInt(weightToLose.getText()), activityLevelChoiceBox.getValue());
-		System.out.println(user.getBmr());
+		newBmrLabel.setText(user.getBmr()+"");
 
-		}
 	}
+}
 
+/**
+ * 
+ * Person user = new Person(x, Integer.parseInt(ageTextField.getText()),
+ * Integer.parseInt(heightTextField.getText()),
+ * Integer.parseInt(currentweightTextField.getText()),
+ * Double.parseDouble(weeklyWeightChange.getValue()),
+ * gainOrLoss(weightChange.getValue()),
+ * Integer.parseInt(weightToLose.getText()),
+ * activityLevel(activityLevelChoiceBox.getValue()));
+ * newBmrLabel.setText(user.getBmr()+"");
+ */
+/**
+ * Person user = new Person(x, Integer.parseInt(ageTextField.getText()),
+ * Integer.parseInt(heightTextField.getText()),
+ * Integer.parseInt(currentweightTextField.getText()),
+ * Double.parseDouble(weeklyWeightChange.getValue()), weightChange.getValue(),
+ * Integer.parseInt(weightToLose.getText()), y); System.out.println(user);
+ * newBmrLabel.setText(user.getBmr()+"");
+ */

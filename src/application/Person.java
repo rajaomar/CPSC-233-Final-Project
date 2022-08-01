@@ -221,4 +221,13 @@ public class Person {
 		return bmr;
 	}
 
+
+	public String toString() {
+		return (this.gender +" "+ this.age +" "+ this.height +" "+ this.weight
+				+" "+ this.weeklyWeightChange +" "+ this.gainOrLoss
+				+" "+ this.amountOfWeightToChange
+				+" "+ this.personsActivityLevel+" "+this.getBmr());
+
+	}
+
 }
