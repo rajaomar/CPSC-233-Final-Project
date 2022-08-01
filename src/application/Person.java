@@ -111,7 +111,7 @@ public class Person {
 		this.daysNeeded = (int) (this.amountOfWeightToChange / this.weeklyWeightChange);
 
 	}
-	
+
 	public int getAge() {
 		return age;
 	}
@@ -219,6 +219,15 @@ public class Person {
 	public int setBmr(int bmr) {
 		this.bmr = bmr;
 		return bmr;
+	}
+
+
+	public String toString() {
+		return (this.gender +" "+ this.age +" "+ this.height +" "+ this.weight
+				+" "+ this.weeklyWeightChange +" "+ this.gainOrLoss
+				+" "+ this.amountOfWeightToChange
+				+" "+ this.personsActivityLevel+" "+this.getBmr());
+
 	}
 
 }
