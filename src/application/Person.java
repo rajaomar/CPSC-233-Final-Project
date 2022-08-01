@@ -27,54 +27,62 @@ public class Person {
 		this.setGainOrLoss(gainOrLoss);
 		this.setAmountOfWeightToChange(amountOfWeightToChange);
 		this.setPersonsActivityLevel(personsActivityLevel);
+		 String option1 = "Sedentary (little to no exercise + work a desk job)";
+		 String option2 = "Lightly Active (light exercise 1-3 days / week)";
+		 String option3 = "Moderately Active (moderate exercise 3-5 days / week)";
+		 String option4 = "Very Active (heavy exercise 6-7 days / week)";
+		 String option5 = "Extremely Active (strenuous training 2x / day)";
+		 String male_selected = "male";
+		 String female_selected = "female";
 
-		if (this.getGender() == "male"
-				&& this.personsActivityLevel == "Sedentary (little to no exercise + work a desk job)") {
+		if (this.getGender().equals(male_selected)
+				&& this.personsActivityLevel.equals(option1)) {
 			this.setBmr((int) ((int) (1.2)
 					* (66.47 + (13.75 * this.getWeight()) + (5.003 * this.getHeight()) - (6.755 * this.getAge()))));
 		}
-		if (this.getGender() == "male"
-				&& this.personsActivityLevel == "Lightly Active (light exercise 1-3 days / week)") {
+		if (this.getGender().equals(male_selected)
+				&& this.personsActivityLevel.equals(option2)) {
 			this.setBmr((int) ((int) (1.375)
 					* (66.47 + (13.75 * this.getWeight()) + (5.003 * this.getHeight()) - (6.755 * this.getAge()))));
 		}
-		if (this.getGender() == "male"
-				&& this.personsActivityLevel == "Moderately Active (moderate exercise 3-5 days / week)") {
+		if (this.getGender().equals(male_selected)
+				&& this.personsActivityLevel.equals(option3)) {
 			this.setBmr((int) ((int) (1.55)
 					* (66.47 + (13.75 * this.getWeight()) + (5.003 * this.getHeight()) - (6.755 * this.getAge()))));
 		}
-		if (this.getGender() == "male" && this.personsActivityLevel == "Very Active (heavy exercise 6-7 days / week)") {
+		if (this.getGender().equals(male_selected)
+				&& this.personsActivityLevel.equals(option4)) {
 			this.setBmr((int) ((int) (1.725)
 					* (66.47 + (13.75 * this.getWeight()) + (5.003 * this.getHeight()) - (6.755 * this.getAge()))));
 		}
-		if (this.getGender() == "male"
-				&& this.personsActivityLevel == "Extremely Active (strenuous training 2x / day)") {
+		if (this.getGender().equals(male_selected)
+				&& this.personsActivityLevel.equals(option5)) {
 			this.setBmr((int) ((int) (1.9)
 					* (66.47 + (13.75 * this.getWeight()) + (5.003 * this.getHeight()) - (6.755 * this.getAge()))));
 		}
 
-		if (this.getGender() == "female"
-				&& this.personsActivityLevel == "Sedentary (little to no exercise + work a desk job)") {
+		if (this.getGender().equals(female_selected)
+				&& this.personsActivityLevel.equals(option1)) {
 			this.setBmr((int) ((int) (1.2)
 					* (66.47 + (13.75 * this.getWeight()) + (5.003 * this.getHeight()) - (6.755 * this.getAge()))));
 		}
-		if (this.getGender() == "female"
-				&& this.personsActivityLevel == "Lightly Active (light exercise 1-3 days / week)") {
+		if (this.getGender().equals(female_selected)
+				&& this.personsActivityLevel.equals(option2)) {
 			this.setBmr((int) ((int) (1.375)
 					* (66.47 + (13.75 * this.getWeight()) + (5.003 * this.getHeight()) - (6.755 * this.getAge()))));
 		}
-		if (this.getGender() == "female"
-				&& this.personsActivityLevel == "Moderately Active (moderate exercise 3-5 days / week)") {
+		if (this.getGender().equals(female_selected)
+				&& this.personsActivityLevel.equals(option3)) {
 			this.setBmr((int) ((int) (1.55)
 					* (66.47 + (13.75 * this.getWeight()) + (5.003 * this.getHeight()) - (6.755 * this.getAge()))));
 		}
-		if (this.getGender() == "female"
-				&& this.personsActivityLevel == "Very Active (heavy exercise 6-7 days / week)") {
+		if (this.getGender().equals(female_selected)
+				&& this.personsActivityLevel.equals(option4)) {
 			this.setBmr((int) ((int) (1.725)
 					* (66.47 + (13.75 * this.getWeight()) + (5.003 * this.getHeight()) - (6.755 * this.getAge()))));
 		}
-		if (this.getGender() == "female"
-				&& this.personsActivityLevel == "Extremely Active (strenuous training 2x / day)") {
+		if (this.getGender().equals(female_selected)
+				&& this.personsActivityLevel.equals(option5)) {
 			this.setBmr((int) ((int) (1.9)
 					* (66.47 + (13.75 * this.getWeight()) + (5.003 * this.getHeight()) - (6.755 * this.getAge()))));
 		}
