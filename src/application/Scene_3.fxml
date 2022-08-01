@@ -102,7 +102,9 @@
             <items>
               <FXCollections fx:factory="observableArrayList">
               <String fx:value="male" />
-              <String fx:value="female" />         
+              <String fx:value="female" />
+           
+              
               </FXCollections>
               </items>
             </ChoiceBox>

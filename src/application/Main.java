@@ -19,6 +19,8 @@ public class Main extends Application {
 			primaryStage.setScene(scene);
 			primaryStage.setTitle("Health Tracker");
 			primaryStage.show();
+			Person test = new Person("male", 19, 175, 75, 0.25, "gain", 10,"Sedentary (little to no exercise + work a desk job)");
+			System.out.println(test.toString());
 		} catch(Exception e) {
 			e.printStackTrace();
 		}

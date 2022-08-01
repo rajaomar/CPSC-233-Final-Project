@@ -232,13 +232,15 @@ public class HealthTrackerController {
 				weeklyWeightLoss };
 		for (Label label : labels)
 			root.getChildren().add(label);
-
-		Person user = new Person(genderChoiceBox.getValue(), Integer.parseInt(ageTextField.getText()),
+		
+		Person test = new Person("male", 19, 175, 75, 0.25, "gain", 10,"Sedentary (little to no exercise + work a desk job)");
+			
+		Person user = new Person(genderChoiceBox.getValue().toString(), Integer.parseInt(ageTextField.getText()),
 				Integer.parseInt(heightTextField.getText()), Integer.parseInt(currentweightTextField.getText()),
 				Double.parseDouble(weeklyWeightChange.getValue()), weightChange.getValue(),
-				Integer.parseInt(weightToLose.getText()), activityLevelChoiceBox.getValue());
-		System.out.println(user.getBmr());
-
-		}
+				Integer.parseInt(weightToLose.getText()), activityLevelChoiceBox.getValue().toString());
+		System.out.println(user);
+		newBmrLabel.setText(user.getBmr()+"");
+	}
 	}
 
