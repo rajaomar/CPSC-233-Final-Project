@@ -30,8 +30,9 @@ public class Person {
 
 		if (this.getGender() == "male"
 				&& this.personsActivityLevel == "Sedentary (little to no exercise + work a desk job)") {
-			this.setBmr((int) ((int) (1.2)
-					* (66.47 + (13.75 * this.getWeight()) + (5.003 * this.getHeight()) - (6.755 * this.getAge()))));
+			int x = (int) ((1.2)
+					* (66.47 + (13.75 * this.getWeight()) + (5.003 * this.getHeight()) - (6.755 * this.getAge())));
+			this.bmr=x;
 		}
 		if (this.getGender() == "male"
 				&& this.personsActivityLevel == "Lightly Active (light exercise 1-3 days / week)") {
@@ -79,7 +80,7 @@ public class Person {
 					* (66.47 + (13.75 * this.getWeight()) + (5.003 * this.getHeight()) - (6.755 * this.getAge()))));
 		}
 
-		if (weeklyWeightChange == 0.25 && gainOrLoss == "loss")
+	/**	if (weeklyWeightChange == 0.25 && gainOrLoss == "loss")
 			this.dailyIntake = setBmr(getBmr() - 250);
 		if (weeklyWeightChange == 0.5 && gainOrLoss == "loss")
 			this.dailyIntake = setBmr(getBmr() - 500);
@@ -100,7 +101,7 @@ public class Person {
 		if (weeklyWeightChange == 0.25 && gainOrLoss == "loss")
 			this.caloriesBurntEveryday = 1000;
 
-		this.daysNeeded = (int) (this.amountOfWeightToChange / this.weeklyWeightChange);
+		this.daysNeeded = (int) (this.amountOfWeightToChange / this.weeklyWeightChange);*/
 
 	}
 
@@ -211,6 +212,14 @@ public class Person {
 	public int setBmr(int bmr) {
 		this.bmr = bmr;
 		return bmr;
+	}
+
+	public String toString() {
+		return (this.gender +" "+ this.age +" "+ this.height +" "+ this.weight
+				+" "+ this.weeklyWeightChange +" "+ this.gainOrLoss
+				+" "+ this.amountOfWeightToChange
+				+" "+ this.personsActivityLevel+" "+this.getBmr());
+
 	}
 
 }
