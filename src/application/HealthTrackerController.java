@@ -260,13 +260,14 @@ public class HealthTrackerController {
 				weeklyWeightLoss };
 		for (Label label : labels)
 			root.getChildren().add(label);
-		int x = 0;
+		
+		int y = 0;
 		if (genderChoiceBox.getValue().equals("male"))
-			x = 1;
+			y = 1;
 		if (genderChoiceBox.getValue().equals("female"))
-			x = 2;
+			y = 2;
 
-		Person user = new Person(x, Integer.parseInt(ageTextField.getText()),
+		Person user = new Person(y, Integer.parseInt(ageTextField.getText()),
 				Integer.parseInt(heightTextField.getText()), Integer.parseInt(currentweightTextField.getText()),
 				Double.parseDouble(weeklyWeightChange.getValue()), gainOrLoss(weightChange.getValue()),
 				Integer.parseInt(weightToLose.getText()), activityLevel(activityLevelChoiceBox.getValue()));

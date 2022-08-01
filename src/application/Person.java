@@ -29,8 +29,8 @@ public class Person {
 
 		if (this.getGender() == 1
 				&& this.personsActivityLevel == 1) {
-			double x = (1.2)* (66.47 + (13.75 * this.getWeight()) + (5.003 * this.getHeight()) - (6.755 * this.getAge()));
-			this.bmr=(int) x;
+			double y = (10 * this.getWeight()) + (6.25 * this.getHeight()) - (5 * this.getAge() + 5);
+			this.bmr = (int) y;
 		}
 		if (this.getGender() == 1
 				&& this.personsActivityLevel == 2) {
