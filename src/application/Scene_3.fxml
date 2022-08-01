@@ -86,7 +86,7 @@
             <Label prefHeight="17.0" prefWidth="249.0" text="Amount of weight you want to lose/gain:" />
             <HBox prefHeight="25.0" prefWidth="153.0">
                <children>
-                  <TextField fx:id="weightToLose" maxWidth="-Infinity" prefHeight="18.0" prefWidth="140.0" />
+                  <TextField fx:id="weightToChange" maxWidth="-Infinity" prefHeight="18.0" prefWidth="140.0" />
                   <Label text="kg" />
                </children>
             </HBox>

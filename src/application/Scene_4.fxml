@@ -13,7 +13,10 @@
 			<children>
 				<HBox prefHeight="17.0" prefWidth="200.0">
 					<children>
-						<Label text="BMI (Body Mass Index):" />
+						<Label text="BMI (Body Mass Index):">
+                     <font>
+                        <Font size="14.0" />
+                     </font></Label>
 						<Label fx:id="bmiLabel">
 							<HBox.margin>
 								<Insets left="10.0" />
@@ -23,7 +26,10 @@
 				</HBox>
 				<HBox prefHeight="17.0" prefWidth="200.0">
 					<children>
-						<Label text="BMR (Basal Metabolic Rate):" />
+						<Label text="BMR (Basal Metabolic Rate):">
+                     <font>
+                        <Font size="14.0" />
+                     </font></Label>
 						<Label fx:id="bmrLabel" text="">
 							<HBox.margin>
 								<Insets left="10.0" />
@@ -33,7 +39,10 @@
 				</HBox>
 				<HBox prefHeight="17.0" prefWidth="200.0">
 					<children>
-						<Label text="Obesity class:" />
+						<Label text="Obesity class:">
+                     <font>
+                        <Font size="14.0" />
+                     </font></Label>
 						<Label fx:id="obesityClassLabel" text="">
 							<HBox.margin>
 								<Insets left="10.0" />
@@ -57,7 +66,7 @@
 						<Font size="15.0" />
 					</font>
 				</Text>
-            <Text layoutY="97.0" strokeType="OUTSIDE" strokeWidth="0.0" text="This will allow you to reach your required weight in           days. " wrappingWidth="500.0">
+            <Text layoutY="97.0" strokeType="OUTSIDE" strokeWidth="0.0" text="This will allow you to reach your required weight in      days. " wrappingWidth="500.0">
                <font>
                   <Font size="15.0" />
                </font>

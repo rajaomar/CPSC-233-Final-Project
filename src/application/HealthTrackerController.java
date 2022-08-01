@@ -1,19 +1,19 @@
 package application;
 
 import java.io.IOException;
-import java.util.ArrayList;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.control.ChoiceBox;
-import javafx.scene.control.DatePicker;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
+import javafx.scene.text.Font;
+import javafx.scene.text.FontWeight;
 import javafx.stage.Stage;
 import javafx.scene.Node;
 
@@ -53,7 +53,7 @@ public class HealthTrackerController {
 	private ChoiceBox<String> activityLevelChoiceBox;
 
 	@FXML
-	private TextField weightToLose;
+	private TextField weightToChange;
 
 	@FXML
 	private ChoiceBox<String> weeklyWeightChange;
@@ -82,7 +82,6 @@ public class HealthTrackerController {
 	private Stage stage;
 	private Scene scene;
 	private VBox root;
-	private boolean gender = false;
 
 	public void switchToScene2(ActionEvent event) throws IOException {
 
@@ -95,6 +94,15 @@ public class HealthTrackerController {
 			scene = new Scene(root);
 			stage.setScene(scene);
 			stage.show();
+			Label nameLabel = new Label();
+			nameLabel.setText(nameTextField.getText());
+			nameLabel.setTranslateX(80);
+			nameLabel.setTranslateY(20.4);
+			nameLabel.setFont(Font.font("System", FontWeight.BOLD, 14));
+
+			root.getChildren().add(nameLabel);
+			
+
 		} else {
 			errorInputs.setTextFill(Color.color(1, 0, 0));
 			errorInputs.setText("Please enter a valid name");
@@ -128,9 +136,9 @@ public class HealthTrackerController {
 										&& (currentweightTextField.getText().chars().allMatch(Character::isDigit))) {
 									int userWeight = Integer.parseInt(currentweightTextField.getText());
 									if (userWeight > 25 && userWeight < 450) {
-										if (weightToLose.getText() != ""
-												&& (weightToLose.getText().chars().allMatch(Character::isDigit))) {
-											int loseWeight = Integer.parseInt(weightToLose.getText());
+										if (weightToChange.getText() != ""
+												&& (weightToChange.getText().chars().allMatch(Character::isDigit))) {
+											int loseWeight = Integer.parseInt(weightToChange.getText());
 											if (loseWeight < 0.5 * userWeight) {
 												if (activityLevelChoiceBox.getValue() != null) {
 													if (weeklyWeightChange.getValue() != null) {
@@ -202,105 +210,71 @@ public class HealthTrackerController {
 		}
 	}
 
-	int activityLevel(String string) {
-		int x = 0;
-		if (activityLevelChoiceBox.getValue().equals("Sedentary (little to no exercise + work a desk job)")) {
-			x = 1;
-		}
-		if (activityLevelChoiceBox.getValue().equals("Lightly Active (light exercise 1-3 days / week)")) {
-			x = 2;
-		}
-		if (activityLevelChoiceBox.getValue().equals("Moderately Active (moderate exercise 3-5 days / week)")) {
-			x = 3;
-		}
-		if (activityLevelChoiceBox.getValue().equals("Very Active (heavy exercise 6-7 days / week)")) {
-			x = 4;
-		}
-		if (activityLevelChoiceBox.getValue().equals("Extremely Active (strenuous training 2x / day)")) {
-			x = 5;
-		}
-		return x;
-	}
-
-	int gainOrLoss(String string1) {
-		int z = 0;
-		if (weightChange.getValue().equals("gain"))
-			z = 1;
-		if (weightChange.getValue().equals("loss"))
-			z = 2;
-		return z;
-	}
-
 	void doCalc(AnchorPane root, String gender) {
 		Label newBmiLabel = new Label();
-		newBmiLabel.setTranslateY(69.5);
-		newBmiLabel.setTranslateX(139);
+		newBmiLabel.setTranslateY(73);
+		newBmiLabel.setTranslateX(159);
 		Label newBmrLabel = new Label();
-		newBmrLabel.setTranslateY(88);
-		newBmrLabel.setTranslateX(161.5);
+		newBmrLabel.setTranslateY(92);
+		newBmrLabel.setTranslateX(187);
 		Label obesityClassLabel = new Label();
-		obesityClassLabel.setTranslateY(104.5);
-		obesityClassLabel.setTranslateX(84.8);
+		obesityClassLabel.setTranslateY(112);
+		obesityClassLabel.setTranslateX(98);
 		Label targetCaloriesLabel = new Label();
-		targetCaloriesLabel.setTranslateY(192);
-		targetCaloriesLabel.setTranslateX(242);
+		targetCaloriesLabel.setTranslateY(190);
+		targetCaloriesLabel.setTranslateX(245);
 		Label daysNeededLabel = new Label();
-		daysNeededLabel.setTranslateX(365);
-		daysNeededLabel.setTranslateY(249.5);
+		daysNeededLabel.setTranslateX(352.9);
+		daysNeededLabel.setTranslateY(250.6);
 
-		
-		Label[] labels = { newBmrLabel, newBmiLabel, obesityClassLabel, targetCaloriesLabel,daysNeededLabel};
+		Label[] labels = {newBmrLabel, newBmiLabel, obesityClassLabel, targetCaloriesLabel, daysNeededLabel};
 		for (Label label : labels)
 			root.getChildren().add(label);
-		int y = 0;
-		if (genderChoiceBox.getValue().equals("male"))
-			y = 1;
-		if (genderChoiceBox.getValue().equals("female"))
-			y = 2;
 
 		Person user = new Person(genderChoiceBox.getValue(), Integer.parseInt(ageTextField.getText()),
 				Integer.parseInt(heightTextField.getText()), Integer.parseInt(currentweightTextField.getText()),
 				Double.parseDouble(weeklyWeightChange.getValue()), weightChange.getValue(),
-				Integer.parseInt(weightToLose.getText()), activityLevelChoiceBox.getValue());
+				Integer.parseInt(weightToChange.getText()), activityLevelChoiceBox.getValue());
 		newBmrLabel.setText(user.getBmr() + "");
-		System.out.println(user.toString());
+		newBmrLabel.setFont(Font.font("System", FontWeight.BOLD, 14));
+
 		targetCaloriesLabel.setText(user.getDailyIntake() + "");
+		targetCaloriesLabel.setTextFill(Color.color(0, 0, 1));
+		targetCaloriesLabel.setFont(Font.font("System", FontWeight.BOLD, 14));
+
 		newBmiLabel.setText(String.format("%.1f", user.getBmi()));
-		daysNeededLabel.setText(user.getDaysNeeded()+"");
-		
+		newBmiLabel.setFont(Font.font("System", FontWeight.BOLD, 14));
+
+		daysNeededLabel.setText(user.getDaysNeeded() + "");
+		daysNeededLabel.setFont(new Font(14));
+		daysNeededLabel.setFont(Font.font("System", FontWeight.BOLD, 14));
+		daysNeededLabel.setTextFill(Color.color(0.39, 0.34, 1));
+
 		if (user.getBmi() < 18.5) {
+			newBmiLabel.setTextFill(Color.color(1, 0, 0));
 			obesityClassLabel.setTextFill(Color.color(1, 0, 0));
 			obesityClassLabel.setText("Underweight");
+			obesityClassLabel.setFont(Font.font("System", FontWeight.BOLD, 14));
+
 		} else if (user.getBmi() > 18.5 && user.getBmi() < 24.9) {
-			obesityClassLabel.setTextFill(Color.color(0, 1, 0.5));
+			newBmiLabel.setTextFill(Color.color(0.5, .8, 0.5));
+			obesityClassLabel.setTextFill(Color.color(0.5, .8, 0.5));
 			obesityClassLabel.setText("Healthy weight");
+			obesityClassLabel.setFont(Font.font("System", FontWeight.BOLD, 14));
 		} else if (user.getBmi() > 25.0 && user.getBmi() < 29.9) {
+			newBmiLabel.setTextFill(Color.color(1, 0, 0));
 			obesityClassLabel.setTextFill(Color.color(1, 0, 0));
-			obesityClassLabel.setText("Underweight");
+			obesityClassLabel.setText("Overweight");
+			obesityClassLabel.setFont(Font.font("System", FontWeight.BOLD, 14));
+
 		} else if (user.getBmi() > 30.0) {
+			newBmiLabel.setTextFill(Color.color(1, 0, 0));
 			obesityClassLabel.setTextFill(Color.color(1, 0, 0));
-			obesityClassLabel.setText("Underweight");
+			obesityClassLabel.setText("Obese");
+			obesityClassLabel.setFont(new Font(14));
+			obesityClassLabel.setFont(Font.font("System", FontWeight.BOLD, 14));
+
 		}
 
 	}
-}
-
-/**
- * 
- * Person user = new Person(x, Integer.parseInt(ageTextField.getText()),
- * Integer.parseInt(heightTextField.getText()),
- * Integer.parseInt(currentweightTextField.getText()),
- * Double.parseDouble(weeklyWeightChange.getValue()),
- * gainOrLoss(weightChange.getValue()),
- * Integer.parseInt(weightToLose.getText()),
- * activityLevel(activityLevelChoiceBox.getValue()));
- * newBmrLabel.setText(user.getBmr()+"");
- */
-/**
- * Person user = new Person(x, Integer.parseInt(ageTextField.getText()),
- * Integer.parseInt(heightTextField.getText()),
- * Integer.parseInt(currentweightTextField.getText()),
- * Double.parseDouble(weeklyWeightChange.getValue()), weightChange.getValue(),
- * Integer.parseInt(weightToLose.getText()), y); System.out.println(user);
- * newBmrLabel.setText(user.getBmr()+"");
- */
+} 
