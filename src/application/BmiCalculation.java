@@ -1,14 +1,14 @@
 package application;
 
 public class BmiCalculation {
-	private double bmiValue;
+	private int bmiValue;
 
-	public BmiCalculation(double userWeight, int userHeight) {
-		bmiValue = userWeight / Math.pow(userHeight, 2);
+	public BmiCalculation(int userWeight, int userHeight) {
+		bmiValue = (int) (userWeight / Math.pow(userHeight, 2));
 	}
 
 	public String toString() {
-		return String.format("%.1f", String.valueOf(bmiValue));
+		return bmiValue+"";
 	}
 
 }
