@@ -10,7 +10,6 @@ import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
-import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
 import javafx.scene.text.FontWeight;
@@ -81,7 +80,6 @@ public class HealthTrackerController {
 
 	private Stage stage;
 	private Scene scene;
-	private VBox root;
 
 	public void switchToScene2(ActionEvent event) throws IOException {
 

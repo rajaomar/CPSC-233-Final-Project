@@ -79,10 +79,6 @@ public class Person {
 		String weightLoss = "lose";
 		String weightGain = "gain";
 
-		String pointTwoFive = "0.25";
-		String pointFive = "0.25";
-		String one = "1.0";
-
 		if (this.weeklyWeightChange == 0.25 && this.gainOrLoss.equals(weightLoss))
 			this.dailyIntake = this.bmr - 250;
 		if (this.weeklyWeightChange == 0.5 && this.gainOrLoss.equals(weightLoss))
