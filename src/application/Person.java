@@ -1,5 +1,6 @@
 package application;
 
+import java.text.DecimalFormat;
 import java.util.Date;
 
 public class Person {
@@ -94,25 +95,29 @@ public class Person {
 			this.dailyIntake = this.getBmr()-250;
 		if (this.weeklyWeightChange == 0.5 && this.gainOrLoss.equals(weightLoss))
 			this.dailyIntake = this.getBmr()-500;
-		if (this.weeklyWeightChange == 0.25 && this.gainOrLoss.equals(weightLoss))
+		if (this.weeklyWeightChange == 1 && this.gainOrLoss.equals(weightLoss))
 			this.dailyIntake = this.getBmr()-1000;
 
 		if (this.weeklyWeightChange == 0.25 && this.gainOrLoss.equals(weightGain))
 			this.dailyIntake = this.getBmr()+ 250;
 		if (this.weeklyWeightChange == 0.5 && this.gainOrLoss.equals(weightGain))
 			this.dailyIntake = this.getBmr()+ 500;
-		if (this.weeklyWeightChange == 0.25 && this.gainOrLoss.equals(weightGain))
+		if (this.weeklyWeightChange == 1 && this.gainOrLoss.equals(weightGain))
 			this.dailyIntake = this.getBmr()+ 1000;
 
 		if (this.weeklyWeightChange == 0.25 && this.gainOrLoss.equals(weightLoss))
 			this.caloriesBurntEveryday = 250;
 		if (this.weeklyWeightChange == 0.5 && this.gainOrLoss.equals(weightLoss))
 			this.caloriesBurntEveryday = 500;
-		if (this.weeklyWeightChange == 0.25 && this.gainOrLoss.equals(weightLoss))
+		if (this.weeklyWeightChange == 1 && this.gainOrLoss.equals(weightLoss))
 			this.caloriesBurntEveryday = 1000;
 
 		this.daysNeeded = (int) (this.amountOfWeightToChange / this.weeklyWeightChange);
-
+		
+		double denom = (double) ((this.height)*(this.height))/10000.0;
+		double numer =(double) this.weight+0.0;
+		this.bmi = numer/denom;
+		
 	}
 
 	public int getAge() {
@@ -231,6 +236,20 @@ public class Person {
 				+" "+ this.amountOfWeightToChange
 				+" "+ this.personsActivityLevel+" "+this.getBmr()+" "+this.dailyIntake);
 
+	}
+
+	/**
+	 * @return the bmi
+	 */
+	public double getBmi() {
+		return bmi;
+	}
+
+	/**
+	 * @param bmi the bmi to set
+	 */
+	public void setBmi(double bmi) {
+		this.bmi = bmi;
 	}
 
 }

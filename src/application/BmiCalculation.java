@@ -4,7 +4,7 @@ public class BmiCalculation {
 	private int bmiValue;
 
 	public BmiCalculation(int userWeight, int userHeight) {
-		bmiValue = (int) (userWeight / Math.pow(userHeight, 2));
+		bmiValue =  (userWeight / Math.pow(userHeight, 2));
 	}
 
 	public String toString() {
