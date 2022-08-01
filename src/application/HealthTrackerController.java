@@ -271,7 +271,9 @@ public class HealthTrackerController {
 				Double.parseDouble(weeklyWeightChange.getValue()), weightChange.getValue(),
 				Integer.parseInt(weightToLose.getText()), activityLevelChoiceBox.getValue());
 		newBmrLabel.setText(user.getBmr()+"");
-
+		System.out.println(user.toString());
+		targetCaloriesLabel.setText(user.getDailyIntake()+"");
+		
 	}
 }
 

@@ -87,25 +87,28 @@ public class Person {
 					* (66.47 + (13.75 * this.getWeight()) + (5.003 * this.getHeight()) - (6.755 * this.getAge()))));
 		}
 
-		if (weeklyWeightChange == 0.25 && gainOrLoss == "loss")
-			this.dailyIntake = setBmr(getBmr() - 250);
-		if (weeklyWeightChange == 0.5 && gainOrLoss == "loss")
-			this.dailyIntake = setBmr(getBmr() - 500);
-		if (weeklyWeightChange == 0.25 && gainOrLoss == "loss")
-			this.dailyIntake = setBmr(getBmr() - 1000);
+		String weightLoss = "loss";
+		String weightGain = "gain";
+		
+		if (this.weeklyWeightChange == 0.25 && this.gainOrLoss.equals(weightLoss))
+			this.dailyIntake = this.getBmr()-250;
+		if (this.weeklyWeightChange == 0.5 && this.gainOrLoss.equals(weightLoss))
+			this.dailyIntake = this.getBmr()-500;
+		if (this.weeklyWeightChange == 0.25 && this.gainOrLoss.equals(weightLoss))
+			this.dailyIntake = this.getBmr()-1000;
 
-		if (weeklyWeightChange == 0.25 && gainOrLoss == "gain")
-			this.dailyIntake = setBmr(getBmr() + 250);
-		if (weeklyWeightChange == 0.5 && gainOrLoss == "gain")
-			this.dailyIntake = setBmr(getBmr() + 500);
-		if (weeklyWeightChange == 0.25 && gainOrLoss == "gain")
-			this.dailyIntake = setBmr(getBmr() + 1000);
+		if (this.weeklyWeightChange == 0.25 && this.gainOrLoss.equals(weightGain))
+			this.dailyIntake = this.getBmr()+ 250;
+		if (this.weeklyWeightChange == 0.5 && this.gainOrLoss.equals(weightGain))
+			this.dailyIntake = this.getBmr()+ 500;
+		if (this.weeklyWeightChange == 0.25 && this.gainOrLoss.equals(weightGain))
+			this.dailyIntake = this.getBmr()+ 1000;
 
-		if (weeklyWeightChange == 0.25 && gainOrLoss == "loss")
+		if (this.weeklyWeightChange == 0.25 && this.gainOrLoss.equals(weightLoss))
 			this.caloriesBurntEveryday = 250;
-		if (weeklyWeightChange == 0.5 && gainOrLoss == "loss")
+		if (this.weeklyWeightChange == 0.5 && this.gainOrLoss.equals(weightLoss))
 			this.caloriesBurntEveryday = 500;
-		if (weeklyWeightChange == 0.25 && gainOrLoss == "loss")
+		if (this.weeklyWeightChange == 0.25 && this.gainOrLoss.equals(weightLoss))
 			this.caloriesBurntEveryday = 1000;
 
 		this.daysNeeded = (int) (this.amountOfWeightToChange / this.weeklyWeightChange);
@@ -226,7 +229,7 @@ public class Person {
 		return (this.gender +" "+ this.age +" "+ this.height +" "+ this.weight
 				+" "+ this.weeklyWeightChange +" "+ this.gainOrLoss
 				+" "+ this.amountOfWeightToChange
-				+" "+ this.personsActivityLevel+" "+this.getBmr());
+				+" "+ this.personsActivityLevel+" "+this.getBmr()+" "+this.dailyIntake);
 
 	}
 
