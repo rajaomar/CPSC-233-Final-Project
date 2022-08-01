@@ -270,10 +270,25 @@ public class HealthTrackerController {
 				Integer.parseInt(heightTextField.getText()), Integer.parseInt(currentweightTextField.getText()),
 				Double.parseDouble(weeklyWeightChange.getValue()), weightChange.getValue(),
 				Integer.parseInt(weightToLose.getText()), activityLevelChoiceBox.getValue());
-		newBmrLabel.setText(user.getBmr()+"");
+		newBmrLabel.setText(user.getBmr() + "");
 		System.out.println(user.toString());
-		targetCaloriesLabel.setText(user.getDailyIntake()+"");
+		targetCaloriesLabel.setText(user.getDailyIntake() + "");
+		newBmiLabel.setText(String.format("%.1f", user.getBmi()));
 		
+		if (user.getBmi() < 18.5) {
+			obesityClassLabel.setTextFill(Color.color(1, 0, 0));
+			obesityClassLabel.setText("Underweight");
+		} else if (user.getBmi() > 18.5 && user.getBmi() < 24.9) {
+			obesityClassLabel.setTextFill(Color.color(0, 1, 0.5));
+			obesityClassLabel.setText("Healthy weight");
+		} else if (user.getBmi() > 25.0 && user.getBmi() < 29.9) {
+			obesityClassLabel.setTextFill(Color.color(1, 0, 0));
+			obesityClassLabel.setText("Underweight");
+		} else if (user.getBmi() > 30.0) {
+			obesityClassLabel.setTextFill(Color.color(1, 0, 0));
+			obesityClassLabel.setText("Underweight");
+		}
+
 	}
 }
 
