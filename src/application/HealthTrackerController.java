@@ -23,9 +23,6 @@ public class HealthTrackerController {
 	private TextField nameTextField;
 
 	@FXML
-	private ChoiceBox<String> genderChoiceBox;
-
-	@FXML
 	private Label introductionLabel;
 
 	@FXML
@@ -80,7 +77,7 @@ public class HealthTrackerController {
 	private Label weightLossDaily;
 
 	@FXML
-	public Label test;
+	public ChoiceBox<String> genderChoiceBox;
 
 	private Stage stage;
 	private Scene scene;
@@ -94,36 +91,15 @@ public class HealthTrackerController {
 		AnchorPane root = FXMLLoader.load(getClass().getResource("Scene_2.fxml"));
 		stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
 
-		if (name == "" && genderChoiceBox.getValue() == null) {
-			errorInputs.setTextFill(Color.color(1, 0, 0));
-			errorInputs.setText("Please enter your name and pick a gender");
+		if (name != "" && name.matches("[a-zA-Z]+")) {
+			scene = new Scene(root);
+			stage.setScene(scene);
+			stage.show();
 		} else {
-			errorInputs.setText("");
-			if (name.matches("[a-zA-Z]+")) {
-				if (genderChoiceBox.getValue() != null) {
-					scene = new Scene(root);
-					stage.setScene(scene);
-					stage.show();
-					if ((genderChoiceBox.getValue()) == "Male")
-						gender = true;
-					Label usersNameLabel = new Label();
-					usersNameLabel.setText(name);
-					usersNameLabel.setTranslateY(20);
-					usersNameLabel.setTranslateX(110);
-					root.getChildren().add(usersNameLabel);
-				} else {
-					validName.setText("");
-					validGender.setTextFill(Color.color(1, 0, 0));
-					validGender.setText("Please pick a gender");
-
-				}
-			} else {
-				validGender.setText("");
-				validName.setTextFill(Color.color(1, 0, 0));
-				validName.setText("Please enter a valid name");
-			}
-
+			errorInputs.setTextFill(Color.color(1, 0, 0));
+			errorInputs.setText("Please enter a valid name");
 		}
+
 	}
 
 	public void switchToScene3(ActionEvent event) throws IOException {
@@ -135,58 +111,64 @@ public class HealthTrackerController {
 	}
 
 	public void switchToScene4(ActionEvent event) throws IOException {
-		AnchorPane root = FXMLLoader.load(getClass().getResource("Scene_5.fxml"));
+		AnchorPane root = FXMLLoader.load(getClass().getResource("Scene_4.fxml"));
 		stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
 		boolean validCalc = false;
 
-		if (ageTextField.getText() != "" && (ageTextField.getText().chars().allMatch(Character::isDigit))) {
-			int userAge = Integer.parseInt(ageTextField.getText());
-			if (userAge > 9) {
-				if (userAge < 80) {
-					if (heightTextField.getText() != ""
-							&& heightTextField.getText().chars().allMatch(Character::isDigit)) {
-						int userHeight = Integer.parseInt(heightTextField.getText());
-						if (userHeight > 55 && userHeight < 270) {
-							if (currentweightTextField.getText() != ""
-									&& (currentweightTextField.getText().chars().allMatch(Character::isDigit))) {
-								int userWeight = Integer.parseInt(currentweightTextField.getText());
-								if (userWeight > 25 && userWeight < 450) {
-									if (weightToLose.getText() != ""
-											&& (weightToLose.getText().chars().allMatch(Character::isDigit))) {
-										int loseWeight = Integer.parseInt(weightToLose.getText());
-										if (loseWeight < 0.5 * userWeight) {
-											if (activityLevelChoiceBox.getValue() != null) {
-												if (weeklyWeightChange.getValue() != null) {
-													if (weightChange.getValue() != null) {
-														scene = new Scene(root);
-														stage.setScene(scene);
-														stage.show();
-														validCalc = true;
+		if (genderChoiceBox.getValue() != null) {
+			if (ageTextField.getText() != "" && (ageTextField.getText().chars().allMatch(Character::isDigit))) {
+				int userAge = Integer.parseInt(ageTextField.getText());
+				if (userAge > 9) {
+					if (userAge < 80) {
+						if (heightTextField.getText() != ""
+								&& heightTextField.getText().chars().allMatch(Character::isDigit)) {
+							int userHeight = Integer.parseInt(heightTextField.getText());
+							if (userHeight > 55 && userHeight < 270) {
+								if (currentweightTextField.getText() != ""
+										&& (currentweightTextField.getText().chars().allMatch(Character::isDigit))) {
+									int userWeight = Integer.parseInt(currentweightTextField.getText());
+									if (userWeight > 25 && userWeight < 450) {
+										if (weightToLose.getText() != ""
+												&& (weightToLose.getText().chars().allMatch(Character::isDigit))) {
+											int loseWeight = Integer.parseInt(weightToLose.getText());
+											if (loseWeight < 0.5 * userWeight) {
+												if (activityLevelChoiceBox.getValue() != null) {
+													if (weeklyWeightChange.getValue() != null) {
+														if (weightChange.getValue() != null) {
+															scene = new Scene(root);
+															stage.setScene(scene);
+															stage.show();
+															validCalc = true;
 
+														} else {
+															sceneThreeErrorLabel.setTextFill(Color.color(1, 0, 0));
+															sceneThreeErrorLabel.setText(
+																	"Please pick the correct weight change option (loss/gain)");
+														}
 													} else {
 														sceneThreeErrorLabel.setTextFill(Color.color(1, 0, 0));
 														sceneThreeErrorLabel.setText(
-																"Please pick the correct weight change option (loss/gain)");
+																"Please pick one of the weekly weight loss/gain options.");
 													}
 												} else {
 													sceneThreeErrorLabel.setTextFill(Color.color(1, 0, 0));
-													sceneThreeErrorLabel.setText(
-															"Please pick one of the weekly weight loss/gain options.");
+													sceneThreeErrorLabel
+															.setText("Please pick your daily activity level");
 												}
 											} else {
 												sceneThreeErrorLabel.setTextFill(Color.color(1, 0, 0));
-												sceneThreeErrorLabel.setText("Please pick your daily activity level");
+												sceneThreeErrorLabel
+														.setText("You're attempting to lose a lot of bodyweight,"
+																+ " please rethink your target weight");
 											}
 										} else {
 											sceneThreeErrorLabel.setTextFill(Color.color(1, 0, 0));
-											sceneThreeErrorLabel
-													.setText("You're attempting to lose a lot of bodyweight,"
-															+ " please rethink your target weight");
+											sceneThreeErrorLabel.setText(
+													"Please enter the amount of weight you'd like to gain/lose.");
 										}
 									} else {
 										sceneThreeErrorLabel.setTextFill(Color.color(1, 0, 0));
-										sceneThreeErrorLabel
-												.setText("Please enter the amount of weight you'd like to gain/lose.");
+										sceneThreeErrorLabel.setText("Please enter a valid weight.");
 									}
 								} else {
 									sceneThreeErrorLabel.setTextFill(Color.color(1, 0, 0));
@@ -194,7 +176,7 @@ public class HealthTrackerController {
 								}
 							} else {
 								sceneThreeErrorLabel.setTextFill(Color.color(1, 0, 0));
-								sceneThreeErrorLabel.setText("Please enter a valid weight.");
+								sceneThreeErrorLabel.setText("Please enter a valid height.");
 							}
 						} else {
 							sceneThreeErrorLabel.setTextFill(Color.color(1, 0, 0));
@@ -202,27 +184,26 @@ public class HealthTrackerController {
 						}
 					} else {
 						sceneThreeErrorLabel.setTextFill(Color.color(1, 0, 0));
-						sceneThreeErrorLabel.setText("Please enter a valid height.");
+						sceneThreeErrorLabel.setText("You're too old to go for weight gain/loss");
 					}
 				} else {
 					sceneThreeErrorLabel.setTextFill(Color.color(1, 0, 0));
-					sceneThreeErrorLabel.setText("You're too old to go for weight gain/loss");
+					sceneThreeErrorLabel.setText("You're too young to go for weight gain/loss.");
 				}
 			} else {
 				sceneThreeErrorLabel.setTextFill(Color.color(1, 0, 0));
-				sceneThreeErrorLabel.setText("You're too young to go for weight gain/loss.");
+				sceneThreeErrorLabel.setText("Please enter your age.");
 			}
 		} else {
 			sceneThreeErrorLabel.setTextFill(Color.color(1, 0, 0));
-			sceneThreeErrorLabel.setText("Please enter all the required details.");
+			sceneThreeErrorLabel.setText("Please pick your gender.");
 		}
-		if (validCalc) {			
-			doCalc(root);
-			
+		if (validCalc) {
+			doCalc(root, genderChoiceBox.getValue());
 		}
 	}
 
-	void doCalc(AnchorPane root) {
+	void doCalc(AnchorPane root, String gender) {
 		Label newBmiLabel = new Label();
 		// newBmiLabel.setText("i am bmi");
 		newBmiLabel.setTranslateY(69.5);
@@ -238,7 +219,7 @@ public class HealthTrackerController {
 		Label targetCaloriesLabel = new Label();
 		// targetCaloriesLabel.setText("i am target calories");
 		targetCaloriesLabel.setTranslateY(192);
-		targetCaloriesLabel.setTranslateX(105);
+		targetCaloriesLabel.setTranslateX(242);
 		Label dailyWeightLoss = new Label();
 		// dailyWeightLoss.setText("2.2");
 		dailyWeightLoss.setTranslateY(288);
@@ -251,8 +232,13 @@ public class HealthTrackerController {
 				weeklyWeightLoss };
 		for (Label label : labels)
 			root.getChildren().add(label);
-			System.out.println(gender);
+
+		Person user = new Person(genderChoiceBox.getValue(), Integer.parseInt(ageTextField.getText()),
+				Integer.parseInt(heightTextField.getText()), Integer.parseInt(currentweightTextField.getText()),
+				Double.parseDouble(weeklyWeightChange.getValue()), weightChange.getValue(),
+				Integer.parseInt(weightToLose.getText()), activityLevelChoiceBox.getValue());
+		System.out.println(user.getBmr());
+
 		}
 	}
-
 
