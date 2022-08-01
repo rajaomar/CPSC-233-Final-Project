@@ -1,5 +1,8 @@
 package application;
 
+//The created application takes inspiration from the following website
+//Date accessed: July 25th, 2022
+//https://www.calculator.net/calorie-calculator.html
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.stage.Stage;

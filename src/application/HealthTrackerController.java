@@ -88,6 +88,16 @@ public class HealthTrackerController {
 		AnchorPane root = FXMLLoader.load(getClass().getResource("Scene_2.fxml"));
 		stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
 
+		//Code used for checking if String contains only alphabets in Java:
+		//Date accessed July 29th, 2022
+		//https://www.tutorialkart.com/java/how-to-check-if-string-contains-only-
+		//alphabets-in-java/#:~:text=To%20check%20if%20String%20contains%20only
+		//%20alphabets%20in%20Java%2C%20call,alphabets%20(uppercase%20or%20lowercase)
+		
+		//Website used for learning how to move label within JavaFX
+		//Date Accessed: July 30th, 2022
+		//http://www.java2s.com/Code/Java/JavaFX/MoveaLabelbyusingsetTranslateY.htm
+		
 		if (name != "" && name.matches("[a-zA-Z]+")) {
 			scene = new Scene(root);
 			stage.setScene(scene);
@@ -107,7 +117,9 @@ public class HealthTrackerController {
 		}
 
 	}
-
+	// Code used for switching scenes:
+	// Date accessed Jul 28, 2022 
+	//https://www.youtube.com/watch?v=hcM-R-YOKkQ
 	public void switchToScene3(ActionEvent event) throws IOException {
 		AnchorPane root = FXMLLoader.load(getClass().getResource("Scene_3.fxml"));
 		stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
@@ -122,6 +134,9 @@ public class HealthTrackerController {
 		boolean validCalc = false;
 
 		if (genderChoiceBox.getValue() != null) {
+			//The following code to check if String is numeric was derived from the given citation.
+			//Date Accessed July 29th, 2022
+			//https://stackoverflow.com/questions/1102891/how-to-check-if-a-string-is-numeric-in-java?noredirect=1&lq=1
 			if (ageTextField.getText() != "" && (ageTextField.getText().chars().allMatch(Character::isDigit))) {
 				int userAge = Integer.parseInt(ageTextField.getText());
 				if (userAge > 9) {
@@ -207,7 +222,10 @@ public class HealthTrackerController {
 			doCalc(root, genderChoiceBox.getValue());
 		}
 	}
-
+	
+	//Website used for learning how to move label within JavaFX
+	//Date Accessed: July 30th, 2022
+	//http://www.java2s.com/Code/Java/JavaFX/MoveaLabelbyusingsetTranslateY.htm
 	void doCalc(AnchorPane root, String gender) {
 		Label newBmiLabel = new Label();
 		newBmiLabel.setTranslateY(73);
@@ -233,6 +251,18 @@ public class HealthTrackerController {
 				Integer.parseInt(heightTextField.getText()), Integer.parseInt(currentweightTextField.getText()),
 				Double.parseDouble(weeklyWeightChange.getValue()), weightChange.getValue(),
 				Integer.parseInt(weightToChange.getText()), activityLevelChoiceBox.getValue());
+		//Citation for Styling text
+		//Date Accessed July 31st, 2022
+		//https://docs.oracle.com/javafx/2/text/jfxpub-text.htm
+		
+		//Citation for Colouring text
+		//Date Accessed July 31st, 2022
+		//https://docs.oracle.com/javafx/2/api/javafx/scene/paint/Color.html
+		
+		//Citation for Colouring text
+		//Date Accessed July 31st, 2022
+		//https://stackoverflow.com/questions/61052676/how-to-change-color-of-text-in-javafx-label
+		
 		newBmrLabel.setText(user.getBmr() + "");
 		newBmrLabel.setFont(Font.font("System", FontWeight.BOLD, 14));
 

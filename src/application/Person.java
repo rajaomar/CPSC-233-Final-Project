@@ -13,6 +13,10 @@ public class Person {
 	private int bmr;
 	private int daysNeeded;
 	private double bmi;
+	
+	//Statistics and formulas for calculating the outputs were derived from the following website.
+	//Date Accessed: July 25th, 2022 
+	//https://www.nasm.org/resources/calorie-calculator#calculate-calories
 
 	public Person(String gender, int age, int height, int weight, double weeklyWeightChange, String gainOrLoss,
 			int amountOfWeightToChange, String personsActivityLevel) {
