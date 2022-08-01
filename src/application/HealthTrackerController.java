@@ -233,31 +233,23 @@ public class HealthTrackerController {
 
 	void doCalc(AnchorPane root, String gender) {
 		Label newBmiLabel = new Label();
-		// newBmiLabel.setText("i am bmi");
 		newBmiLabel.setTranslateY(69.5);
 		newBmiLabel.setTranslateX(139);
 		Label newBmrLabel = new Label();
-		// newBmrLabel.setText("i am bmr");
 		newBmrLabel.setTranslateY(88);
 		newBmrLabel.setTranslateX(161.5);
 		Label obesityClassLabel = new Label();
-		// obesityClassLabel.setText("i am obesity");
 		obesityClassLabel.setTranslateY(104.5);
 		obesityClassLabel.setTranslateX(84.8);
 		Label targetCaloriesLabel = new Label();
-		// targetCaloriesLabel.setText("i am target calories");
 		targetCaloriesLabel.setTranslateY(192);
 		targetCaloriesLabel.setTranslateX(242);
-		Label dailyWeightLoss = new Label();
-		// dailyWeightLoss.setText("2.2");
-		dailyWeightLoss.setTranslateY(288);
-		dailyWeightLoss.setTranslateX(5);
-		Label weeklyWeightLoss = new Label();
-		// weeklyWeightLoss.setText("1.1");
-		weeklyWeightLoss.setTranslateY(305);
-		weeklyWeightLoss.setTranslateX(5);
-		Label[] labels = { newBmrLabel, newBmiLabel, obesityClassLabel, targetCaloriesLabel, dailyWeightLoss,
-				weeklyWeightLoss };
+		Label daysNeededLabel = new Label();
+		daysNeededLabel.setTranslateX(365);
+		daysNeededLabel.setTranslateY(249.5);
+
+		
+		Label[] labels = { newBmrLabel, newBmiLabel, obesityClassLabel, targetCaloriesLabel,daysNeededLabel};
 		for (Label label : labels)
 			root.getChildren().add(label);
 		int y = 0;
@@ -273,20 +265,21 @@ public class HealthTrackerController {
 		newBmrLabel.setText(user.getBmr() + "");
 		System.out.println(user.toString());
 		targetCaloriesLabel.setText(user.getDailyIntake() + "");
-		newBmiLabel.setText(String.format("%.1f ", user.getBmi()));
+		newBmiLabel.setText(String.format("%.1f", user.getBmi()));
+		daysNeededLabel.setText(user.getDaysNeeded()+"");
 		
 		if (user.getBmi() < 18.5) {
 			obesityClassLabel.setTextFill(Color.color(1, 0, 0));
-			obesityClassLabel.setText(" Underweight ");
+			obesityClassLabel.setText("Underweight");
 		} else if (user.getBmi() > 18.5 && user.getBmi() < 24.9) {
 			obesityClassLabel.setTextFill(Color.color(0, 1, 0.5));
-			obesityClassLabel.setText(" Healthy weight ");
+			obesityClassLabel.setText("Healthy weight");
 		} else if (user.getBmi() > 25.0 && user.getBmi() < 29.9) {
 			obesityClassLabel.setTextFill(Color.color(1, 0, 0));
-			obesityClassLabel.setText(" Underweight ");
+			obesityClassLabel.setText("Underweight");
 		} else if (user.getBmi() > 30.0) {
 			obesityClassLabel.setTextFill(Color.color(1, 0, 0));
-			obesityClassLabel.setText(" Underweight ");
+			obesityClassLabel.setText("Underweight");
 		}
 
 	}
