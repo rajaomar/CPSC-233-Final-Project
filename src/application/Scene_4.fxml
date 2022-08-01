@@ -13,7 +13,7 @@
 			<children>
 				<HBox prefHeight="17.0" prefWidth="200.0">
 					<children>
-						<Label text="BMI (Body Mass Index):" />
+						<Label text="BMI (Body Mass Index): " />
 						<Label fx:id="bmiLabel">
 							<HBox.margin>
 								<Insets left="10.0" />
@@ -23,7 +23,7 @@
 				</HBox>
 				<HBox prefHeight="17.0" prefWidth="200.0">
 					<children>
-						<Label text="BMR (Basal Metabolic Rate):" />
+						<Label text="BMR (Basal Metabolic Rate): " />
 						<Label fx:id="bmrLabel" text= "">
 							<HBox.margin>
 								<Insets left="10.0" />
@@ -33,7 +33,7 @@
 				</HBox>
 				<HBox prefHeight="17.0" prefWidth="200.0">
 					<children>
-						<Label text="Obesity class:" />
+						<Label text="Obesity class: " />
 						<Label fx:id="obesityClassLabel" text="">
 							<HBox.margin>
 								<Insets left="10.0" />
