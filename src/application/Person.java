@@ -1,5 +1,7 @@
 package application;
 
+import javafx.scene.Scene;
+
 public class Person {
 	private String gender;
 	private int age;
@@ -12,11 +14,11 @@ public class Person {
 	private int dailyIntake;
 	private int bmr;
 	private int daysNeeded;
-	private double bmi;
-	
-	//Statistics and formulas for calculating the outputs were derived from the following website.
-	//Date Accessed: July 25th, 2022 
-	//https://www.nasm.org/resources/calorie-calculator#calculate-calories
+
+	// Statistics and formulas for calculating the outputs were derived from the
+	// following website.
+	// Date Accessed: July 25th, 2022
+	// https://www.nasm.org/resources/calorie-calculator#calculate-calories
 
 	public Person(String gender, int age, int height, int weight, double weeklyWeightChange, String gainOrLoss,
 			int amountOfWeightToChange, String personsActivityLevel) {
@@ -98,10 +100,6 @@ public class Person {
 			this.dailyIntake = this.bmr + 1000;
 
 		this.daysNeeded = (int) (this.amountOfWeightToChange / this.weeklyWeightChange);
-
-		double denom = (double) ((this.height) * (this.height)) / 10000.0;
-		double numer = (double) this.weight + 0.0;
-		this.bmi = numer / denom;
 
 	}
 
@@ -206,18 +204,75 @@ public class Person {
 		return bmr;
 	}
 
-	/**
-	 * @return the bmi
-	 */
-	public double getBmi() {
-		return bmi;
-	}
+	public String errorMessage(String string1, String string2, String string3, String string4, String string5,
+			String string6, String string7, String string8) {
+		String errorText = "";
+		if (string1 != null) {
+			// The following code to check if String is numeric was derived from the given
+			// citation.
+			// Date Accessed July 29th, 2022
+			// https://stackoverflow.com/questions/1102891/how-to-check-if-a-string-is-numeric-in-java?noredirect=1&lq=1
+			if (string2 != "" && (string2.chars().allMatch(Character::isDigit))) {
+				int userAge = Integer.parseInt(string2);
+				if (userAge > 9) {
+					if (userAge < 80) {
+						if (string3 != "" && string3.chars().allMatch(Character::isDigit)) {
+							int userHeight = Integer.parseInt(string3);
+							if (userHeight > 55 && userHeight < 270) {
+								if (string4 != "" && (string4.chars().allMatch(Character::isDigit))) {
+									int userWeight = Integer.parseInt(string4);
+									if (userWeight > 25 && userWeight < 450) {
+										if (string5 != "" && (string5.chars().allMatch(Character::isDigit))) {
+											int loseWeight = Integer.parseInt(string5);
+											if (loseWeight < 0.5 * userWeight) {
+												if (string6 != null) {
+													if (string7 != null) {
+														if (string8 != null) {
+															return errorText;
 
-	/**
-	 * @param bmi the bmi to set
-	 */
-	public void setBmi(double bmi) {
-		this.bmi = bmi;
+														} else {
+															errorText = ("Please pick the correct weight change option (loss/gain)");
+														}
+													} else {
+														errorText = "Please pick one of the weekly weight loss/gain options.";
+													}
+												} else {
+													errorText = ("Please pick your daily activity level");
+												}
+											} else {
+												errorText = ("You're attempting to lose a lot of bodyweight,"
+														+ " please rethink your target weight");
+											}
+										} else {
+											errorText = "Please enter the amount of weight you'd like to gain/lose.";
+										}
+									} else {
+										errorText = ("Please enter a valid weight.");
+									}
+								} else {
+									errorText = ("Please enter a valid weight.");
+								}
+							} else {
+								errorText = ("Please enter a valid height.");
+							}
+						} else {
+							errorText = ("Please enter a valid height.");
+						}
+					} else {
+						errorText = ("You're too old to go for weight gain/loss");
+					}
+				} else {
+					errorText = ("You're too young to go for weight gain/loss.");
+				}
+			} else {
+				errorText = ("Please enter your age.");
+			}
+		} else {
+			errorText = ("Please pick your gender.");
+		}
+
+		return errorText;
+
 	}
 
 }

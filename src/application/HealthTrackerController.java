@@ -88,16 +88,16 @@ public class HealthTrackerController {
 		AnchorPane root = FXMLLoader.load(getClass().getResource("Scene_2.fxml"));
 		stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
 
-		//Code used for checking if String contains only alphabets in Java:
-		//Date accessed July 29th, 2022
-		//https://www.tutorialkart.com/java/how-to-check-if-string-contains-only-
-		//alphabets-in-java/#:~:text=To%20check%20if%20String%20contains%20only
-		//%20alphabets%20in%20Java%2C%20call,alphabets%20(uppercase%20or%20lowercase)
-		
-		//Website used for learning how to move label within JavaFX
-		//Date Accessed: July 30th, 2022
-		//http://www.java2s.com/Code/Java/JavaFX/MoveaLabelbyusingsetTranslateY.htm
-		
+		// Code used for checking if String contains only alphabets in Java:
+		// Date accessed July 29th, 2022
+		// https://www.tutorialkart.com/java/how-to-check-if-string-contains-only-
+		// alphabets-in-java/#:~:text=To%20check%20if%20String%20contains%20only
+		// %20alphabets%20in%20Java%2C%20call,alphabets%20(uppercase%20or%20lowercase)
+
+		// Website used for learning how to move label within JavaFX
+		// Date Accessed: July 30th, 2022
+		// http://www.java2s.com/Code/Java/JavaFX/MoveaLabelbyusingsetTranslateY.htm
+
 		if (name != "" && name.matches("[a-zA-Z]+")) {
 			scene = new Scene(root);
 			stage.setScene(scene);
@@ -109,7 +109,6 @@ public class HealthTrackerController {
 			nameLabel.setFont(Font.font("System", FontWeight.BOLD, 14));
 
 			root.getChildren().add(nameLabel);
-			
 
 		} else {
 			errorInputs.setTextFill(Color.color(1, 0, 0));
@@ -117,9 +116,10 @@ public class HealthTrackerController {
 		}
 
 	}
+
 	// Code used for switching scenes:
-	// Date accessed Jul 28, 2022 
-	//https://www.youtube.com/watch?v=hcM-R-YOKkQ
+	// Date accessed Jul 28, 2022
+	// https://www.youtube.com/watch?v=hcM-R-YOKkQ
 	public void switchToScene3(ActionEvent event) throws IOException {
 		AnchorPane root = FXMLLoader.load(getClass().getResource("Scene_3.fxml"));
 		stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
@@ -131,102 +131,30 @@ public class HealthTrackerController {
 	public void switchToScene4(ActionEvent event) throws IOException {
 		AnchorPane root = FXMLLoader.load(getClass().getResource("Scene_4.fxml"));
 		stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-		boolean validCalc = false;
+		sceneThreeErrorLabel.setTextFill(Color.color(1, 0, 0));
 
-		if (genderChoiceBox.getValue() != null) {
-			//The following code to check if String is numeric was derived from the given citation.
-			//Date Accessed July 29th, 2022
-			//https://stackoverflow.com/questions/1102891/how-to-check-if-a-string-is-numeric-in-java?noredirect=1&lq=1
-			if (ageTextField.getText() != "" && (ageTextField.getText().chars().allMatch(Character::isDigit))) {
-				int userAge = Integer.parseInt(ageTextField.getText());
-				if (userAge > 9) {
-					if (userAge < 80) {
-						if (heightTextField.getText() != ""
-								&& heightTextField.getText().chars().allMatch(Character::isDigit)) {
-							int userHeight = Integer.parseInt(heightTextField.getText());
-							if (userHeight > 55 && userHeight < 270) {
-								if (currentweightTextField.getText() != ""
-										&& (currentweightTextField.getText().chars().allMatch(Character::isDigit))) {
-									int userWeight = Integer.parseInt(currentweightTextField.getText());
-									if (userWeight > 25 && userWeight < 450) {
-										if (weightToChange.getText() != ""
-												&& (weightToChange.getText().chars().allMatch(Character::isDigit))) {
-											int loseWeight = Integer.parseInt(weightToChange.getText());
-											if (loseWeight < 0.5 * userWeight) {
-												if (activityLevelChoiceBox.getValue() != null) {
-													if (weeklyWeightChange.getValue() != null) {
-														if (weightChange.getValue() != null) {
-															scene = new Scene(root);
-															stage.setScene(scene);
-															stage.show();
-															validCalc = true;
-														} else {
-															sceneThreeErrorLabel.setTextFill(Color.color(1, 0, 0));
-															sceneThreeErrorLabel.setText(
-																	"Please pick the correct weight change option (loss/gain)");
-														}
-													} else {
-														sceneThreeErrorLabel.setTextFill(Color.color(1, 0, 0));
-														sceneThreeErrorLabel.setText(
-																"Please pick one of the weekly weight loss/gain options.");
-													}
-												} else {
-													sceneThreeErrorLabel.setTextFill(Color.color(1, 0, 0));
-													sceneThreeErrorLabel
-															.setText("Please pick your daily activity level");
-												}
-											} else {
-												sceneThreeErrorLabel.setTextFill(Color.color(1, 0, 0));
-												sceneThreeErrorLabel
-														.setText("You're attempting to lose a lot of bodyweight,"
-																+ " please rethink your target weight");
-											}
-										} else {
-											sceneThreeErrorLabel.setTextFill(Color.color(1, 0, 0));
-											sceneThreeErrorLabel.setText(
-													"Please enter the amount of weight you'd like to gain/lose.");
-										}
-									} else {
-										sceneThreeErrorLabel.setTextFill(Color.color(1, 0, 0));
-										sceneThreeErrorLabel.setText("Please enter a valid weight.");
-									}
-								} else {
-									sceneThreeErrorLabel.setTextFill(Color.color(1, 0, 0));
-									sceneThreeErrorLabel.setText("Please enter a valid weight.");
-								}
-							} else {
-								sceneThreeErrorLabel.setTextFill(Color.color(1, 0, 0));
-								sceneThreeErrorLabel.setText("Please enter a valid height.");
-							}
-						} else {
-							sceneThreeErrorLabel.setTextFill(Color.color(1, 0, 0));
-							sceneThreeErrorLabel.setText("Please enter a valid height.");
-						}
-					} else {
-						sceneThreeErrorLabel.setTextFill(Color.color(1, 0, 0));
-						sceneThreeErrorLabel.setText("You're too old to go for weight gain/loss");
-					}
-				} else {
-					sceneThreeErrorLabel.setTextFill(Color.color(1, 0, 0));
-					sceneThreeErrorLabel.setText("You're too young to go for weight gain/loss.");
-				}
-			} else {
-				sceneThreeErrorLabel.setTextFill(Color.color(1, 0, 0));
-				sceneThreeErrorLabel.setText("Please enter your age.");
-			}
-		} else {
-			sceneThreeErrorLabel.setTextFill(Color.color(1, 0, 0));
-			sceneThreeErrorLabel.setText("Please pick your gender.");
-		}
-		if (validCalc) {
-			doCalc(root, genderChoiceBox.getValue());
+		ErrorMessage error = new ErrorMessage(genderChoiceBox.getValue(), ageTextField.getText(),
+				heightTextField.getText(), currentweightTextField.getText(), weightToChange.getText(),
+				activityLevelChoiceBox.getValue(), weeklyWeightChange.getValue(), weightChange.getValue());
+		sceneThreeErrorLabel.setText(error.getErrorText());
+		
+		if (error.isChangeScene()) {
+			scene = new Scene(root);
+			stage.setScene(scene);
+			stage.show();
+			makeLabels(root);
 		}
 	}
-	
-	//Website used for learning how to move label within JavaFX
-	//Date Accessed: July 30th, 2022
-	//http://www.java2s.com/Code/Java/JavaFX/MoveaLabelbyusingsetTranslateY.htm
-	void doCalc(AnchorPane root, String gender) {
+
+	// Website used for learning how to move label within JavaFX
+	// Date Accessed: July 30th, 2022
+	// http://www.java2s.com/Code/Java/JavaFX/MoveaLabelbyusingsetTranslateY.htm
+	/**
+	 * 
+	 * @param root
+	 * @param gender
+	 */
+	void makeLabels(AnchorPane root) {
 		Label newBmiLabel = new Label();
 		newBmiLabel.setTranslateY(73);
 		newBmiLabel.setTranslateX(159);
@@ -243,7 +171,7 @@ public class HealthTrackerController {
 		daysNeededLabel.setTranslateX(352.9);
 		daysNeededLabel.setTranslateY(250.6);
 
-		Label[] labels = {newBmrLabel, newBmiLabel, obesityClassLabel, targetCaloriesLabel, daysNeededLabel};
+		Label[] labels = { newBmrLabel, newBmiLabel, obesityClassLabel, targetCaloriesLabel, daysNeededLabel };
 		for (Label label : labels)
 			root.getChildren().add(label);
 
@@ -251,58 +179,43 @@ public class HealthTrackerController {
 				Integer.parseInt(heightTextField.getText()), Integer.parseInt(currentweightTextField.getText()),
 				Double.parseDouble(weeklyWeightChange.getValue()), weightChange.getValue(),
 				Integer.parseInt(weightToChange.getText()), activityLevelChoiceBox.getValue());
-		//Citation for Styling text
-		//Date Accessed July 31st, 2022
-		//https://docs.oracle.com/javafx/2/text/jfxpub-text.htm
 		
-		//Citation for Colouring text
-		//Date Accessed July 31st, 2022
-		//https://docs.oracle.com/javafx/2/api/javafx/scene/paint/Color.html
+		setLabelText(newBmrLabel,newBmiLabel,obesityClassLabel,targetCaloriesLabel,daysNeededLabel,user);
 		
-		//Citation for Colouring text
-		//Date Accessed July 31st, 2022
-		//https://stackoverflow.com/questions/61052676/how-to-change-color-of-text-in-javafx-label
+		// Citation for Styling text
+		// Date Accessed July 31st, 2022
+		// https://docs.oracle.com/javafx/2/text/jfxpub-text.htm
+
+		// Citation for Colouring text
+		// Date Accessed July 31st, 2022
+		// https://docs.oracle.com/javafx/2/api/javafx/scene/paint/Color.html
+
+		// Citation for Colouring text
+		// Date Accessed July 31st, 2022
+		// https://stackoverflow.com/questions/61052676/how-to-change-color-of-text-in-javafx-label
+
 		
-		newBmrLabel.setText(user.getBmr() + "");
-		newBmrLabel.setFont(Font.font("System", FontWeight.BOLD, 14));
-
-		targetCaloriesLabel.setText(user.getDailyIntake() + "");
-		targetCaloriesLabel.setTextFill(Color.color(0, 0, 1));
-		targetCaloriesLabel.setFont(Font.font("System", FontWeight.BOLD, 14));
-
-		newBmiLabel.setText(String.format("%.1f", user.getBmi()));
-		newBmiLabel.setFont(Font.font("System", FontWeight.BOLD, 14));
-
-		daysNeededLabel.setText(user.getDaysNeeded() + "");
-		daysNeededLabel.setFont(new Font(14));
-		daysNeededLabel.setFont(Font.font("System", FontWeight.BOLD, 14));
-		daysNeededLabel.setTextFill(Color.color(0.39, 0.34, 1));
-
-		if (user.getBmi() < 18.5) {
-			newBmiLabel.setTextFill(Color.color(1, 0, 0));
-			obesityClassLabel.setTextFill(Color.color(1, 0, 0));
-			obesityClassLabel.setText("Underweight");
-			obesityClassLabel.setFont(Font.font("System", FontWeight.BOLD, 14));
-
-		} else if (user.getBmi() > 18.5 && user.getBmi() < 24.9) {
-			newBmiLabel.setTextFill(Color.color(0.5, .8, 0.5));
-			obesityClassLabel.setTextFill(Color.color(0.5, .8, 0.5));
-			obesityClassLabel.setText("Healthy weight");
-			obesityClassLabel.setFont(Font.font("System", FontWeight.BOLD, 14));
-		} else if (user.getBmi() > 25.0 && user.getBmi() < 29.9) {
-			newBmiLabel.setTextFill(Color.color(1, 0, 0));
-			obesityClassLabel.setTextFill(Color.color(1, 0, 0));
-			obesityClassLabel.setText("Overweight");
-			obesityClassLabel.setFont(Font.font("System", FontWeight.BOLD, 14));
-
-		} else if (user.getBmi() > 30.0) {
-			newBmiLabel.setTextFill(Color.color(1, 0, 0));
-			obesityClassLabel.setTextFill(Color.color(1, 0, 0));
-			obesityClassLabel.setText("Obese");
-			obesityClassLabel.setFont(new Font(14));
-			obesityClassLabel.setFont(Font.font("System", FontWeight.BOLD, 14));
-
-		}
 
 	}
-} 
+	void setLabelText(Label bmr, Label bmi, Label obesity, Label targetCalories, Label daysNeeded, Person theUser) {
+		
+		bmr.setText(theUser.getBmr() + "");
+		bmr.setFont(Font.font("System", FontWeight.BOLD, 14));
+
+		targetCalories.setText(theUser.getDailyIntake() + "");
+		targetCalories.setTextFill(Color.color(0, 0, 1));
+		targetCalories.setFont(Font.font("System", FontWeight.BOLD, 14));
+
+		Bmi usersBmi = new Bmi(theUser.getHeight(), theUser.getWeight());
+
+		bmi.setText(String.format("%.1f", usersBmi.getBmiValue()));
+		bmi.setFont(Font.font("System", FontWeight.BOLD, 14));
+
+		obesity.setText(usersBmi.obesityLabelText(usersBmi.getBmiValue()));
+		daysNeeded.setFont(Font.font("System", FontWeight.BOLD, 14));
+
+		daysNeeded.setText(theUser.getDaysNeeded() + "");
+		daysNeeded.setFont(Font.font("System", FontWeight.BOLD, 14));
+		daysNeeded.setTextFill(Color.color(0.39, 0.34, 1));
+	}
+}
