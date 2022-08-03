@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+
+<AnchorPane prefHeight="353.0" prefWidth="430.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8">
+   <children>
+      <VBox prefHeight="136.0" prefWidth="403.0">
+         <children>
+            <HBox prefHeight="100.0" prefWidth="200.0">
+               <children>
+                  <Label prefHeight="29.0" prefWidth="362.0" text="Please choose the following activity conducted:" />
+                  <Button mnemonicParsing="false" text="User" />
+               </children>
+            </HBox>
+            <HBox prefHeight="100.0" prefWidth="200.0">
+               <children>
+                  <Label text="Exercise:" />
+                  <ChoiceBox prefWidth="150.0" />
+               </children>
+            </HBox>
+            <HBox layoutX="10.0" layoutY="39.0" prefHeight="100.0" prefWidth="200.0">
+               <children>
+                  <Label text="Time Spent Exercising:" />
+                  <Slider />
+               </children>
+            </HBox>
+            <Button mnemonicParsing="false" text="Next" />
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>

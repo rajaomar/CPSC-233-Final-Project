@@ -1,7 +1,5 @@
 package application;
 
-import javafx.scene.Scene;
-
 public class Person {
 	private String gender;
 	private int age;
@@ -14,6 +12,7 @@ public class Person {
 	private int dailyIntake;
 	private int bmr;
 	private int daysNeeded;
+	private int currentDailyIntake;
 
 	// Statistics and formulas for calculating the outputs were derived from the
 	// following website.
@@ -38,46 +37,58 @@ public class Person {
 		String male_selected = "male";
 		String female_selected = "female";
 
+		if (this.getGender().equals(male_selected)) {
+			this.setBmr((int) ((int) (88.362 + (13.397 * this.getWeight()) + (4.799 * this.getHeight())
+					- (5.677 * this.getAge()))));
+		}
+		if (this.getGender().equals(female_selected)) {
+			this.setBmr((int) ((int) (66.47 + (13.75 * this.getWeight()) + (5.003 * this.getHeight())
+					- (6.755 * this.getAge()))));
+		}
+		
+		
 		if (this.getGender().equals(male_selected) && this.personsActivityLevel.equals(option1)) {
-			this.setBmr((int) ((int) (1.2)
-					* (66.47 + (13.75 * this.getWeight()) + (5.003 * this.getHeight()) - (6.755 * this.getAge()))));
+			this.setCurrentDailyIntake((int) ((int) (1.2)
+					* (88.362 + (13.397 * this.getWeight()) + (4.799 * this.getHeight()) - (5.677 * this.getAge()))));
 		}
 		if (this.getGender().equals(male_selected) && this.personsActivityLevel.equals(option2)) {
-			this.setBmr((int) ((int) (1.375)
-					* (66.47 + (13.75 * this.getWeight()) + (5.003 * this.getHeight()) - (6.755 * this.getAge()))));
+			this.setCurrentDailyIntake((int) ((int) (1.375)
+					* (88.362 + (13.397 * this.getWeight()) + (4.799 * this.getHeight()) - (5.677 * this.getAge()))));
 		}
 		if (this.getGender().equals(male_selected) && this.personsActivityLevel.equals(option3)) {
-			this.setBmr((int) ((int) (1.55)
-					* (66.47 + (13.75 * this.getWeight()) + (5.003 * this.getHeight()) - (6.755 * this.getAge()))));
+			this.setCurrentDailyIntake((int) ((int) (1.55)
+					* (88.362 + (13.397 * this.getWeight()) + (4.799 * this.getHeight()) - (5.677 * this.getAge()))));
 		}
 		if (this.getGender().equals(male_selected) && this.personsActivityLevel.equals(option4)) {
-			this.setBmr((int) ((int) (1.725)
-					* (66.47 + (13.75 * this.getWeight()) + (5.003 * this.getHeight()) - (6.755 * this.getAge()))));
+			this.setCurrentDailyIntake((int) ((int) (1.725)
+					* (88.362 + (13.397 * this.getWeight()) + (4.799 * this.getHeight()) - (5.677 * this.getAge()))));
 		}
 		if (this.getGender().equals(male_selected) && this.personsActivityLevel.equals(option5)) {
-			this.setBmr((int) ((int) (1.9)
-					* (66.47 + (13.75 * this.getWeight()) + (5.003 * this.getHeight()) - (6.755 * this.getAge()))));
+			this.setCurrentDailyIntake((int) ((int) (1.9)
+					* (88.362 + (13.397 * this.getWeight()) + (4.799 * this.getHeight()) - (5.677 * this.getAge()))));
 		}
 
+		
+		
 		if (this.getGender().equals(female_selected) && this.personsActivityLevel.equals(option1)) {
-			this.setBmr((int) ((int) (1.2)
-					* (66.47 + (13.75 * this.getWeight()) + (5.003 * this.getHeight()) - (6.755 * this.getAge()))));
+			this.setCurrentDailyIntake((int) ((int) (1.2) * 447.593 + (9.247 * this.getWeight())
+					+ (3.098 * this.getHeight()) - (4.330 * this.getAge())));
 		}
 		if (this.getGender().equals(female_selected) && this.personsActivityLevel.equals(option2)) {
-			this.setBmr((int) ((int) (1.375)
-					* (66.47 + (13.75 * this.getWeight()) + (5.003 * this.getHeight()) - (6.755 * this.getAge()))));
+			this.setCurrentDailyIntake((int) ((int) (1.375) * 447.593 + (9.247 * this.getWeight())
+					+ (3.098 * this.getHeight()) - (4.330 * this.getAge())));
 		}
 		if (this.getGender().equals(female_selected) && this.personsActivityLevel.equals(option3)) {
-			this.setBmr((int) ((int) (1.55)
-					* (66.47 + (13.75 * this.getWeight()) + (5.003 * this.getHeight()) - (6.755 * this.getAge()))));
+			this.setCurrentDailyIntake((int) ((int) (1.55) * 447.593 + (9.247 * this.getWeight())
+					+ (3.098 * this.getHeight()) - (4.330 * this.getAge())));
 		}
 		if (this.getGender().equals(female_selected) && this.personsActivityLevel.equals(option4)) {
-			this.setBmr((int) ((int) (1.725)
-					* (66.47 + (13.75 * this.getWeight()) + (5.003 * this.getHeight()) - (6.755 * this.getAge()))));
+			this.setCurrentDailyIntake((int) ((int) (1.725) * 447.593 + (9.247 * this.getWeight())
+					+ (3.098 * this.getHeight()) - (4.330 * this.getAge())));
 		}
 		if (this.getGender().equals(female_selected) && this.personsActivityLevel.equals(option5)) {
-			this.setBmr((int) ((int) (1.9)
-					* (66.47 + (13.75 * this.getWeight()) + (5.003 * this.getHeight()) - (6.755 * this.getAge()))));
+			this.setCurrentDailyIntake((int) ((int) (1.9) * 447.593 + (9.247 * this.getWeight())
+					+ (3.098 * this.getHeight()) - (4.330 * this.getAge())));
 		}
 
 		this.daysNeeded = (int) (amountOfWeightToChange / weeklyWeightChange);
@@ -86,18 +97,19 @@ public class Person {
 		String weightGain = "gain";
 
 		if (this.weeklyWeightChange == 0.25 && this.gainOrLoss.equals(weightLoss))
-			this.dailyIntake = this.bmr - 250;
+			this.dailyIntake = this.currentDailyIntake - 250;
 		if (this.weeklyWeightChange == 0.5 && this.gainOrLoss.equals(weightLoss))
-			this.dailyIntake = this.bmr - 500;
+			this.dailyIntake = this.currentDailyIntake - 500;
 		if (this.weeklyWeightChange == 1 && this.gainOrLoss.equals(weightLoss))
-			this.dailyIntake = this.bmr - 1000;
+			this.dailyIntake = this.currentDailyIntake - 1000;
+
 
 		if (this.weeklyWeightChange == 0.25 && this.gainOrLoss.equals(weightGain))
-			this.dailyIntake = this.bmr + 250;
+			this.dailyIntake = this.currentDailyIntake + 250;
 		if (this.weeklyWeightChange == 0.5 && this.gainOrLoss.equals(weightGain))
-			this.dailyIntake = this.bmr + 500;
+			this.dailyIntake = this.currentDailyIntake + 500;
 		if (this.weeklyWeightChange == 1 && this.gainOrLoss.equals(weightGain))
-			this.dailyIntake = this.bmr + 1000;
+			this.dailyIntake = this.currentDailyIntake + 1000;
 
 		this.daysNeeded = (int) (this.amountOfWeightToChange / this.weeklyWeightChange);
 
@@ -204,74 +216,21 @@ public class Person {
 		return bmr;
 	}
 
-	public String errorMessage(String string1, String string2, String string3, String string4, String string5,
-			String string6, String string7, String string8) {
-		String errorText = "";
-		if (string1 != null) {
-			// The following code to check if String is numeric was derived from the given
-			// citation.
-			// Date Accessed July 29th, 2022
-			// https://stackoverflow.com/questions/1102891/how-to-check-if-a-string-is-numeric-in-java?noredirect=1&lq=1
-			if (string2 != "" && (string2.chars().allMatch(Character::isDigit))) {
-				int userAge = Integer.parseInt(string2);
-				if (userAge > 9) {
-					if (userAge < 80) {
-						if (string3 != "" && string3.chars().allMatch(Character::isDigit)) {
-							int userHeight = Integer.parseInt(string3);
-							if (userHeight > 55 && userHeight < 270) {
-								if (string4 != "" && (string4.chars().allMatch(Character::isDigit))) {
-									int userWeight = Integer.parseInt(string4);
-									if (userWeight > 25 && userWeight < 450) {
-										if (string5 != "" && (string5.chars().allMatch(Character::isDigit))) {
-											int loseWeight = Integer.parseInt(string5);
-											if (loseWeight < 0.5 * userWeight) {
-												if (string6 != null) {
-													if (string7 != null) {
-														if (string8 != null) {
-															return errorText;
+	/**
+	 * @return the currentDailyIntake
+	 */
+	public int getCurrentDailyIntake() {
+		return currentDailyIntake;
+	}
 
-														} else {
-															errorText = ("Please pick the correct weight change option (loss/gain)");
-														}
-													} else {
-														errorText = "Please pick one of the weekly weight loss/gain options.";
-													}
-												} else {
-													errorText = ("Please pick your daily activity level");
-												}
-											} else {
-												errorText = ("You're attempting to lose a lot of bodyweight,"
-														+ " please rethink your target weight");
-											}
-										} else {
-											errorText = "Please enter the amount of weight you'd like to gain/lose.";
-										}
-									} else {
-										errorText = ("Please enter a valid weight.");
-									}
-								} else {
-									errorText = ("Please enter a valid weight.");
-								}
-							} else {
-								errorText = ("Please enter a valid height.");
-							}
-						} else {
-							errorText = ("Please enter a valid height.");
-						}
-					} else {
-						errorText = ("You're too old to go for weight gain/loss");
-					}
-				} else {
-					errorText = ("You're too young to go for weight gain/loss.");
-				}
-			} else {
-				errorText = ("Please enter your age.");
-			}
-		} else {
-			errorText = ("Please pick your gender.");
-		}
+	/**
+	 * @param currentDailyIntake the currentDailyIntake to set
+	 */
+	public void setCurrentDailyIntake(int currentDailyIntake) {
+		this.currentDailyIntake = currentDailyIntake;
+	}
 
-		return errorText;
+	public void valueOfDailyIntake(int bmr, int recommendedDailyIntake) {
 
 	}
 
