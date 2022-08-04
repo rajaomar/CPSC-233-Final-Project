@@ -79,7 +79,7 @@ public class HealthTrackerController {
 	public ChoiceBox<String> genderChoiceBox;
 
 	@FXML
-	private ChoiceBox<String> dietType;
+	public ChoiceBox<String> dietType;
 
 	private Stage stage;
 	private Scene scene;
@@ -149,8 +149,27 @@ public class HealthTrackerController {
 		}
 	}
 
+	@FXML
 	public void switchToScene5(ActionEvent event) throws IOException {
+		AnchorPane root = FXMLLoader.load(getClass().getResource("Scene_5.fxml"));
+		stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+		scene = new Scene(root);
+		stage.setScene(scene);
+		stage.show();
+	}
+	
+	@FXML
+	public void switchToScene6(ActionEvent event) throws IOException {
 		AnchorPane root = FXMLLoader.load(getClass().getResource("Scene_6.fxml"));
+		stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+		scene = new Scene(root);
+		stage.setScene(scene);
+		stage.show();
+	}
+	
+	@FXML
+	public void switchToScene7(ActionEvent event) throws IOException {
+		AnchorPane root = FXMLLoader.load(getClass().getResource("Scene_7.fxml"));
 		stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
 		scene = new Scene(root);
 		stage.setScene(scene);

@@ -100,6 +100,6 @@
 				</Label>
 			</children>
 		</Pane>
-		<Button fx:id="switchToScene5" layoutX="212.0" layoutY="421.0" mnemonicParsing="false" text="Next" />
+		<Button layoutX="212.0" layoutY="421.0" mnemonicParsing="false" onAction="#switchToScene5" text="Next" />
 	</children>
 </AnchorPane>

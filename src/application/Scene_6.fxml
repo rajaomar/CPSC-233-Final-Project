@@ -5,8 +5,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.layout.AnchorPane?>
 
-
-<AnchorPane prefHeight="353.0" prefWidth="430.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8">
+<AnchorPane prefHeight="353.0" prefWidth="430.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.HealthTrackerController">
    <children>
       <VBox prefHeight="136.0" prefWidth="403.0">
          <children>
@@ -28,7 +27,7 @@
                   <Slider />
                </children>
             </HBox>
-            <Button mnemonicParsing="false" text="Next" />
+            <Button mnemonicParsing="false" onAction="#switchToScene7" text="Next" />
          </children>
       </VBox>
    </children>
