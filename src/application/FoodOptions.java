@@ -23,10 +23,10 @@ public class FoodOptions {
 		String vegan = "Vegan";
 
 		if (typeOfFood.equals(regularFood)) {
-			this.setBreakfast1("Pancakes, Butter, And Syrup");
+			this.setBreakfast1("Omelet with mac and cheese");
 			this.setBreakfast2("One bowl of cereal with 2 large bananas");
 			this.breakfast3 = "2 eggs 2 bacon 2 toast";
-			this.lunch1 = "Taco Hard Shell  with beef and cheese and lettuce";
+			this.lunch1 = "Beef Nachos";
 			this.lunch2 = "Chicken Fried Rice with a side of pop";
 			this.lunch3 = "Hamburger with fries";
 			this.dinner1 = "Baked Salmon with Garlic and Dijon";
@@ -42,7 +42,7 @@ public class FoodOptions {
 			this.lunch3 = "2 Veggie Sandwich & salad";
 			this.dinner1 = "2 Vegetarian Tacos & smoothie";
 			this.dinner2 = "Curried Chickpea Stew & 2 Bread";
-			this.dinner3 = "Cheesy Spinach-Zucchini Lasagna";
+			this.dinner3 = "Tikka Masala & 2 Peanut-Butter Energy Balls";
 		}
 		if (typeOfFood.equals(vegan)) {
 			this.setBreakfast1("Grain Toast with Peanut Butter & Banana");
@@ -135,32 +135,32 @@ public class FoodOptions {
 
 	public void setBreakfastCalories(String breakfastOption) {
 
-		if (breakfastOption == "Pancakes, Butter, And Syrup") {
-			this.breakfastCalories = 0;
+		if (breakfastOption == "Omelet with mac and cheese") {
+			this.breakfastCalories = 651;
 		}
 		if (breakfastOption == "One bowl of cereal with 2 large bananas") {
-			this.breakfastCalories = 0;
+			this.breakfastCalories = 400;
 		}
 		if (breakfastOption == "2 eggs 2 bacon 2 toast") {
-			this.breakfastCalories = 0;
+			this.breakfastCalories = 740;
 		}
 		if (breakfastOption == "Baked Banana-Nut Oatmeal with a cup of yogurt") {
-			this.breakfastCalories = 0;
+			this.breakfastCalories = 365;
 		}
 		if (breakfastOption == "Oatmeal, 2 boiled eggs") {
-			this.breakfastCalories = 0;
+			this.breakfastCalories = 480;
 		}
 		if (breakfastOption == "Thai Curry Pizza & smoothie") {
-			this.breakfastCalories = 0;
+			this.breakfastCalories = 620;
 		}
 		if (breakfastOption == "Grain Toast with Peanut Butter & Banana") {
-			this.breakfastCalories = 0;
+			this.breakfastCalories = 377;
 		}
 		if (breakfastOption == "Toast with avocado and a smoothie") {
-			this.breakfastCalories = 0;
+			this.breakfastCalories = 515;
 		}
 		if (breakfastOption == "3 pancakes with butter and syrup") {
-			this.breakfastCalories = 0;
+			this.breakfastCalories = 790;
 		}
 	}
 
@@ -169,32 +169,32 @@ public class FoodOptions {
 	}
 
 	public void setLunchCalories(String lunchOption) {
-		if (lunchOption == "Taco Hard Shell  with beef and cheese and lettuce") {
-			this.lunchCalories = 0;
+		if (lunchOption == "Beef Nachos") {
+			this.lunchCalories = 651;
 		}
 		if (lunchOption == "Chicken Fried Rice with a side of pop") {
-			this.lunchCalories = 0;
+			this.lunchCalories = 433;
 		}
 		if (lunchOption == "Hamburger with fries") {
-			this.lunchCalories = 0;
+			this.lunchCalories = 900;
 		}
 		if (lunchOption == "Veggie Wrap") {
-			this.lunchCalories = 0;
+			this.lunchCalories = 345;
 		}
 		if (lunchOption == "Hummus Bowls") {
-			this.lunchCalories = 0;
+			this.lunchCalories = 534;
 		}
 		if (lunchOption == "2 Veggie Sandwich & salad") {
-			this.lunchCalories = 0;
+			this.lunchCalories = 750;
 		}
 		if (lunchOption == "Vegan Superfood Buddha Bowls") {
-			this.lunchCalories = 0;
+			this.lunchCalories = 381;
 		}
 		if (lunchOption == "2 Cheese Pizza & Fries & pop") {
-			this.lunchCalories = 0;
+			this.lunchCalories = 804;
 		}
 		if (lunchOption == "Veggie Sandwich & 2 bananas & orange") {
-			this.lunchCalories = 0;
+			this.lunchCalories = 567;
 		}
 	}
 
@@ -204,31 +204,31 @@ public class FoodOptions {
 
 	public void setDinnerCalories(String dinnerOption) {
 		if (dinnerOption == "Baked Salmon with Garlic and Dijon") {
-			this.dinnerCalories = 0;
+			this.dinnerCalories = 314;
 		}
 		if (dinnerOption == "Steak and rice") {
-			this.dinnerCalories = 0;
+			this.dinnerCalories = 493;
 		}
 		if (dinnerOption == "Spaghetti with tomato sauce and cooked ground beef") {
-			this.dinnerCalories = 0;
+			this.dinnerCalories = 700;
 		}
 		if (dinnerOption == "2 Vegetarian Tacos & smoothie") {
-			this.dinnerCalories = 0;
+			this.dinnerCalories = 397;
 		}
 		if (dinnerOption == "Curried Chickpea Stew & 2 Bread") {
-			this.dinnerCalories = 0;
+			this.dinnerCalories = 561;
 		}
-		if (dinnerOption == "Cheesy Spinach-Zucchini Lasagna") {
-			this.dinnerCalories = 0;
+		if (dinnerOption == "Tikka Masala & 2 Peanut-Butter Energy Balls") {
+			this.dinnerCalories = 714;
 		}
 		if (dinnerOption == "Vegan Quinoa Salad") {
-			this.dinnerCalories = 0;
+			this.dinnerCalories = 300;
 		}
 		if (dinnerOption == "Chickpea Buddha Bowl") {
-			this.dinnerCalories = 0;
+			this.dinnerCalories = 481;
 		}
 		if (dinnerOption == "Vegan Coconut Chickpea Curry") {
-			this.dinnerCalories = 0;
+			this.dinnerCalories = 733;
 		}
 	}
 }
