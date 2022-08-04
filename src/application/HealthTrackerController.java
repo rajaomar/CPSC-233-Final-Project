@@ -83,8 +83,13 @@ public class HealthTrackerController {
 
 	@FXML
 	private Label sceneFourErrorLabel;
-	
-	private boolean foodsPicked=false;
+
+	@FXML
+	private Label sceneFiveErrorLabel;
+
+	@FXML
+	public boolean foodsPicked = false;
+
 	private Stage stage;
 	private Scene scene;
 
@@ -161,7 +166,10 @@ public class HealthTrackerController {
 			scene = new Scene(root);
 			stage.setScene(scene);
 			stage.show();
-			makeFoodChoiceboxes(dietType.getValue(), root);
+			ChoiceBox breakfast = new ChoiceBox();
+			ChoiceBox lunch = new ChoiceBox();
+			ChoiceBox dinner = new ChoiceBox();			
+			makeFoodChoiceboxes(breakfast, lunch, dinner, dietType.getValue(), root);
 		} else {
 			sceneFourErrorLabel.setText("Please pick a diet type to proceed.");
 		}
@@ -171,9 +179,15 @@ public class HealthTrackerController {
 	public void switchToScene6(ActionEvent event) throws IOException {
 		AnchorPane root = FXMLLoader.load(getClass().getResource("Scene_6.fxml"));
 		stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-		scene = new Scene(root);
-		stage.setScene(scene);
-		stage.show();
+		areFoodsPicked(null, null, null);
+		if (genderChoiceBox.getValue()!="") {
+			scene = new Scene(root);
+			stage.setScene(scene);
+			stage.show();
+		} else {
+			sceneFiveErrorLabel.setText("Please pick a diet type to proceed.");
+		}
+
 	}
 
 	@FXML
@@ -257,26 +271,22 @@ public class HealthTrackerController {
 		daysNeeded.setTextFill(Color.color(0.39, 0.34, 1));
 	}
 
-	void makeFoodChoiceboxes(String usersDietType, AnchorPane root) {
+	void makeFoodChoiceboxes(ChoiceBox breakfast, ChoiceBox lunch, ChoiceBox dinner, String usersDietType,
+			AnchorPane root) {
 		FoodOptions usersFoodPreferance = new FoodOptions(usersDietType);
 
-
-		ChoiceBox breakfast = new ChoiceBox();
 		breakfast.setTranslateX(100);
 		breakfast.setTranslateY(59.8);
 		breakfast.getItems().add(usersFoodPreferance.getBreakfast1());
 		breakfast.getItems().add(usersFoodPreferance.getBreakfast2());
 		breakfast.getItems().add(usersFoodPreferance.getBreakfast3());
 
-		ChoiceBox lunch = new ChoiceBox();
 		lunch.setTranslateX(100);
-		lunch.setTranslateY(120);		
+		lunch.setTranslateY(120);
 		lunch.getItems().add(usersFoodPreferance.getLunch1());
 		lunch.getItems().add(usersFoodPreferance.getLunch2());
 		lunch.getItems().add(usersFoodPreferance.getLunch3());
 
-
-		ChoiceBox dinner = new ChoiceBox();
 		dinner.setTranslateX(100);
 		dinner.setTranslateY(181.1);
 		dinner.getItems().add(usersFoodPreferance.getDinner1());
@@ -286,7 +296,15 @@ public class HealthTrackerController {
 		root.getChildren().add(breakfast);
 		root.getChildren().add(dinner);
 
-		
 	}
 
+	boolean areFoodsPicked(String breakfast, String lunch, String dinner) {
+		if (breakfast != "" && lunch != "" && dinner != "") {
+			return true;
+		} else {
+			return false;
+
+		}
+
+	}
 }

@@ -11,6 +11,7 @@ public class FoodOptions {
 	private String dinner1;
 	private String dinner2;
 	private String dinner3;
+	public static boolean foodsPicked=false;
 	private int calories = 0;
 
 	public FoodOptions(String typeOfFood) {

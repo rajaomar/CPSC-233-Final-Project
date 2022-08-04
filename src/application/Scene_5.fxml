@@ -33,5 +33,7 @@
       </VBox>
       <Button layoutX="566.0" layoutY="-1.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="52.0" text="User " />
       <Button layoutX="14.0" layoutY="287.0" mnemonicParsing="false" onAction="#switchToScene6" text="Next" />
+      <Label fx:id="sceneFiveErrorLabel" layoutX="291.0" layoutY="321.0" textFill="#ee0909" />
+      <ChoiceBox fx:id="textBox" layoutX="376.0" layoutY="309.0" prefWidth="150.0" />
    </children>
 </AnchorPane>
