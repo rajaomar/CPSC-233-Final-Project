@@ -8,7 +8,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.collections.FXCollections?>
 
-<AnchorPane prefHeight="556.0" prefWidth="686.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.HealthTrackerController">
+<AnchorPane prefHeight="556.0" prefWidth="686.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.Scene3Controller">
    <children>
       <Label layoutX="12.0" layoutY="38.0" text="Please enter all values in whole numbers, decimal values are not accepted as of now" />
       <VBox layoutX="243.0" layoutY="46.0" prefHeight="51.0" prefWidth="140.0" />
