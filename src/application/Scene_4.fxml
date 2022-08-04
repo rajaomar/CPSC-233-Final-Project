@@ -101,5 +101,6 @@
 			</children>
 		</Pane>
 		<Button layoutX="212.0" layoutY="421.0" mnemonicParsing="false" onAction="#switchToScene5" text="Next" />
+      <Label fx:id="sceneFourErrorLabel" layoutX="224.0" layoutY="398.0" textFill="#e10606" />
 	</children>
 </AnchorPane>

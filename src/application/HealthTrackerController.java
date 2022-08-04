@@ -81,6 +81,10 @@ public class HealthTrackerController {
 	@FXML
 	public ChoiceBox<String> dietType;
 
+	@FXML
+	private Label sceneFourErrorLabel;
+	
+	private boolean foodsPicked=false;
 	private Stage stage;
 	private Scene scene;
 
@@ -153,11 +157,16 @@ public class HealthTrackerController {
 	public void switchToScene5(ActionEvent event) throws IOException {
 		AnchorPane root = FXMLLoader.load(getClass().getResource("Scene_5.fxml"));
 		stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-		scene = new Scene(root);
-		stage.setScene(scene);
-		stage.show();
+		if (dietType.getValue() != null) {
+			scene = new Scene(root);
+			stage.setScene(scene);
+			stage.show();
+			makeFoodChoiceboxes(dietType.getValue(), root);
+		} else {
+			sceneFourErrorLabel.setText("Please pick a diet type to proceed.");
+		}
 	}
-	
+
 	@FXML
 	public void switchToScene6(ActionEvent event) throws IOException {
 		AnchorPane root = FXMLLoader.load(getClass().getResource("Scene_6.fxml"));
@@ -166,7 +175,7 @@ public class HealthTrackerController {
 		stage.setScene(scene);
 		stage.show();
 	}
-	
+
 	@FXML
 	public void switchToScene7(ActionEvent event) throws IOException {
 		AnchorPane root = FXMLLoader.load(getClass().getResource("Scene_7.fxml"));
@@ -247,29 +256,37 @@ public class HealthTrackerController {
 		daysNeeded.setFont(Font.font("System", FontWeight.BOLD, 14));
 		daysNeeded.setTextFill(Color.color(0.39, 0.34, 1));
 	}
-	
-	void makeFoodChoiceboxes() {
-		
-	/***	Food lunch = new Food();
-		
+
+	void makeFoodChoiceboxes(String usersDietType, AnchorPane root) {
+		FoodOptions usersFoodPreferance = new FoodOptions(usersDietType);
+
+
 		ChoiceBox breakfast = new ChoiceBox();
-		breakfast.getItems().add(getFood(dietType.getValue()));
-		breakfast.getItems().add("asdasd");
-		breakfast.getItems().add("asdasd");
+		breakfast.setTranslateX(100);
+		breakfast.setTranslateY(59.8);
+		breakfast.getItems().add(usersFoodPreferance.getBreakfast1());
+		breakfast.getItems().add(usersFoodPreferance.getBreakfast2());
+		breakfast.getItems().add(usersFoodPreferance.getBreakfast3());
 
-		
 		ChoiceBox lunch = new ChoiceBox();
-		lunch.getItems().add("asdasd");
-		lunch.getItems().add("asdasd");
-		lunch.getItems().add("asdasd");
+		lunch.setTranslateX(100);
+		lunch.setTranslateY(120);		
+		lunch.getItems().add(usersFoodPreferance.getLunch1());
+		lunch.getItems().add(usersFoodPreferance.getLunch2());
+		lunch.getItems().add(usersFoodPreferance.getLunch3());
 
-		
-		
+
 		ChoiceBox dinner = new ChoiceBox();
-		dinner.getItems().add("asdasd");
-		dinner.getItems().add("asdasd");
-		dinner.getItems().add("asdasd");*/
+		dinner.setTranslateX(100);
+		dinner.setTranslateY(181.1);
+		dinner.getItems().add(usersFoodPreferance.getDinner1());
+		dinner.getItems().add(usersFoodPreferance.getDinner2());
+		dinner.getItems().add(usersFoodPreferance.getDinner3());
+		root.getChildren().add(lunch);
+		root.getChildren().add(breakfast);
+		root.getChildren().add(dinner);
 
+		
 	}
 
 }
