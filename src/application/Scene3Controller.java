@@ -17,7 +17,7 @@ import javafx.scene.Parent;
 public class Scene3Controller {
 
 	@FXML
-    private TextField currentweightTextField;
+    public TextField currentweightTextField;
 
     @FXML
     private TextField weightToChange;

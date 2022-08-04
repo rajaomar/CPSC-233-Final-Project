@@ -11,7 +11,7 @@
          <children>
             <HBox prefHeight="100.0" prefWidth="200.0">
                <children>
-                  <Label text="Please select a meal from the list or please manually enter the calories entered" />
+                  <Label text="Please select a meal from each dropdown menu." />
                </children>
             </HBox>
             <HBox prefHeight="100.0" prefWidth="200.0">

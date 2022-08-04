@@ -6,31 +6,31 @@ import javafx.scene.control.Label;
 public class Scene7Controller {
 
     @FXML
-    private Label todaysCarbs;
+    public Label todaysCarbs;
 
     @FXML
-    private Label recommendedProteins;
+    public Label recommendedProteins;
 
     @FXML
-    private Label recommendedIntake;
+    public Label recommendedIntake;
 
     @FXML
-    private Label netCaloricIntake;
+    public Label netCaloricIntake;
 
     @FXML
-    private Label recommendedCarbs;
+    public Label recommendedCarbs;
 
     @FXML
-    private Label todaysFats;
+    public Label todaysFats;
 
     @FXML
-    private Label recommendedFats;
+    public Label recommendedFats;
 
     @FXML
-    private Label caloricDiff;
+    public Label caloricDiff;
 
     @FXML
-    private Label todaysProtein;
+    public Label todaysProtein;
 
 
 

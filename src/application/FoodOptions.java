@@ -1,16 +1,21 @@
 package application;
 
 public class FoodOptions {
+
 	private String breakfast1;
 	private String breakfast2;
 	private String breakfast3;
+	private int breakfastCalories;
 
 	private String lunch1;
 	private String lunch2;
 	private String lunch3;
+	private int lunchCalories;
+
 	private String dinner1;
 	private String dinner2;
 	private String dinner3;
+	private int dinnerCalories;
 
 	public FoodOptions(String typeOfFood) {
 		String regularFood = "Regular";
@@ -124,4 +129,106 @@ public class FoodOptions {
 		this.breakfast2 = breakfast2;
 	}
 
+	public int getBreakfastCalories() {
+		return breakfastCalories;
+	}
+
+	public void setBreakfastCalories(String breakfastOption) {
+
+		if (breakfastOption == "Pancakes, Butter, And Syrup") {
+			this.breakfastCalories = 0;
+		}
+		if (breakfastOption == "One bowl of cereal with 2 large bananas") {
+			this.breakfastCalories = 0;
+		}
+		if (breakfastOption == "2 eggs 2 bacon 2 toast") {
+			this.breakfastCalories = 0;
+		}
+		if (breakfastOption == "Baked Banana-Nut Oatmeal with a cup of yogurt") {
+			this.breakfastCalories = 0;
+		}
+		if (breakfastOption == "Oatmeal, 2 boiled eggs") {
+			this.breakfastCalories = 0;
+		}
+		if (breakfastOption == "Thai Curry Pizza & smoothie") {
+			this.breakfastCalories = 0;
+		}
+		if (breakfastOption == "Grain Toast with Peanut Butter & Banana") {
+			this.breakfastCalories = 0;
+		}
+		if (breakfastOption == "Toast with avocado and a smoothie") {
+			this.breakfastCalories = 0;
+		}
+		if (breakfastOption == "3 pancakes with butter and syrup") {
+			this.breakfastCalories = 0;
+		}
+	}
+
+	public int getLunchCalories() {
+		return lunchCalories;
+	}
+
+	public void setLunchCalories(String lunchOption) {
+		if (lunchOption == "Taco Hard Shell  with beef and cheese and lettuce") {
+			this.lunchCalories = 0;
+		}
+		if (lunchOption == "Chicken Fried Rice with a side of pop") {
+			this.lunchCalories = 0;
+		}
+		if (lunchOption == "Hamburger with fries") {
+			this.lunchCalories = 0;
+		}
+		if (lunchOption == "Veggie Wrap") {
+			this.lunchCalories = 0;
+		}
+		if (lunchOption == "Hummus Bowls") {
+			this.lunchCalories = 0;
+		}
+		if (lunchOption == "2 Veggie Sandwich & salad") {
+			this.lunchCalories = 0;
+		}
+		if (lunchOption == "Vegan Superfood Buddha Bowls") {
+			this.lunchCalories = 0;
+		}
+		if (lunchOption == "2 Cheese Pizza & Fries & pop") {
+			this.lunchCalories = 0;
+		}
+		if (lunchOption == "Veggie Sandwich & 2 bananas & orange") {
+			this.lunchCalories = 0;
+		}
+	}
+
+	public int getDinnerCalories() {
+		return dinnerCalories;
+	}
+
+	public void setDinnerCalories(String dinnerOption) {
+		if (dinnerOption == "Baked Salmon with Garlic and Dijon") {
+			this.dinnerCalories = 0;
+		}
+		if (dinnerOption == "Steak and rice") {
+			this.dinnerCalories = 0;
+		}
+		if (dinnerOption == "Spaghetti with tomato sauce and cooked ground beef") {
+			this.dinnerCalories = 0;
+		}
+		if (dinnerOption == "2 Vegetarian Tacos & smoothie") {
+			this.dinnerCalories = 0;
+		}
+		if (dinnerOption == "Curried Chickpea Stew & 2 Bread") {
+			this.dinnerCalories = 0;
+		}
+		if (dinnerOption == "Cheesy Spinach-Zucchini Lasagna") {
+			this.dinnerCalories = 0;
+		}
+		if (dinnerOption == "Vegan Quinoa Salad") {
+			this.dinnerCalories = 0;
+		}
+		if (dinnerOption == "Chickpea Buddha Bowl") {
+			this.dinnerCalories = 0;
+		}
+		if (dinnerOption == "Vegan Coconut Chickpea Curry") {
+			this.dinnerCalories = 0;
+		}
+	}
 }
