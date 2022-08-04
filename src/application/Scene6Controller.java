@@ -32,9 +32,9 @@ public class Scene6Controller {
 	public void switchToScene7(ActionEvent event) throws IOException {
 		FXMLLoader loader = new FXMLLoader(getClass().getResource("Scene_7.fxml"));
 		root = loader.load();
-		Scene7Controller s7c = loader.getController();
-		Scene5Controller s5c = loader.getController();
-		Scene3Controller s3c = loader.getController();
+	//	Scene7Controller s7c = loader.getController();
+	//	Scene5Controller s5c = loader.getController();
+	//	Scene3Controller s3c = loader.getController();
 
 		stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
 		if (timeSpentExercising.getValue() != null && exerciseChoiceBox.getValue() != null) {
@@ -49,14 +49,13 @@ public class Scene6Controller {
 		}
 	}
 
-	void setLabelText(Scene7Controller s7c, Scene5Controller s5c, Scene3Controller s3c) {
-		Exercise usersExercise = new Exercise(exerciseChoiceBox.getValue(),
-				Integer.parseInt(timeSpentExercising.getValue()),
-				Integer.parseInt(s3c.currentweightTextField.getText()));
+//	void setLabelText(Scene7Controller s7c, Scene5Controller s5c, Scene3Controller s3c) {
+	//	Exercise usersExercise = new Exercise(exerciseChoiceBox.getValue(),
+		//		Integer.parseInt(timeSpentExercising.getValue()),
+		//		Integer.parseInt(s3c.currentweightTextField.getText()));
 		
 	//	usersExercise.getCaloriesBurnt()+
 		
-		s7c.netCaloricIntake.setText(null);
+	//	s7c.netCaloricIntake.setText(null);
 
 	}
-}
