@@ -78,6 +78,9 @@ public class HealthTrackerController {
 	@FXML
 	public ChoiceBox<String> genderChoiceBox;
 
+	@FXML
+	private ChoiceBox<String> dietType;
+
 	private Stage stage;
 	private Scene scene;
 
@@ -137,13 +140,21 @@ public class HealthTrackerController {
 				heightTextField.getText(), currentweightTextField.getText(), weightToChange.getText(),
 				activityLevelChoiceBox.getValue(), weeklyWeightChange.getValue(), weightChange.getValue());
 		sceneThreeErrorLabel.setText(error.getErrorText());
-		
+
 		if (error.isChangeScene()) {
 			scene = new Scene(root);
 			stage.setScene(scene);
 			stage.show();
 			makeLabels(root);
 		}
+	}
+
+	public void switchToScene5(ActionEvent event) throws IOException {
+		AnchorPane root = FXMLLoader.load(getClass().getResource("Scene_6.fxml"));
+		stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+		scene = new Scene(root);
+		stage.setScene(scene);
+		stage.show();
 	}
 
 	// Website used for learning how to move label within JavaFX
@@ -179,9 +190,9 @@ public class HealthTrackerController {
 				Integer.parseInt(heightTextField.getText()), Integer.parseInt(currentweightTextField.getText()),
 				Double.parseDouble(weeklyWeightChange.getValue()), weightChange.getValue(),
 				Integer.parseInt(weightToChange.getText()), activityLevelChoiceBox.getValue());
-		
-		setLabelText(newBmrLabel,newBmiLabel,obesityClassLabel,targetCaloriesLabel,daysNeededLabel,user);
-		
+
+		setLabelText(newBmrLabel, newBmiLabel, obesityClassLabel, targetCaloriesLabel, daysNeededLabel, user);
+
 		// Citation for Styling text
 		// Date Accessed July 31st, 2022
 		// https://docs.oracle.com/javafx/2/text/jfxpub-text.htm
@@ -194,11 +205,10 @@ public class HealthTrackerController {
 		// Date Accessed July 31st, 2022
 		// https://stackoverflow.com/questions/61052676/how-to-change-color-of-text-in-javafx-label
 
-		
-
 	}
+
 	void setLabelText(Label bmr, Label bmi, Label obesity, Label targetCalories, Label daysNeeded, Person theUser) {
-		
+
 		bmr.setText(theUser.getBmr() + "");
 		bmr.setFont(Font.font("System", FontWeight.BOLD, 14));
 
@@ -218,4 +228,29 @@ public class HealthTrackerController {
 		daysNeeded.setFont(Font.font("System", FontWeight.BOLD, 14));
 		daysNeeded.setTextFill(Color.color(0.39, 0.34, 1));
 	}
+	
+	void makeFoodChoiceboxes() {
+		
+	/***	Food lunch = new Food();
+		
+		ChoiceBox breakfast = new ChoiceBox();
+		breakfast.getItems().add(getFood(dietType.getValue()));
+		breakfast.getItems().add("asdasd");
+		breakfast.getItems().add("asdasd");
+
+		
+		ChoiceBox lunch = new ChoiceBox();
+		lunch.getItems().add("asdasd");
+		lunch.getItems().add("asdasd");
+		lunch.getItems().add("asdasd");
+
+		
+		
+		ChoiceBox dinner = new ChoiceBox();
+		dinner.getItems().add("asdasd");
+		dinner.getItems().add("asdasd");
+		dinner.getItems().add("asdasd");*/
+
+	}
+
 }

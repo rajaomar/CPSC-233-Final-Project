@@ -6,29 +6,19 @@
 <?import javafx.scene.layout.AnchorPane?>
 
 
-<AnchorPane prefHeight="353.0" prefWidth="430.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8">
+<AnchorPane xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8">
    <children>
-      <VBox prefHeight="136.0" prefWidth="403.0">
+      <VBox prefHeight="505.0" prefWidth="606.0">
          <children>
-            <HBox prefHeight="100.0" prefWidth="200.0">
+            <Pane prefHeight="200.0" prefWidth="200.0">
                <children>
-                  <Label prefHeight="29.0" prefWidth="362.0" text="Please choose the following activity conducted:" />
-                  <Button mnemonicParsing="false" text="User" />
+                  <TextArea prefHeight="93.0" prefWidth="546.0" promptText="Based on the given inputs, for the calories consumed, and the calories burned off through exercise, we have concluded that you have                 the requirements of the calculated calories budget" />
                </children>
-            </HBox>
-            <HBox prefHeight="100.0" prefWidth="200.0">
-               <children>
-                  <Label text="Exercise:" />
-                  <ChoiceBox prefWidth="150.0" />
-               </children>
-            </HBox>
-            <HBox layoutX="10.0" layoutY="39.0" prefHeight="100.0" prefWidth="200.0">
-               <children>
-                  <Label text="Time Spent Exercising:" />
-                  <Slider />
-               </children>
-            </HBox>
-            <Button mnemonicParsing="false" text="Next" />
+            </Pane>
+            <Label text="If you would like to edit your user profile, click the following edit button" />
+            <Button mnemonicParsing="false" text="Edit" />
+            <Label text="If you are satisfied with your requirements please click the following Finish button" />
+            <Button mnemonicParsing="false" text="Finish" />
          </children>
       </VBox>
    </children>
