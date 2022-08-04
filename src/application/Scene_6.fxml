@@ -6,42 +6,30 @@
 <?import javafx.scene.layout.AnchorPane?>
 
 
-<AnchorPane prefHeight="387.0" prefWidth="638.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8">
+<AnchorPane prefHeight="353.0" prefWidth="430.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8">
    <children>
-      <VBox prefHeight="293.0" prefWidth="537.0">
+      <VBox prefHeight="136.0" prefWidth="403.0">
          <children>
             <HBox prefHeight="100.0" prefWidth="200.0">
                <children>
-                  <Label text="Please select a meal from the list or please manually enter the calories entered" />
+                  <Label prefHeight="29.0" prefWidth="362.0" text="Please choose the following activity conducted:" />
+                  <Button mnemonicParsing="false" text="User" />
                </children>
             </HBox>
             <HBox prefHeight="100.0" prefWidth="200.0">
                <children>
-                  <Label text="Breakfast:" />
+                  <Label text="Exercise:" />
                   <ChoiceBox prefWidth="150.0" />
-                  <Label text="or calories consumed:" />
-                  <TextField />
                </children>
             </HBox>
-            <HBox prefHeight="100.0" prefWidth="200.0">
+            <HBox layoutX="10.0" layoutY="39.0" prefHeight="100.0" prefWidth="200.0">
                <children>
-                  <Label text="Lunch:" />
-                  <ChoiceBox prefWidth="150.0" />
-                  <Label text="or calories consumed:" />
-                  <TextField />
+                  <Label text="Time Spent Exercising:" />
+                  <Slider />
                </children>
             </HBox>
-            <HBox prefHeight="151.0" prefWidth="537.0">
-               <children>
-                  <Label text="Dinner:" />
-                  <ChoiceBox prefWidth="150.0" />
-                  <Label text="or calories consumed:" />
-                  <TextField />
-               </children>
-            </HBox>
+            <Button mnemonicParsing="false" text="Next" />
          </children>
       </VBox>
-      <Button layoutX="576.0" layoutY="1.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="52.0" text="User " />
-      <Button layoutX="14.0" layoutY="287.0" mnemonicParsing="false" text="Next" />
    </children>
 </AnchorPane>
