@@ -8,14 +8,12 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.collections.FXCollections?>
 
-<AnchorPane prefHeight="510.0" prefWidth="510.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.HealthTrackerController">
+<AnchorPane prefHeight="510.0" prefWidth="510.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.Scene1Controller">
    <children>
       <Label layoutX="5.0" prefHeight="40.0" prefWidth="500.0" text="Welcome to the weight loss calculator, please enter your name and press Next to continue." />
-      <Label fx:id="validName" layoutX="360.0" layoutY="47.0" text="" />
       <Label layoutX="122.0" layoutY="47.0" text="Last name" />
       <TextField fx:id="nameTextField" layoutX="181.0" layoutY="43.0" />
       <Button layoutX="235.0" layoutY="159.0" mnemonicParsing="false" onAction="#switchToScene2" text="Next" />
-      <Label fx:id="validGender" layoutX="360.0" layoutY="94.0" text="" />
-      <Label fx:id="errorInputs" layoutX="46.0" layoutY="232.0" prefHeight="17.0" prefWidth="419.0" /> 
+      <Label fx:id="validName" layoutX="241.0" layoutY="119.0" textFill="#e40e0e" /> 
    </children>
 </AnchorPane>

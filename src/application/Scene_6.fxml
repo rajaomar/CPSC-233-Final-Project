@@ -1,34 +1,41 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.*?>
 <?import javafx.scene.control.*?>
 <?import java.lang.*?>
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane prefHeight="353.0" prefWidth="430.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.HealthTrackerController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="500.0" prefWidth="500.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.Scene6Controller">
    <children>
-      <VBox prefHeight="136.0" prefWidth="403.0">
+      <VBox prefHeight="185.0" prefWidth="500.0">
          <children>
-            <HBox prefHeight="100.0" prefWidth="200.0">
+            <HBox prefHeight="37.0" prefWidth="411.0">
                <children>
-                  <Label prefHeight="29.0" prefWidth="362.0" text="Please choose the following activity conducted:" />
-                  <Button mnemonicParsing="false" text="User" />
+                  <Label prefHeight="17.0" prefWidth="493.0" text="Please pick the exercise you have done today and also the amount of time you spent on it" />
                </children>
             </HBox>
             <HBox prefHeight="100.0" prefWidth="200.0">
                <children>
-                  <Label text="Exercise:" />
-                  <ChoiceBox prefWidth="150.0" />
+                  <Label text="Type of exercise" />
+                  <ChoiceBox fx:id="exericiseChoiceBox" prefWidth="150.0" />
                </children>
+               <VBox.margin>
+                  <Insets top="10.0" />
+               </VBox.margin>
             </HBox>
             <HBox layoutX="10.0" layoutY="39.0" prefHeight="100.0" prefWidth="200.0">
                <children>
-                  <Label text="Time Spent Exercising:" />
-                  <Slider />
+                  <Label text="Time Spent Exercising (on average):" />
+                  <ChoiceBox fx:id="timeSpentExercising" prefWidth="150.0" />
                </children>
             </HBox>
-            <Button mnemonicParsing="false" onAction="#switchToScene7" text="Next" />
+            <Button mnemonicParsing="false" onAction="#switchToScene7" text="Next">
+               <VBox.margin>
+                  <Insets left="230.0" />
+               </VBox.margin></Button>
          </children>
       </VBox>
+      <Label fx:id="sceneSixErrorLabel" layoutX="83.0" layoutY="233.0" prefHeight="17.0" prefWidth="335.0" textFill="#eb0505" />
    </children>
 </AnchorPane>

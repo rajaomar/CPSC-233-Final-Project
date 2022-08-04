@@ -1,24 +1,77 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.text.*?>
 <?import javafx.scene.control.*?>
 <?import java.lang.*?>
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.HealthTrackerController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="500.0" prefWidth="500.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.Scene7Controller">
    <children>
-      <VBox prefHeight="505.0" prefWidth="606.0">
+      <Pane prefHeight="200.0" prefWidth="500.0">
          <children>
-            <Pane prefHeight="200.0" prefWidth="200.0">
-               <children>
-                  <TextArea prefHeight="93.0" prefWidth="546.0" promptText="Based on the given inputs, for the calories consumed, and the calories burned off through exercise, we have concluded that you have                 the requirements of the calculated calories budget" />
-               </children>
-            </Pane>
-            <Label text="If you would like to edit your user profile, click the following edit button" />
-            <Button mnemonicParsing="false" text="Edit" />
-            <Label text="If you are satisfied with your requirements please click the following Finish button" />
-            <Button mnemonicParsing="false" text="Finish" />
+            <Text layoutX="14.0" layoutY="20.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Based on the foods you had choosen for your day, and the exercises you did, your net caloric intake for today is            which is            than your recommended daily intake for             weight." wrappingWidth="444.13671875">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Text>
+            <Label fx:id="netCaloricIntake" layoutX="284.0" layoutY="24.0" textFill="#0105dd">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Label>
+            <Label fx:id="caloricDiff" layoutX="379.0" layoutY="24.0" textFill="#0105dd">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Label>
+            <Label fx:id="recommendedIntake" layoutX="236.0" layoutY="44.0" textFill="#0105dd">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Label>
          </children>
-      </VBox>
+      </Pane>
+      <Pane layoutY="200.0" prefHeight="228.0" prefWidth="500.0">
+         <children>
+            <Text layoutX="14.0" layoutY="20.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Your macronutrients for today (based on the foods you picked) are:" wrappingWidth="444.13671875">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Text>
+            <Label fx:id="todaysProtein" layoutX="14.0" layoutY="34.0" textFill="#e40505">
+               <font>
+                  <Font size="15.0" />
+               </font></Label>
+            <Label fx:id="todaysCarbs" layoutX="14.0" layoutY="51.0" textFill="#d0bc0b">
+               <font>
+                  <Font size="15.0" />
+               </font></Label>
+            <Label fx:id="todaysFats" layoutX="14.0" layoutY="68.0" textFill="#1d8d32">
+               <font>
+                  <Font size="15.0" />
+               </font></Label>
+            <Text layoutX="14.0" layoutY="115.0" strokeType="OUTSIDE" strokeWidth="0.0" text="The recommended macronutrients based on your recommended daily intake, following the 30/40/30 split are:" wrappingWidth="444.13671875">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Text>
+            <Label fx:id="recommendedProteins" layoutX="14.0" layoutY="147.0" textFill="#e40505">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Label>
+            <Label fx:id="recommendedCarbs" layoutX="14.0" layoutY="164.0" textFill="#d0bc0b">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Label>
+            <Label fx:id="recommendedFats" layoutX="14.0" layoutY="185.0" textFill="#1d8d32">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Label>
+         </children>
+      </Pane>
    </children>
 </AnchorPane>
