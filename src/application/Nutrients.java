@@ -1,16 +1,27 @@
 package application;
-
+/**
+ * Nutrients Class
+ * Instance Variables: totalCalories, proteins,carbohydrates,fats
+ * Overall Description of the class: In this class we use the user inputs of food
+ * choices to then set them to their calories
+ */
 public class Nutrients {
 
 	private int totalCalories = 0;
 	private double proteins;
 	private double carbohydrates;
 	private double fats;
-
+	/*Method Name: Nutrients
+	*Inputs: breakfast,lunch,dinner
+	*Outputs/Sets: sets the total calories of each food time
+	*/
 	public Nutrients(String breakfast, String lunch, String dinner) {
 		setTotalCalories(breakfast, lunch, dinner);
 	}
-
+	/*Method Name: Getter/Setters for TotalCalories,CarbonHydrates,fats,protein
+	* Set/get: sets the certain method to the correct value, and gets the correct values. 
+	* and gets the total calories of all food chosen from the user. 
+	*/
 	public int getTotalCalories() {
 		return totalCalories;
 	}

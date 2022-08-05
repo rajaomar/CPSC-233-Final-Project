@@ -1,5 +1,10 @@
 package application;
-
+/**
+ * FoodOptions Class
+ * Instance Variables: Breakfast1-3 breakfastCalories lunch1-3 lunchCalories dinner1-3 dinnerCalories
+ * Overall Description of the class: In this class we establish certain food choice the user chooses
+ * and then sets the choices to their calories
+ */
 public class FoodOptions {
 
 	private String breakfast1;
@@ -16,7 +21,11 @@ public class FoodOptions {
 	private String dinner2;
 	private String dinner3;
 	private int dinnerCalories;
-
+	/*Method Name: FoodOptions
+	*Inputs: typeOfFood
+	*Functionality: The user choice will be given to them by this method   
+	*Outputs/Sets: places the right foods for the user to choose from
+	*/
 	public FoodOptions(String typeOfFood) {
 		String regularFood = "Regular";
 		String vegetarian = "Vegetarian";
@@ -56,7 +65,9 @@ public class FoodOptions {
 			this.dinner3 = "Vegan Coconut Chickpea Curry";
 		}
 	}
-
+	/*Method Name:Getter/Setters for breakfast,lunch,dinner
+	 *   
+	 */
 	public String getBreakfast3() {
 		return breakfast3;
 	}
@@ -129,10 +140,10 @@ public class FoodOptions {
 		this.breakfast2 = breakfast2;
 	}
 
-	// public int getBreakfastCalories() {
-//		return breakfastCalories;
-//	}
-
+	/*Method Name: Getters/Setters BreakfastCalories,getLunchCalories,getDinnerCalories
+	*Inputs: breakfastOption,lunchOption,dinnerOption
+	*Outputs/Sets: It then sets the correct calories of the chosen food.
+	*/
 	public int getBreakfastCalories(String breakfastOption) {
 		int breakfastCalories = 0;
 		if (breakfastOption == "Omelet with mac and cheese") {
