@@ -18,7 +18,7 @@ public class Exercise {
 		String option3="Leisure bicycling";
 		String option4="Swimming";
 		String option5="Vigorous weight lifting";
-		
+		//
 		if (typeOfExercise.equals(option1)) {
 			this.caloriesBurnt = (int) (timeSpent * (3.5) * (11.5) * (weightOfUser) / 200);
 		}
