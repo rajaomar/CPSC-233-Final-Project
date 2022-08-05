@@ -46,7 +46,12 @@ public class Scene3Controller {
 	private Stage stage;
 	private Scene scene;
 	private Parent root;
-
+	/*Method Name: switchToScene4
+	*Inputs: event
+	*Functionality: makes it so that after the user inputs from one window it switches to the other
+	* and sets the error message to the corresponding field. It also sets the user inputs to the 
+	* person class.
+	*/
 	public void switchToScene4(ActionEvent event) throws IOException {
 		FXMLLoader loader = new FXMLLoader(getClass().getResource("Scene_4.fxml"));
 		root = loader.load();
@@ -75,7 +80,9 @@ public class Scene3Controller {
 
 		}
 	}
-
+	/* sets the labeltext for the obesity ,bmi, dailyintake, and daysneeded to the users. 
+	 * 
+	 */
 	void setLabelText(Person theUser, Scene4Controller s4c) {
 		
 		Bmi usersBmi = new Bmi(theUser.getHeight(), theUser.getWeight());

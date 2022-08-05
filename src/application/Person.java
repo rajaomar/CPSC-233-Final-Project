@@ -1,5 +1,11 @@
 package application;
-
+/**
+ * Person Class
+ * Instance Variables: gender,age,height,weight,weeklyWeightChange,gainOrLoss
+ * amountOfWeightToChange.personsActivityLevel,dailyIntake,bmr,daysNeeded,currentDailyIntake
+ * Overall Description of the class: In this class we set all the person attributes and does all the calculation
+ * like bmr,dailyIntake,daysNeeded
+ */
 public class Person {
 	private String gender;
 	private int age;
@@ -20,7 +26,7 @@ public class Person {
 	// https://www.nasm.org/resources/calorie-calculator#calculate-calories
 
 	public Person(String gender, int age, int height, int weight, double weeklyWeightChange, String gainOrLoss,
-			int amountOfWeightToChange, String personsActivityLevel) {
+		int amountOfWeightToChange, String personsActivityLevel) {
 		this.setGender(gender);
 		this.setAge(age);
 		this.setHeight(height);
@@ -114,7 +120,10 @@ public class Person {
 		this.daysNeeded = (int) (this.amountOfWeightToChange / this.weeklyWeightChange);
 
 	}
-
+	/* Getters/Setters of Age,Height,Weight,GainOrLoss,WeeklyWeightChange
+	 * AmountOfWeightToChange,DaysNeeded,PersonsActivityLevel,DailyIntake
+	 * ,Gender,Bmr,CurrentDailyIntake
+	*/
 	public int getAge() {
 		return age;
 	}

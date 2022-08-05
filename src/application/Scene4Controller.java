@@ -41,6 +41,11 @@ public class Scene4Controller {
 	private Parent root;
 
 	@FXML
+	/*Method Name: switchToScene5
+	*Inputs: event
+	*Functionality: makes it so that after the user inputs from one window it switches to the other
+	* and gives out the correct error message 
+	*/
 	public void switchToScene5(ActionEvent event) throws IOException {
 		FXMLLoader loader = new FXMLLoader(getClass().getResource("Scene_5.fxml"));
 		root = loader.load();
@@ -57,7 +62,11 @@ public class Scene4Controller {
 			sceneFourErrorLabel.setText("Please pick a diet type to proceed.");
 		}
 	}
-
+	/*Method Name: addFoodOptions
+	*Inputs: s5c
+	*Functionality: sets the choicebox of the breakfast,lunch and dinners to the user 
+	*and adds all the correct food choices
+	*/
 	void addFoodOptions(Scene5Controller s5c) {
 		FoodOptions usersFoodPreferance = new FoodOptions(dietType.getValue());
 

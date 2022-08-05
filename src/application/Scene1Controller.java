@@ -24,6 +24,11 @@ public class Scene1Controller {
 	private Scene scene;
 	private Parent root;
 
+	/*Method Name: switchToScene3
+	*Inputs: event
+	*Functionality: makes it so that after the user inputs from one window it switches to the other
+	*and takes the their name.
+	*/
 	public void switchToScene2(ActionEvent event) throws IOException {
 
 		validName.setText("");

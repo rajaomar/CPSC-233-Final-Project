@@ -1,5 +1,11 @@
 package application;
-
+/**
+ * FoodOptions Class
+ * Instance Variables: breakfast1,breakfast2,breakfast3,breakfastCalories,lunch1
+ * lunch2,lunch3,lunchCalories,dinner1,dinner2,dinner3,dinnerCalories
+ * Overall Description of the class: In this class we set the options of food by seeing what 
+ * the user inputs. 
+ */
 public class FoodOptions {
 
 	private String breakfast1;
@@ -16,7 +22,13 @@ public class FoodOptions {
 	private String dinner2;
 	private String dinner3;
 	private int dinnerCalories;
-
+	/*Method Name: FoodOptions
+	*Inputs: typeOfFood
+	*Functionality: makes a string for the different type of Food options. 
+	*Which then sets the display based on the food option they have chosen.
+	*
+	*Outputs/Sets: sets the specific food items that the user has chosen 
+	*/
 	public FoodOptions(String typeOfFood) {
 		String regularFood = "Regular";
 		String vegetarian = "Vegetarian";
@@ -56,7 +68,10 @@ public class FoodOptions {
 			this.dinner3 = "Vegan Coconut Chickpea Curry";
 		}
 	}
-
+	/*Method Name: Setters/Getters
+	* to get/set all the breakfasts,lunch and dinners 
+	*
+	*/
 	public String getBreakfast3() {
 		return breakfast3;
 	}
@@ -132,7 +147,13 @@ public class FoodOptions {
 	public int getBreakfastCalories() {
 		return breakfastCalories;
 	}
-
+	/*Method Name: setBreakFastCalories
+	*Inputs: breakfastOption
+	*Functionality: if the user has chosen the specific food we set the calories to
+	* what they have chosen
+	*
+	*Outputs/Sets: sets the chosen food calories
+	*/
 	public void setBreakfastCalories(String breakfastOption) {
 
 		if (breakfastOption == "Omelet with mac and cheese") {
@@ -167,7 +188,12 @@ public class FoodOptions {
 	public int getLunchCalories() {
 		return lunchCalories;
 	}
-
+	/*Method Name: setLunchCalories
+	*Inputs: lunchOption
+	*Functionality: if the user has chosen the specific food we set the calories to
+	* what they have chosen
+	*Outputs/Sets: sets the chosen food calories
+	*/
 	public void setLunchCalories(String lunchOption) {
 		if (lunchOption == "Beef Nachos") {
 			this.lunchCalories = 651;
@@ -201,7 +227,12 @@ public class FoodOptions {
 	public int getDinnerCalories() {
 		return dinnerCalories;
 	}
-
+	/*Method Name: setDinnerCalories
+	*Inputs: dinnerOption
+	*Functionality: if the user has chosen the specific food we set the calories to
+	* what they have chosen
+	*Outputs/Sets: sets the chosen food calories
+	*/
 	public void setDinnerCalories(String dinnerOption) {
 		if (dinnerOption == "Baked Salmon with Garlic and Dijon") {
 			this.dinnerCalories = 314;

@@ -1,9 +1,21 @@
 package application;
 
+/**
+ * Error Class
+ * Instance Variables: errorText changeScene
+ * Overall Description of the class: In this class we set the certain messages that happen if 
+ * the user inputs the answer wrong or invalid and sets the instance variable changeScene to the correct 
+ * value. 
+ */
 public class ErrorMessage {
 	private String errorText;
 	private boolean changeScene=false;
-	
+	/*Method Name: ErrorMessage
+	*Inputs: string1 to string8
+	*Functionality: Presents the user the correct error message when the user inputs a wrong input.
+	*
+	*Outputs/Sets: a error message
+	*/
 	public ErrorMessage(String string1, String string2, String string3, String string4, String string5, String string6,
 			String string7, String string8) {
 		String errorMessage = "";
@@ -75,8 +87,9 @@ public class ErrorMessage {
 
 	}
 
-	/**
-	 * @return the errorText
+	
+	/* Getter and Setter for ErrorText  
+	 * 
 	 */
 	public String getErrorText() {
 		return errorText;
@@ -96,9 +109,12 @@ public class ErrorMessage {
 		return changeScene;
 	}
 
-	/**
-	 * @param changeScene the changeScene to set
-	 */
+	/*Method Name: setChangeScene
+	*Inputs: changeScene
+	*Functionality: boolean value tells us to change scene or not
+	*
+	*Outputs/Sets: sets the instance variable to the correct statement 
+	*/
 	public void setChangeScene(boolean changeScene) {
 		this.changeScene = changeScene;
 	}
