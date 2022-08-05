@@ -53,6 +53,9 @@ public class Scene3Controller {
 	* person class.
 	*/
 	public void switchToScene4(ActionEvent event) throws IOException {
+		// Code used for switching scenes:
+		// Date accessed Jul 28, 2022
+		// https://www.youtube.com/watch?v=hcM-R-YOKkQ
 		FXMLLoader loader = new FXMLLoader(getClass().getResource("Scene_4.fxml"));
 		root = loader.load();
 		stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
@@ -75,6 +78,9 @@ public class Scene3Controller {
 					Double.parseDouble(weeklyWeightChange.getValue()), weightChange.getValue(),
 					Integer.parseInt(weightToChange.getText()), activityLevelChoiceBox.getValue());
 			Scene6Controller.weight=Integer.parseInt(currentweightTextField.getText());
+			//Code used for switching controller:
+			//https://www.youtube.com/watch?v=wxhGKR3PQpo
+			//Date accessed: August 3rd, 2022
 			Scene4Controller s4c = loader.getController();
 			setLabelText(user, s4c);
 

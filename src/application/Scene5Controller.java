@@ -41,6 +41,9 @@ public class Scene5Controller {
 	* and gives out the correct error message 
 	*/
 	public void switchToScene6(ActionEvent event) throws IOException {
+	// Code used for switching scenes:
+	// Date accessed Jul 28, 2022
+	// https://www.youtube.com/watch?v=hcM-R-YOKkQ
 		FXMLLoader loader = new FXMLLoader(getClass().getResource("Scene_6.fxml"));
 		root = loader.load();
 		stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
@@ -51,6 +54,9 @@ public class Scene5Controller {
 			scene = new Scene(root);
 			stage.setScene(scene);
 			stage.show();
+			//Code used for switching controller:
+			//https://www.youtube.com/watch?v=wxhGKR3PQpo
+			//Date accessed: August 3rd, 2022
 			Scene6Controller.breakfast=breakfastChoicebox.getValue();
 			Scene6Controller.lunch=lunchChoicebox.getValue();
 			Scene6Controller.dinner=dinnerChoicebox.getValue();

@@ -47,8 +47,14 @@ public class Scene4Controller {
 	* and gives out the correct error message 
 	*/
 	public void switchToScene5(ActionEvent event) throws IOException {
+	// Code used for switching scenes:
+	// Date accessed Jul 28, 2022
+	// https://www.youtube.com/watch?v=hcM-R-YOKkQ
 		FXMLLoader loader = new FXMLLoader(getClass().getResource("Scene_5.fxml"));
 		root = loader.load();
+		//Code used for switching controller:
+		//https://www.youtube.com/watch?v=wxhGKR3PQpo
+		//Date accessed: August 3rd, 2022
 		Scene5Controller s5c = loader.getController();
 
 		stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
