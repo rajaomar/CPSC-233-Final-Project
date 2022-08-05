@@ -20,7 +20,13 @@
 								<Font size="14.0" />
 							</font>
 						</Label>
-                  <Label fx:id="bmiLabelNew" />
+                  <Label fx:id="bmiLabelNew" textFill="#1c03f5">
+                     <HBox.margin>
+                        <Insets />
+                     </HBox.margin>
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font></Label>
 					</children>
 				</HBox>
 				<HBox prefHeight="20.0" prefWidth="232.0">
@@ -30,7 +36,10 @@
 								<Font size="14.0" />
 							</font>
 						</Label>
-                  <Label fx:id="bmrLabelNew" prefHeight="17.0" prefWidth="41.0" />
+                  <Label fx:id="bmrLabelNew" prefHeight="17.0" prefWidth="41.0" textFill="#1107d0">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font></Label>
 					</children>
 				</HBox>
 				<HBox prefHeight="17.0" prefWidth="200.0">
@@ -40,7 +49,13 @@
 								<Font size="14.0" />
 							</font>
 						</Label>
-                  <Label fx:id="obesityLabelNew" prefHeight="17.0" prefWidth="41.0" />
+                  <Label fx:id="obesityLabelNew" prefHeight="20.0" prefWidth="163.0" textFill="#2e05d3">
+                     <HBox.margin>
+                        <Insets />
+                     </HBox.margin>
+                     <font>
+                        <Font size="14.0" />
+                     </font></Label>
 					</children>
 				</HBox>
 			</children>
@@ -58,13 +73,19 @@
 						<Font size="15.0" />
 					</font>
 				</Text>
-				<Text layoutY="97.0" strokeType="OUTSIDE" strokeWidth="0.0" text="This will allow you to reach your required weight in      days. " wrappingWidth="500.0">
+				<Text layoutY="97.0" strokeType="OUTSIDE" strokeWidth="0.0" text="This will allow you to reach your required weight in    day(s). " wrappingWidth="500.0">
 					<font>
 						<Font size="15.0" />
 					</font>
 				</Text>
-            <Label fx:id="targetStuff" layoutX="236.0" layoutY="31.0" />
-            <Label fx:id="requiredDays" layoutX="335.0" layoutY="83.0" />
+            <Label fx:id="targetStuff" layoutX="232.0" layoutY="20.0" textFill="#1d0183">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font></Label>
+            <Label fx:id="requiredDays" layoutX="342.0" layoutY="81.0" text="5" textFill="#2f02ab">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font></Label>
 			</children>
 		</Pane>
 		<Pane layoutX="14.0" layoutY="293.0" prefHeight="105.0" prefWidth="500.0">

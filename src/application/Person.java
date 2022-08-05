@@ -239,8 +239,6 @@ public class Person {
 		this.currentDailyIntake = currentDailyIntake;
 	}
 
-	public void valueOfDailyIntake(int bmr, int recommendedDailyIntake) {
-
-	}
+	
 
 }
