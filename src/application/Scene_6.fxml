@@ -54,7 +54,6 @@
 									<String fx:value="90" />
 									<String fx:value="105" />
 									<String fx:value="120" />
-									<String fx:value="more than 120" />
 								</FXCollections>
 							</items>
 						</ChoiceBox>
