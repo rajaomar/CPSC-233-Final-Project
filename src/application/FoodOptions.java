@@ -129,73 +129,76 @@ public class FoodOptions {
 		this.breakfast2 = breakfast2;
 	}
 
-	public int getBreakfastCalories() {
-		return breakfastCalories;
-	}
+	// public int getBreakfastCalories() {
+//		return breakfastCalories;
+//	}
 
-	public void setBreakfastCalories(String breakfastOption) {
-
+	public int getBreakfastCalories(String breakfastOption) {
+		int breakfastCalories = 0;
 		if (breakfastOption == "Omelet with mac and cheese") {
-			this.breakfastCalories = 651;
+			breakfastCalories = 651;
 		}
 		if (breakfastOption == "One bowl of cereal with 2 large bananas") {
-			this.breakfastCalories = 400;
+			breakfastCalories = 400;
 		}
 		if (breakfastOption == "2 eggs 2 bacon 2 toast") {
-			this.breakfastCalories = 740;
+			breakfastCalories = 740;
 		}
 		if (breakfastOption == "Baked Banana-Nut Oatmeal with a cup of yogurt") {
-			this.breakfastCalories = 365;
+			breakfastCalories = 365;
 		}
 		if (breakfastOption == "Oatmeal, 2 boiled eggs") {
-			this.breakfastCalories = 480;
+			breakfastCalories = 480;
 		}
 		if (breakfastOption == "Thai Curry Pizza & smoothie") {
-			this.breakfastCalories = 620;
+			breakfastCalories = 620;
 		}
 		if (breakfastOption == "Grain Toast with Peanut Butter & Banana") {
-			this.breakfastCalories = 377;
+			breakfastCalories = 377;
 		}
 		if (breakfastOption == "Toast with avocado and a smoothie") {
-			this.breakfastCalories = 515;
+			breakfastCalories = 515;
 		}
 		if (breakfastOption == "3 pancakes with butter and syrup") {
-			this.breakfastCalories = 790;
+			breakfastCalories = 790;
 		}
+		return breakfastCalories;
 	}
 
 	public int getLunchCalories() {
 		return lunchCalories;
 	}
 
-	public void setLunchCalories(String lunchOption) {
+	public int getLunchCalories(String lunchOption) {
+		int lunchCalories = 0;
 		if (lunchOption == "Beef Nachos") {
-			this.lunchCalories = 651;
+			lunchCalories = 651;
 		}
 		if (lunchOption == "Chicken Fried Rice with a side of pop") {
-			this.lunchCalories = 433;
+			lunchCalories = 433;
 		}
 		if (lunchOption == "Hamburger with fries") {
-			this.lunchCalories = 900;
+			lunchCalories = 900;
 		}
 		if (lunchOption == "Veggie Wrap") {
-			this.lunchCalories = 345;
+			lunchCalories = 345;
 		}
 		if (lunchOption == "Hummus Bowls") {
-			this.lunchCalories = 534;
+			lunchCalories = 534;
 		}
 		if (lunchOption == "2 Veggie Sandwich & salad") {
-			this.lunchCalories = 750;
+			lunchCalories = 750;
 		}
 		if (lunchOption == "Vegan Superfood Buddha Bowls") {
-			this.lunchCalories = 381;
+			lunchCalories = 381;
 		}
 		if (lunchOption == "2 Cheese Pizza & Fries & pop") {
-			this.lunchCalories = 804;
+			lunchCalories = 804;
 		}
 		if (lunchOption == "Veggie Sandwich & 2 bananas & orange") {
-			this.lunchCalories = 567;
+			lunchCalories = 567;
 		}
+		return lunchCalories;
 	}
 
 	public int getDinnerCalories() {

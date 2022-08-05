@@ -15,6 +15,7 @@ import javafx.scene.text.Font;
 import javafx.scene.text.FontWeight;
 import javafx.stage.Stage;
 import javafx.scene.Node;
+import javafx.scene.Parent;
 
 public class Scene5Controller {
 
@@ -32,17 +33,22 @@ public class Scene5Controller {
 
 	private Stage stage;
 	private Scene scene;
-
+	private Parent root;
 	@FXML
 	public void switchToScene6(ActionEvent event) throws IOException {
-		AnchorPane root = FXMLLoader.load(getClass().getResource("Scene_6.fxml"));
+		FXMLLoader loader = new FXMLLoader(getClass().getResource("Scene_6.fxml"));
+		root = loader.load();
 		stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-		
+		stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+
 		if (breakfastChoicebox.getValue() != null && lunchChoicebox.getValue() != null
 				&& dinnerChoicebox.getValue() != null) {
 			scene = new Scene(root);
 			stage.setScene(scene);
 			stage.show();
+			Scene6Controller.breakfast=breakfastChoicebox.getValue();
+			Scene6Controller.lunch=lunchChoicebox.getValue();
+			Scene6Controller.dinner=dinnerChoicebox.getValue();
 		} else {
 			sceneFiveErrorLabel.setText("Please pick a diet type to proceed.");
 		}
