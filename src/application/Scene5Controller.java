@@ -35,6 +35,11 @@ public class Scene5Controller {
 	private Scene scene;
 	private Parent root;
 	@FXML
+	/*Method Name: switchToScene6
+	*Inputs: event
+	*Functionality: makes it so that after the user inputs from one window it switches to the other
+	* and gives out the correct error message 
+	*/
 	public void switchToScene6(ActionEvent event) throws IOException {
 		FXMLLoader loader = new FXMLLoader(getClass().getResource("Scene_6.fxml"));
 		root = loader.load();
