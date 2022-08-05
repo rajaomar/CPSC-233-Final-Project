@@ -74,7 +74,7 @@ public class Scene3Controller {
 					Integer.parseInt(heightTextField.getText()), Integer.parseInt(currentweightTextField.getText()),
 					Double.parseDouble(weeklyWeightChange.getValue()), weightChange.getValue(),
 					Integer.parseInt(weightToChange.getText()), activityLevelChoiceBox.getValue());
-
+			Scene6Controller.weight=Integer.parseInt(currentweightTextField.getText());
 			Scene4Controller s4c = loader.getController();
 			setLabelText(user, s4c);
 
@@ -93,6 +93,7 @@ public class Scene3Controller {
 		s4c.bmrLabelNew.setText(theUser.getBmr() + "");
 
 		s4c.targetStuff.setText(theUser.getDailyIntake() + "");
+		Scene6Controller.recommendedIntake=theUser.getDailyIntake();
 
 		s4c.requiredDays.setText(theUser.getDaysNeeded() + "");
 

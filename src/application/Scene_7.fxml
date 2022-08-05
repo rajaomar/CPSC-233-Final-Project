@@ -10,7 +10,7 @@
    <children>
       <Pane prefHeight="200.0" prefWidth="500.0">
          <children>
-            <Text layoutX="14.0" layoutY="20.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Based on the foods you had choosen for your day, and the exercises you did, your net caloric intake for today is            which is            than your recommended daily intake for             weight." wrappingWidth="444.13671875">
+            <Text layoutX="14.0" layoutY="20.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Based on the foods you had choosen for your day, and the exercises you did, your net caloric intake for today is            which is            than your recommended daily intake" wrappingWidth="444.13671875">
                <font>
                   <Font size="14.0" />
                </font>
@@ -20,7 +20,7 @@
                   <Font name="System Bold" size="14.0" />
                </font>
             </Label>
-            <Label fx:id="caloricDiff" layoutX="379.0" layoutY="24.0" textFill="#0105dd">
+            <Label fx:id="caloricDiff" layoutX="379.0" layoutY="24.0" textFill="#db0202">
                <font>
                   <Font name="System Bold" size="14.0" />
                </font>
@@ -32,43 +32,26 @@
             </Label>
          </children>
       </Pane>
-      <Pane layoutY="200.0" prefHeight="228.0" prefWidth="500.0">
+      <Pane layoutY="60.0" prefHeight="228.0" prefWidth="500.0">
          <children>
-            <Text layoutX="14.0" layoutY="20.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Your macronutrients for today (based on the foods you picked) are:" wrappingWidth="444.13671875">
-               <font>
-                  <Font size="14.0" />
-               </font>
-            </Text>
-            <Label fx:id="todaysProtein" layoutX="14.0" layoutY="34.0" textFill="#e40505">
-               <font>
-                  <Font size="15.0" />
-               </font></Label>
-            <Label fx:id="todaysCarbs" layoutX="14.0" layoutY="51.0" textFill="#d0bc0b">
-               <font>
-                  <Font size="15.0" />
-               </font></Label>
-            <Label fx:id="todaysFats" layoutX="14.0" layoutY="68.0" textFill="#1d8d32">
-               <font>
-                  <Font size="15.0" />
-               </font></Label>
             <Text layoutX="14.0" layoutY="115.0" strokeType="OUTSIDE" strokeWidth="0.0" text="The recommended macronutrients based on your recommended daily intake, following the 30/40/30 split are:" wrappingWidth="444.13671875">
                <font>
                   <Font size="14.0" />
                </font>
             </Text>
-            <Label fx:id="recommendedProteins" layoutX="14.0" layoutY="147.0" textFill="#e40505">
+            <Label fx:id="proteinLabel" layoutX="14.0" layoutY="156.0" textFill="#0e6124">
                <font>
-                  <Font size="15.0" />
+                  <Font name="System Bold" size="14.0" />
                </font>
             </Label>
-            <Label fx:id="recommendedCarbs" layoutX="14.0" layoutY="164.0" textFill="#d0bc0b">
+            <Label fx:id="carbsLabel" layoutX="14.0" layoutY="176.0" textFill="#61240f">
                <font>
-                  <Font size="15.0" />
+                  <Font name="System Bold" size="14.0" />
                </font>
             </Label>
-            <Label fx:id="recommendedFats" layoutX="14.0" layoutY="185.0" textFill="#1d8d32">
+            <Label fx:id="fatsLabel" layoutX="14.0" layoutY="196.0" textFill="#35348c">
                <font>
-                  <Font size="15.0" />
+                  <Font name="System Bold" size="14.0" />
                </font>
             </Label>
          </children>

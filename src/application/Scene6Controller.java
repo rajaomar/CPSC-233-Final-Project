@@ -9,6 +9,8 @@ import javafx.scene.Scene;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.Label;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.text.Font;
+import javafx.scene.text.FontWeight;
 import javafx.stage.Stage;
 import javafx.scene.Node;
 import javafx.scene.Parent;
@@ -24,43 +26,61 @@ public class Scene6Controller {
 	@FXML
 	private Label sceneSixErrorLabel;
 
+	public static int weight;
+	public static String breakfast;
+	public static String lunch;
+	public static String dinner;
+	public static int recommendedIntake;
+
 	private Stage stage;
 	private Scene scene;
 	private Parent root;
 
 	@FXML
-	/*Method Name: switchToScene7
-	*Inputs: event
-	*Functionality: makes it so that after the user inputs from one window it switches to the other
-	* and gives out the correct error message 
-	*/
 	public void switchToScene7(ActionEvent event) throws IOException {
 		FXMLLoader loader = new FXMLLoader(getClass().getResource("Scene_7.fxml"));
 		root = loader.load();
-	//	Scene7Controller s7c = loader.getController();
-	//	Scene5Controller s5c = loader.getController();
-	//	Scene3Controller s3c = loader.getController();
+
+		Scene7Controller s7c = loader.getController();
 
 		stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
 		if (timeSpentExercising.getValue() != null && exerciseChoiceBox.getValue() != null) {
 			scene = new Scene(root);
 			stage.setScene(scene);
 			stage.show();
-
-		//	s7c.netCaloricIntake.setText();
-
+			setCalorieLabels(s7c);
+			setMacrosLabels(s7c);
 		} else {
 			sceneSixErrorLabel.setText("Please pick both of the options before pressing Next.");
 		}
 	}
 
-//	void setLabelText(Scene7Controller s7c, Scene5Controller s5c, Scene3Controller s3c) {
-	//	Exercise usersExercise = new Exercise(exerciseChoiceBox.getValue(),
-		//		Integer.parseInt(timeSpentExercising.getValue()),
-		//		Integer.parseInt(s3c.currentweightTextField.getText()));
-		
-	//	usersExercise.getCaloriesBurnt()+
-		
-	//	s7c.netCaloricIntake.setText(null);
+	void setCalorieLabels(Scene7Controller s7c) {
+		Exercise usersExercise = new Exercise(exerciseChoiceBox.getValue(),
+				Integer.parseInt(timeSpentExercising.getValue()), weight);
+		usersExercise.getCaloriesBurnt();
+
+		Nutrients usersFood = new Nutrients(breakfast, lunch, dinner);
+		int netCalories = usersFood.getTotalCalories() - usersExercise.getCaloriesBurnt();
+
+		s7c.netCaloricIntake.setText(netCalories + "");
+		if (recommendedIntake < netCalories) {
+			s7c.caloricDiff.setText("more");
+			s7c.caloricDiff.setFont(Font.font("System", FontWeight.BOLD, 14));
+		}
+		if (recommendedIntake > netCalories) {
+			s7c.caloricDiff.setText("less");
+			s7c.caloricDiff.setFont(Font.font("System", FontWeight.BOLD, 14));
+		} else
+			s7c.caloricDiff.setText("equal");
 
 	}
+
+	void setMacrosLabels(Scene7Controller s7c) {
+
+		s7c.proteinLabel.setText(String.format("%.1f", (recommendedIntake * 0.4) / 4) + " grams");
+		s7c.carbsLabel.setText(String.format("%.1f", (recommendedIntake * 0.3) / 4) + " grams");
+		s7c.fatsLabel.setText(String.format("%.1f", (recommendedIntake * 0.4) / 9) + " grams");
+
+	}
+}
