@@ -55,10 +55,10 @@ public class FoodOptions {
 		}
 		if (typeOfFood.equals(vegan)) {
 			this.setBreakfast1("Grain Toast with Peanut Butter & Banana");
-			this.setBreakfast2("Toast with avocado and a smoothie");
+			this.setBreakfast2("Toast with avocado & Two Boiled Eggs");
 			this.breakfast3 = "3 pancakes with butter and syrup";
 			this.lunch1 = "Vegan Superfood Buddha Bowls";
-			this.lunch2 = "2 Cheese Pizza & Fries & pop";
+			this.lunch2 = "Lentil Bean Salad & bag of chickpeas";
 			this.lunch3 = "Veggie Sandwich & 2 bananas & orange";
 			this.dinner1 = "Vegan Quinoa Salad";
 			this.dinner2 = "Chickpea Buddha Bowl";
@@ -167,8 +167,8 @@ public class FoodOptions {
 		if (breakfastOption == "Grain Toast with Peanut Butter & Banana") {
 			breakfastCalories = 377;
 		}
-		if (breakfastOption == "Toast with avocado and a smoothie") {
-			breakfastCalories = 515;
+		if (breakfastOption == "Toast with avocado & Two Boiled Eggs ") {
+			breakfastCalories = 671;
 		}
 		if (breakfastOption == "3 pancakes with butter and syrup") {
 			breakfastCalories = 790;
@@ -203,8 +203,8 @@ public class FoodOptions {
 		if (lunchOption == "Vegan Superfood Buddha Bowls") {
 			lunchCalories = 381;
 		}
-		if (lunchOption == "2 Cheese Pizza & Fries & pop") {
-			lunchCalories = 804;
+		if (lunchOption == "Lentil Bean Salad & bag of chickpeas") {
+			lunchCalories = 820 ;
 		}
 		if (lunchOption == "Veggie Sandwich & 2 bananas & orange") {
 			lunchCalories = 567;
