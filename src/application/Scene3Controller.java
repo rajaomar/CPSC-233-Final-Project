@@ -42,6 +42,8 @@ public class Scene3Controller {
 
     @FXML
     private TextField ageTextField;
+    @FXML 
+    private double bmiValue;
 
 	private Stage stage;
 	private Scene scene;
@@ -76,7 +78,7 @@ public class Scene3Controller {
 			Person user = new Person(genderChoiceBox.getValue(), Integer.parseInt(ageTextField.getText()),
 					Integer.parseInt(heightTextField.getText()), Integer.parseInt(currentweightTextField.getText()),
 					Double.parseDouble(weeklyWeightChange.getValue()), weightChange.getValue(),
-					Integer.parseInt(weightToChange.getText()), activityLevelChoiceBox.getValue());
+					Integer.parseInt(weightToChange.getText()), activityLevelChoiceBox.getValue(), bmiValue);
 			Scene6Controller.weight=Integer.parseInt(currentweightTextField.getText());
 			//Code used for switching controller:
 			//https://www.youtube.com/watch?v=wxhGKR3PQpo
@@ -91,7 +93,10 @@ public class Scene3Controller {
 	 */
 	void setLabelText(Person theUser, Scene4Controller s4c) {
 		
-		Bmi usersBmi = new Bmi(theUser.getHeight(), theUser.getWeight());
+		Person usersBmi = new Person(genderChoiceBox.getValue(), Integer.parseInt(ageTextField.getText()),
+				Integer.parseInt(heightTextField.getText()), Integer.parseInt(currentweightTextField.getText()),
+				Double.parseDouble(weeklyWeightChange.getValue()), weightChange.getValue(),
+				Integer.parseInt(weightToChange.getText()), activityLevelChoiceBox.getValue(), bmiValue);
 		
 		s4c.bmiLabelNew.setText(String.format("%.1f", usersBmi.getBmiValue()));
 		s4c.obesityLabelNew.setText(usersBmi.obesityLabelText(usersBmi.getBmiValue()));
