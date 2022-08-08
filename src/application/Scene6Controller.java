@@ -38,6 +38,9 @@ public class Scene6Controller {
 
 	@FXML
 	public void switchToScene7(ActionEvent event) throws IOException {
+	// Code used for switching scenes:
+	// Date accessed Jul 28, 2022
+	// https://www.youtube.com/watch?v=hcM-R-YOKkQ
 		FXMLLoader loader = new FXMLLoader(getClass().getResource("Scene_7.fxml"));
 		root = loader.load();
 
@@ -62,7 +65,9 @@ public class Scene6Controller {
 
 		Nutrients usersFood = new Nutrients(breakfast, lunch, dinner);
 		int netCalories = usersFood.getTotalCalories() - usersExercise.getCaloriesBurnt();
-
+		//Code used for switching controller:
+		//https://www.youtube.com/watch?v=wxhGKR3PQpo
+		//Date accessed: August 3rd, 2022
 		s7c.netCaloricIntake.setText(netCalories + "");
 		if (recommendedIntake < netCalories) {
 			s7c.caloricDiff.setText("more");
