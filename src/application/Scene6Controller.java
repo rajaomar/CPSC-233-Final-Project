@@ -27,9 +27,9 @@ public class Scene6Controller {
 	private Label sceneSixErrorLabel;
 
 	public static int weight;
-	public static String breakfast;
-	public static String lunch;
-	public static String dinner;
+	public static Food breakfast;
+	public static Food lunch;
+	public static Food dinner;
 	public static int recommendedIntake;
 
 	private Stage stage;
@@ -38,9 +38,9 @@ public class Scene6Controller {
 
 	@FXML
 	public void switchToScene7(ActionEvent event) throws IOException {
-	// Code used for switching scenes:
-	// Date accessed Jul 28, 2022
-	// https://www.youtube.com/watch?v=hcM-R-YOKkQ
+		// Code used for switching scenes:
+		// Date accessed Jul 28, 2022
+		// https://www.youtube.com/watch?v=hcM-R-YOKkQ
 		FXMLLoader loader = new FXMLLoader(getClass().getResource("Scene_7.fxml"));
 		root = loader.load();
 
@@ -63,11 +63,11 @@ public class Scene6Controller {
 				Integer.parseInt(timeSpentExercising.getValue()), weight);
 		usersExercise.getCaloriesBurnt();
 
-		Nutrients usersFood = new Nutrients(breakfast, lunch, dinner);
-		int netCalories = usersFood.getTotalCalories() - usersExercise.getCaloriesBurnt();
-		//Code used for switching controller:
-		//https://www.youtube.com/watch?v=wxhGKR3PQpo
-		//Date accessed: August 3rd, 2022
+		int netCalories = (int) ((breakfast.calculateCalories() + lunch.calculateCalories()
+				+ dinner.calculateCalories()) - usersExercise.getCaloriesBurnt());
+		// Code used for switching controller:
+		// https://www.youtube.com/watch?v=wxhGKR3PQpo
+		// Date accessed: August 3rd, 2022
 		s7c.netCaloricIntake.setText(netCalories + "");
 		if (recommendedIntake < netCalories) {
 			s7c.caloricDiff.setText("more");

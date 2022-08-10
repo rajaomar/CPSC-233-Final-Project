@@ -2,6 +2,8 @@ package application;
 
 import java.io.IOException;
 
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -41,20 +43,20 @@ public class Scene4Controller {
 	private Parent root;
 
 	@FXML
-	/*Method Name: switchToScene5
-	*Inputs: event
-	*Functionality: makes it so that after the user inputs from one window it switches to the other
-	* and gives out the correct error message 
-	*/
+	/*
+	 * Method Name: switchToScene5 Inputs: event Functionality: makes it so that
+	 * after the user inputs from one window it switches to the other and gives out
+	 * the correct error message
+	 */
 	public void switchToScene5(ActionEvent event) throws IOException {
-	// Code used for switching scenes:
-	// Date accessed Jul 28, 2022
-	// https://www.youtube.com/watch?v=hcM-R-YOKkQ
+		// Code used for switching scenes:
+		// Date accessed Jul 28, 2022
+		// https://www.youtube.com/watch?v=hcM-R-YOKkQ
 		FXMLLoader loader = new FXMLLoader(getClass().getResource("Scene_5.fxml"));
 		root = loader.load();
-		//Code used for switching controller:
-		//https://www.youtube.com/watch?v=wxhGKR3PQpo
-		//Date accessed: August 3rd, 2022
+		// Code used for switching controller:
+		// https://www.youtube.com/watch?v=wxhGKR3PQpo
+		// Date accessed: August 3rd, 2022
 		Scene5Controller s5c = loader.getController();
 
 		stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
@@ -68,19 +70,74 @@ public class Scene4Controller {
 			sceneFourErrorLabel.setText("Please pick a diet type to proceed.");
 		}
 	}
-	/*Method Name: addFoodOptions
-	*Inputs: s5c
-	*Functionality: sets the choicebox of the breakfast,lunch and dinners to the user 
-	*and adds all the correct food choices
-	*/
-	void addFoodOptions(Scene5Controller s5c) {
-		FoodOptions usersFoodPreferance = new FoodOptions(dietType.getValue());
 
-		s5c.breakfastChoicebox.getItems().addAll(usersFoodPreferance.getBreakfast1(),
-				usersFoodPreferance.getBreakfast2(), usersFoodPreferance.getBreakfast3());
-		s5c.lunchChoicebox.getItems().addAll(usersFoodPreferance.getLunch1(), usersFoodPreferance.getLunch2(),
-				usersFoodPreferance.getLunch3());
-		s5c.dinnerChoicebox.getItems().addAll(usersFoodPreferance.getDinner1(), usersFoodPreferance.getDinner2(),
-				usersFoodPreferance.getDinner3());
+	/*
+	 * Method Name: addFoodOptions Inputs: s5c Functionality: sets the choicebox of
+	 * the breakfast,lunch and dinners to the user and adds all the correct food
+	 * choices
+	 */
+	void addFoodOptions(Scene5Controller s5c) {
+	//	FoodOptions usersFoodPreferance = new FoodOptions(dietType.getValue());
+        ObservableList<Food> breakfastList = FXCollections.observableArrayList();
+        ObservableList<Food> lunchList = FXCollections.observableArrayList();
+        ObservableList<Food> dinnerList = FXCollections.observableArrayList();
+
+		String usersDietType = dietType.getValue();
+		s5c.breakfastChoicebox.setItems(breakfastList);
+		s5c.lunchChoicebox.setItems(lunchList);
+		s5c.dinnerChoicebox.setItems(dinnerList);
+		
+		switch (usersDietType) {
+		case "Regular":
+			breakfastList.addAll(
+					new BreakfastOne(), 
+					new BreakfastTwo(),
+					new BreakfastThree());
+			lunchList.addAll(
+					new LunchOne(), 
+					new LunchTwo(),
+					new LunchThree());
+			dinnerList.addAll(
+					new DinnerOne(),
+					new DinnerTwo(),
+					new DinnerThree());
+		case "Vegetarian":
+			breakfastList.addAll(
+					new BreakfastFour(), 
+					new BreakfastFive(),
+					new BreakfastSix());
+			lunchList.addAll(
+					new LunchFour(),
+					new LunchFive(),
+					new LunchSix());
+			dinnerList.addAll(
+					new DinnerFour(),
+					new DinnerFive(),
+					new DinnerSix());
+		case "Vegan":
+			breakfastList.addAll(
+					new BreakfastSeven(),
+					new BreakfastEight(),
+					new BreakfastNine());
+			lunchList.addAll(
+					new LunchSeven(),
+					new LunchEight(),
+					new LunchNine());
+			dinnerList.addAll(
+					new DinnerSeven(), 
+					new DinnerEight(),
+					new DinnerNine());
+		}
+		/**
+		 * 
+		 * 
+		 * 
+		 * s5c.breakfastChoicebox.getItems().addAll(usersFoodPreferance.getBreakfast1(),
+		 * usersFoodPreferance.getBreakfast2(), usersFoodPreferance.getBreakfast3());
+		 * s5c.lunchChoicebox.getItems().addAll(usersFoodPreferance.getLunch1(),
+		 * usersFoodPreferance.getLunch2(), usersFoodPreferance.getLunch3());
+		 * s5c.dinnerChoicebox.getItems().addAll(usersFoodPreferance.getDinner1(),
+		 * usersFoodPreferance.getDinner2(), usersFoodPreferance.getDinner3());
+		 */
 	}
 }
