@@ -77,67 +77,29 @@ public class Scene4Controller {
 	 * choices
 	 */
 	void addFoodOptions(Scene5Controller s5c) {
-	//	FoodOptions usersFoodPreferance = new FoodOptions(dietType.getValue());
-        ObservableList<Food> breakfastList = FXCollections.observableArrayList();
-        ObservableList<Food> lunchList = FXCollections.observableArrayList();
-        ObservableList<Food> dinnerList = FXCollections.observableArrayList();
+		// FoodOptions usersFoodPreferance = new FoodOptions(dietType.getValue());
+		ObservableList<Food> breakfastList = FXCollections.observableArrayList();
+		ObservableList<Food> lunchList = FXCollections.observableArrayList();
+		ObservableList<Food> dinnerList = FXCollections.observableArrayList();
 
 		String usersDietType = dietType.getValue();
 		s5c.breakfastChoicebox.setItems(breakfastList);
 		s5c.lunchChoicebox.setItems(lunchList);
 		s5c.dinnerChoicebox.setItems(dinnerList);
-		
-		switch (usersDietType) {
-		case "Regular":
-			breakfastList.addAll(
-					new BreakfastOne(), 
-					new BreakfastTwo(),
-					new BreakfastThree());
-			lunchList.addAll(
-					new LunchOne(), 
-					new LunchTwo(),
-					new LunchThree());
-			dinnerList.addAll(
-					new DinnerOne(),
-					new DinnerTwo(),
-					new DinnerThree());
-		case "Vegetarian":
-			breakfastList.addAll(
-					new BreakfastFour(), 
-					new BreakfastFive(),
-					new BreakfastSix());
-			lunchList.addAll(
-					new LunchFour(),
-					new LunchFive(),
-					new LunchSix());
-			dinnerList.addAll(
-					new DinnerFour(),
-					new DinnerFive(),
-					new DinnerSix());
-		case "Vegan":
-			breakfastList.addAll(
-					new BreakfastSeven(),
-					new BreakfastEight(),
-					new BreakfastNine());
-			lunchList.addAll(
-					new LunchSeven(),
-					new LunchEight(),
-					new LunchNine());
-			dinnerList.addAll(
-					new DinnerSeven(), 
-					new DinnerEight(),
-					new DinnerNine());
+
+		if (dietType.getValue().equals("Regular")) {
+			breakfastList.addAll(new BreakfastOne(), new BreakfastTwo(), new BreakfastThree());
+			lunchList.addAll(new LunchOne(), new LunchTwo(), new LunchThree());
+			dinnerList.addAll(new DinnerOne(), new DinnerTwo(), new DinnerThree());
+		} else if (dietType.getValue().equals("Vegetarian")) {
+			breakfastList.addAll(new BreakfastFour(), new BreakfastFive(), new BreakfastSix());
+			lunchList.addAll(new LunchFour(), new LunchFive(), new LunchSix());
+			dinnerList.addAll(new DinnerFour(), new DinnerFive(), new DinnerSix());
+		} else if (dietType.getValue().equals("Vegan")) {
+			breakfastList.addAll(new BreakfastSeven(), new BreakfastEight(), new BreakfastNine());
+			lunchList.addAll(new LunchSeven(), new LunchEight(), new LunchNine());
+			dinnerList.addAll(new DinnerSeven(), new DinnerEight(), new DinnerNine());
 		}
-		/**
-		 * 
-		 * 
-		 * 
-		 * s5c.breakfastChoicebox.getItems().addAll(usersFoodPreferance.getBreakfast1(),
-		 * usersFoodPreferance.getBreakfast2(), usersFoodPreferance.getBreakfast3());
-		 * s5c.lunchChoicebox.getItems().addAll(usersFoodPreferance.getLunch1(),
-		 * usersFoodPreferance.getLunch2(), usersFoodPreferance.getLunch3());
-		 * s5c.dinnerChoicebox.getItems().addAll(usersFoodPreferance.getDinner1(),
-		 * usersFoodPreferance.getDinner2(), usersFoodPreferance.getDinner3());
-		 */
 	}
+
 }
