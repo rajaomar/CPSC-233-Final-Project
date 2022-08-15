@@ -23,13 +23,13 @@ public class Scene5Controller {
 	private Label sceneFiveErrorLabel;
 
 	@FXML
-	public ChoiceBox<String> breakfastChoicebox;
+	public ChoiceBox<Food> breakfastChoicebox;
 
 	@FXML
-	public ChoiceBox<String> lunchChoicebox;
+	public ChoiceBox<Food> lunchChoicebox;
 
 	@FXML
-	public ChoiceBox<String> dinnerChoicebox;
+	public ChoiceBox<Food> dinnerChoicebox;
 
 	private Stage stage;
 	private Scene scene;
