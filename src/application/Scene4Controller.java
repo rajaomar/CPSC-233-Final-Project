@@ -86,7 +86,6 @@ public class Scene4Controller {
 		s5c.breakfastChoicebox.setItems(breakfastList);
 		s5c.lunchChoicebox.setItems(lunchList);
 		s5c.dinnerChoicebox.setItems(dinnerList);
-
 		if (dietType.getValue().equals("Regular")) {
 			breakfastList.addAll(new BreakfastOne(), new BreakfastTwo(), new BreakfastThree());
 			lunchList.addAll(new LunchOne(), new LunchTwo(), new LunchThree());

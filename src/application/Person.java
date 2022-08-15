@@ -70,11 +70,13 @@ public class Person {
 		this.setGainOrLoss(gainOrLoss);
 		this.setAmountOfWeightToChange(amountOfWeightToChange);
 		this.setPersonsActivityLevel(personsActivityLevel);
+		
 		String option1 = "Sedentary (little to no exercise + work a desk job)";
 		String option2 = "Lightly Active (light exercise 1-3 days / week)";
 		String option3 = "Moderately Active (moderate exercise 3-5 days / week)";
 		String option4 = "Very Active (heavy exercise 6-7 days / week)";
 		String option5 = "Extremely Active (strenuous training 2x / day)";
+		
 		String male_selected = "male";
 		String female_selected = "female";
 
@@ -108,8 +110,6 @@ public class Person {
 			this.setCurrentDailyIntake((int) ((int) (1.9)
 					* (88.362 + (13.397 * this.getWeight()) + (4.799 * this.getHeight()) - (5.677 * this.getAge()))));
 		}
-
-		
 		
 		if (this.getGender().equals(female_selected) && this.personsActivityLevel.equals(option1)) {
 			this.setCurrentDailyIntake((int) ((int) (1.2) * 447.593 + (9.247 * this.getWeight())
