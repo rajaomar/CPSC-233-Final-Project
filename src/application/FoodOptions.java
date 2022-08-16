@@ -53,9 +53,9 @@ public class FoodOptions {
 			FoodOptions.dinner3 = "Tikka Masala & 2 Peanut-Butter Energy Balls";
 		}
 		if (typeOfFood.equals(vegan)) {
-			FoodOptions.breakfast1 = "Grain Toast with Peanut Butter & Banana";
-			FoodOptions.breakfast2 = "Toast with avocado & Two Boiled Eggs";
-			FoodOptions.breakfast3 = "3 pancakes with butter and syrup";
+			FoodOptions.breakfast1 = "Grain Toast with Vegan Peanut Butter & Banana";
+			FoodOptions.breakfast2 = "Toast with avocado & Vegan Cheese";
+			FoodOptions.breakfast3 = "3 pancakes with syrup";
 			FoodOptions.lunch1 = "Vegan Superfood Buddha Bowls";
 			FoodOptions.lunch2 = "Lentil Bean Salad & bag of chickpeas";
 			FoodOptions.lunch3 = "Veggie Sandwich & 2 bananas & orange";
