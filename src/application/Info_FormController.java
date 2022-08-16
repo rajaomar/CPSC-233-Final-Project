@@ -80,6 +80,9 @@ public class Info_FormController {
 					Double.parseDouble(weeklyWeightChange.getValue()), weightChange.getValue(),
 					Integer.parseInt(weightToChange.getText()), activityLevelChoiceBox.getValue(), bmiValue);
 			Exercise_InfoController.weight=Integer.parseInt(currentweightTextField.getText());
+			
+			
+			
 			//Code used for switching controller:
 			//https://www.youtube.com/watch?v=wxhGKR3PQpo
 			//Date accessed: August 3rd, 2022

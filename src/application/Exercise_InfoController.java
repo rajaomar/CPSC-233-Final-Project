@@ -31,6 +31,9 @@ public class Exercise_InfoController {
 	public static Lunch lunch = new Lunch();
 	public static Dinner dinner = new Dinner();
 	public static int recommendedIntake;
+	public static int protein;
+	public static int carbs;
+	public static int fats;
 
 	private Stage stage;
 	private Scene scene;
@@ -52,7 +55,8 @@ public class Exercise_InfoController {
 			stage.setScene(scene);
 			stage.show();
 			setCalorieLabels(s7c);
-			setMacrosLabels(s7c);
+			setRecommendedMacrosLabels(s7c);
+			setDailyMacrosLabels(s7c);
 		} else {
 			sceneSixErrorLabel.setText("Please pick both of the options before pressing Next.");
 		}
@@ -80,11 +84,20 @@ public class Exercise_InfoController {
 
 	}
 
-	void setMacrosLabels(Final_Result_Controller s7c) {
+	void setRecommendedMacrosLabels(Final_Result_Controller s7c) {
 
 		s7c.proteinLabel.setText(String.format("%.1f", (recommendedIntake * 0.4) / 4) + " grams");
 		s7c.carbsLabel.setText(String.format("%.1f", (recommendedIntake * 0.3) / 4) + " grams");
 		s7c.fatsLabel.setText(String.format("%.1f", (recommendedIntake * 0.4) / 9) + " grams");
 
 	}
+	
+	void setDailyMacrosLabels(Final_Result_Controller s7c) {
+
+		s7c.dailyProtein.setText(String.format((food.calculateCalories(breakfast,lunch,dinner)[1]) + " grams"));
+		s7c.dailyCarbs.setText(String.format((food.calculateCalories(breakfast,lunch,dinner)[2]) + " grams"));
+		s7c.dailyFats.setText(String.format((food.calculateCalories(breakfast,lunch,dinner)[3]) + " grams"));
+
+	}
+	
 }

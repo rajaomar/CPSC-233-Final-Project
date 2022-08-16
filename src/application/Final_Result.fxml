@@ -54,6 +54,26 @@
                   <Font name="System Bold" size="14.0" />
                </font>
             </Label>
+            <Text layoutX="14.0" layoutY="29.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Your daily macronutrient intake is:" wrappingWidth="444.13671875">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Text>
+            <Label fx:id="dailyProtein" layoutX="14.0" layoutY="34.0" textFill="#89a412">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Label>
+            <Label fx:id="dailyCarbs" layoutX="14.0" layoutY="54.0" textFill="#89a412">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Label>
+            <Label fx:id="dailyFats" layoutX="14.0" layoutY="74.0" textFill="#89a412">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Label>
          </children>
       </Pane>
    </children>
