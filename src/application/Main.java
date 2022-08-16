@@ -15,8 +15,8 @@ public class Main extends Application {
 	@Override
 	public void start(Stage primaryStage) {
 		try {
-			
-			AnchorPane root = FXMLLoader.load(getClass().getResource("Scene_1.fxml"));		
+			FoodData.init();
+			AnchorPane root = FXMLLoader.load(getClass().getResource("Introduction.fxml"));
 			Scene scene = new Scene(root,500,500);
 			primaryStage.setScene(scene);
 			primaryStage.setTitle("Calorie Calculator");

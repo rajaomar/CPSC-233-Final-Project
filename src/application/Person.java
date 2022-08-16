@@ -21,18 +21,6 @@ public class Person {
 	private int currentDailyIntake;
 	private double bmiValue;
 
-		/*
-		*Method Name: Bmi
-		*Inputs: height and weight of the user
-		*Functionality: calculates the BMI from the users height and weight we had to use a fraction calculator 
-		*in order to get a decimal number outputed.
-		*Outputs/Sets: the calculated BMI Value
-		*/
-		public void Bmi(int height, int weight) {
-			double denom =  ((height+0.0) * (height+0.0)) / 10000.0;
-			double numer = weight + 0.0;
-			setBmiValue(numer / denom);
-		}
 
 
 		/*Method Name: obesityLabelText
@@ -70,23 +58,21 @@ public class Person {
 		this.setGainOrLoss(gainOrLoss);
 		this.setAmountOfWeightToChange(amountOfWeightToChange);
 		this.setPersonsActivityLevel(personsActivityLevel);
-		
 		String option1 = "Sedentary (little to no exercise + work a desk job)";
 		String option2 = "Lightly Active (light exercise 1-3 days / week)";
 		String option3 = "Moderately Active (moderate exercise 3-5 days / week)";
 		String option4 = "Very Active (heavy exercise 6-7 days / week)";
 		String option5 = "Extremely Active (strenuous training 2x / day)";
-		
 		String male_selected = "male";
 		String female_selected = "female";
 
 		if (this.getGender().equals(male_selected)) {
-			this.setBmr((int) ((int) (88.362 + (13.397 * this.getWeight()) + (4.799 * this.getHeight())
-					- (5.677 * this.getAge()))));
+			this.setBmr((int) (88.362 + (13.397 * this.getWeight()) + (4.799 * this.getHeight())
+					- (5.677 * this.getAge())));
 		}
 		if (this.getGender().equals(female_selected)) {
-			this.setBmr((int) ((int) (66.47 + (13.75 * this.getWeight()) + (5.003 * this.getHeight())
-					- (6.755 * this.getAge()))));
+			this.setBmr((int) (66.47 + (13.75 * this.getWeight()) + (5.003 * this.getHeight())
+					- (6.755 * this.getAge())));
 		}
 		
 		
@@ -110,6 +96,8 @@ public class Person {
 			this.setCurrentDailyIntake((int) ((int) (1.9)
 					* (88.362 + (13.397 * this.getWeight()) + (4.799 * this.getHeight()) - (5.677 * this.getAge()))));
 		}
+
+		
 		
 		if (this.getGender().equals(female_selected) && this.personsActivityLevel.equals(option1)) {
 			this.setCurrentDailyIntake((int) ((int) (1.2) * 447.593 + (9.247 * this.getWeight())
@@ -131,8 +119,6 @@ public class Person {
 			this.setCurrentDailyIntake((int) ((int) (1.9) * 447.593 + (9.247 * this.getWeight())
 					+ (3.098 * this.getHeight()) - (4.330 * this.getAge())));
 		}
-
-		this.daysNeeded = (int) (amountOfWeightToChange / weeklyWeightChange);
 
 		String weightLoss = "lose";
 		String weightGain = "gain";
@@ -203,32 +189,16 @@ public class Person {
 		this.weight = weight;
 	}
 
-	public double getWeeklyWeightChange() {
-		return weeklyWeightChange;
-	}
-
 	public void setWeeklyWeightChange(double weeklyWeightChange) {
 		this.weeklyWeightChange = weeklyWeightChange;
-	}
-
-	public String getGainOrLoss() {
-		return gainOrLoss;
 	}
 
 	public void setGainOrLoss(String gainOrLoss) {
 		this.gainOrLoss = gainOrLoss;
 	}
 
-	public int getAmountOfWeightToChange() {
-		return amountOfWeightToChange;
-	}
-
 	public void setAmountOfWeightToChange(int amountOfWeightToChange) {
 		this.amountOfWeightToChange = amountOfWeightToChange;
-	}
-
-	public String getPersonsActivityLevel() {
-		return personsActivityLevel;
 	}
 
 	public void setPersonsActivityLevel(String personsActivityLevel) {
@@ -239,16 +209,8 @@ public class Person {
 		return dailyIntake;
 	}
 
-	public void setDailyIntake(int dailyIntake) {
-		this.dailyIntake = dailyIntake;
-	}
-
 	public int getDaysNeeded() {
 		return daysNeeded;
-	}
-
-	public void setDaysNeeded(int daysNeeded) {
-		this.daysNeeded = daysNeeded;
 	}
 
 	/**
@@ -275,16 +237,8 @@ public class Person {
 	/**
 	 * @param bmr the bmr to set
 	 */
-	public int setBmr(int bmr) {
+	public void setBmr(int bmr) {
 		this.bmr = bmr;
-		return bmr;
-	}
-
-	/**
-	 * @return the currentDailyIntake
-	 */
-	public int getCurrentDailyIntake() {
-		return currentDailyIntake;
 	}
 
 	/**

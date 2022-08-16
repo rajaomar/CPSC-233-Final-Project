@@ -10,7 +10,7 @@
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity"
 	prefHeight="500.0" prefWidth="500.0" xmlns="http://javafx.com/javafx/8"
 	xmlns:fx="http://javafx.com/fxml/1"
-	fx:controller="application.Scene6Controller">
+	fx:controller="application.Exercise_InfoController">
 	<children>
 		<VBox prefHeight="185.0" prefWidth="500.0">
 			<children>
