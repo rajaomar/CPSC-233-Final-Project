@@ -3,7 +3,7 @@ package application;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 
-public class Scene7Controller {
+public class Final_Result_Controller {
 
 	@FXML
 	public Label proteinLabel;

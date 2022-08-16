@@ -6,11 +6,11 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="500.0" prefWidth="500.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.Scene7Controller">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="500.0" prefWidth="500.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.Final_Result_Controller">
    <children>
       <Pane prefHeight="200.0" prefWidth="500.0">
          <children>
-            <Text layoutX="14.0" layoutY="20.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Based on the foods you had choosen for your day, and the exercises you did, your net caloric intake for today is            which is            than your recommended daily intake" wrappingWidth="444.13671875">
+            <Text layoutX="14.0" layoutY="20.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Based on the foods you had choosen for your day, and the exercises you did, your net caloric intake for today is            which is            to/than your recommended daily intake" wrappingWidth="444.13671875">
                <font>
                   <Font size="14.0" />
                </font>

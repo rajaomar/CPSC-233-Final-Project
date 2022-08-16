@@ -11,7 +11,7 @@ import javafx.stage.Stage;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 
-public class Scene2Controller {
+public class WelcomeController {
 
 	@FXML
 	private Label introductionLabel;
@@ -31,7 +31,7 @@ public class Scene2Controller {
 	*Functionality: makes it so that after the user inputs from one window it switches to the other
 	*/
 	public void switchToScene3(ActionEvent event) throws IOException {
-		root=FXMLLoader.load(getClass().getResource("Scene_3.fxml"));
+		root=FXMLLoader.load(getClass().getResource("Info_Form.fxml"));
 		stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
 		scene = new Scene(root);
 		stage.setScene(scene);

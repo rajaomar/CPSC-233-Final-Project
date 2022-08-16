@@ -12,7 +12,7 @@ import javafx.stage.Stage;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 
-public class Scene1Controller {
+public class IntroductionController {
 
 	@FXML
 	private Label validName;
@@ -35,13 +35,13 @@ public class Scene1Controller {
 	// https://www.youtube.com/watch?v=hcM-R-YOKkQ
 		validName.setText("");
 		String name = nameTextField.getText();
-		FXMLLoader loader = new FXMLLoader(getClass().getResource("Scene_2.fxml"));
+		FXMLLoader loader = new FXMLLoader(getClass().getResource("Welcome.fxml"));
 		root = loader.load();
 		
 		//Code used for switching controller:
 		//https://www.youtube.com/watch?v=wxhGKR3PQpo
 		//Date accessed: August 3rd, 2022
-		Scene2Controller s2c = loader.getController();
+		WelcomeController s2c = loader.getController();
 		stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
 
 		if (name != "" && name.matches("[a-zA-Z]+")) {

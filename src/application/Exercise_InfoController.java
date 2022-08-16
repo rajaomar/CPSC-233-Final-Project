@@ -8,14 +8,13 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.Label;
-import javafx.scene.layout.AnchorPane;
 import javafx.scene.text.Font;
 import javafx.scene.text.FontWeight;
 import javafx.stage.Stage;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 
-public class Scene6Controller {
+public class Exercise_InfoController {
 
 	@FXML
 	private ChoiceBox<String> timeSpentExercising;
@@ -27,9 +26,10 @@ public class Scene6Controller {
 	private Label sceneSixErrorLabel;
 
 	public static int weight;
-	public static Food breakfast;
-	public static Food lunch;
-	public static Food dinner;
+	public static Food food;
+	public static Breakfast breakfast = new Breakfast();
+	public static Lunch lunch = new Lunch();
+	public static Dinner dinner = new Dinner();
 	public static int recommendedIntake;
 
 	private Stage stage;
@@ -38,13 +38,13 @@ public class Scene6Controller {
 
 	@FXML
 	public void switchToScene7(ActionEvent event) throws IOException {
-		// Code used for switching scenes:
-		// Date accessed Jul 28, 2022
-		// https://www.youtube.com/watch?v=hcM-R-YOKkQ
-		FXMLLoader loader = new FXMLLoader(getClass().getResource("Scene_7.fxml"));
+	// Code used for switching scenes:
+	// Date accessed Jul 28, 2022
+	// https://www.youtube.com/watch?v=hcM-R-YOKkQ
+		FXMLLoader loader = new FXMLLoader(getClass().getResource("Final_Result.fxml"));
 		root = loader.load();
 
-		Scene7Controller s7c = loader.getController();
+		Final_Result_Controller s7c = loader.getController();
 
 		stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
 		if (timeSpentExercising.getValue() != null && exerciseChoiceBox.getValue() != null) {
@@ -58,16 +58,15 @@ public class Scene6Controller {
 		}
 	}
 
-	void setCalorieLabels(Scene7Controller s7c) {
+	void setCalorieLabels(Final_Result_Controller s7c) {
 		Exercise usersExercise = new Exercise(exerciseChoiceBox.getValue(),
 				Integer.parseInt(timeSpentExercising.getValue()), weight);
 		usersExercise.getCaloriesBurnt();
 
-		int netCalories = (int) ((breakfast.calculateCalories() + lunch.calculateCalories()
-				+ dinner.calculateCalories()) - usersExercise.getCaloriesBurnt());
-		// Code used for switching controller:
-		// https://www.youtube.com/watch?v=wxhGKR3PQpo
-		// Date accessed: August 3rd, 2022
+		int netCalories = food.calculateCalories(breakfast,lunch,dinner)[0] - usersExercise.getCaloriesBurnt();
+		//Code used for switching controller:
+		//https://www.youtube.com/watch?v=wxhGKR3PQpo
+		//Date accessed: August 3rd, 2022
 		s7c.netCaloricIntake.setText(netCalories + "");
 		if (recommendedIntake < netCalories) {
 			s7c.caloricDiff.setText("more");
@@ -81,7 +80,7 @@ public class Scene6Controller {
 
 	}
 
-	void setMacrosLabels(Scene7Controller s7c) {
+	void setMacrosLabels(Final_Result_Controller s7c) {
 
 		s7c.proteinLabel.setText(String.format("%.1f", (recommendedIntake * 0.4) / 4) + " grams");
 		s7c.carbsLabel.setText(String.format("%.1f", (recommendedIntake * 0.3) / 4) + " grams");

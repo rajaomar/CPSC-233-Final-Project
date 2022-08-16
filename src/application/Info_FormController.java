@@ -14,7 +14,7 @@ import javafx.stage.Stage;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 
-public class Scene3Controller {
+public class Info_FormController {
 
 	@FXML
     public TextField currentweightTextField;
@@ -58,7 +58,7 @@ public class Scene3Controller {
 		// Code used for switching scenes:
 		// Date accessed Jul 28, 2022
 		// https://www.youtube.com/watch?v=hcM-R-YOKkQ
-		FXMLLoader loader = new FXMLLoader(getClass().getResource("Scene_4.fxml"));
+		FXMLLoader loader = new FXMLLoader(getClass().getResource("Initial_Result.fxml"));
 		root = loader.load();
 		stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
 		sceneThreeErrorLabel.setTextFill(Color.color(1, 0, 0));
@@ -79,11 +79,11 @@ public class Scene3Controller {
 					Integer.parseInt(heightTextField.getText()), Integer.parseInt(currentweightTextField.getText()),
 					Double.parseDouble(weeklyWeightChange.getValue()), weightChange.getValue(),
 					Integer.parseInt(weightToChange.getText()), activityLevelChoiceBox.getValue(), bmiValue);
-			Scene6Controller.weight=Integer.parseInt(currentweightTextField.getText());
+			Exercise_InfoController.weight=Integer.parseInt(currentweightTextField.getText());
 			//Code used for switching controller:
 			//https://www.youtube.com/watch?v=wxhGKR3PQpo
 			//Date accessed: August 3rd, 2022
-			Scene4Controller s4c = loader.getController();
+			Initial_ResultController s4c = loader.getController();
 			setLabelText(user, s4c);
 
 		}
@@ -91,7 +91,7 @@ public class Scene3Controller {
 	/* sets the labeltext for the obesity ,bmi, dailyintake, and daysneeded to the users. 
 	 * 
 	 */
-	void setLabelText(Person theUser, Scene4Controller s4c) {
+	void setLabelText(Person theUser, Initial_ResultController s4c) {
 		
 		Person usersBmi = new Person(genderChoiceBox.getValue(), Integer.parseInt(ageTextField.getText()),
 				Integer.parseInt(heightTextField.getText()), Integer.parseInt(currentweightTextField.getText()),
@@ -104,7 +104,7 @@ public class Scene3Controller {
 		s4c.bmrLabelNew.setText(theUser.getBmr() + "");
 
 		s4c.targetStuff.setText(theUser.getDailyIntake() + "");
-		Scene6Controller.recommendedIntake=theUser.getDailyIntake();
+		Exercise_InfoController.recommendedIntake=theUser.getDailyIntake();
 
 		s4c.requiredDays.setText(theUser.getDaysNeeded() + "");
 
