@@ -1,6 +1,6 @@
 package application;
 
-public class Nutrient {
+public class Nutrients {
     /**
      * Class that stores the nutrient values of a food.
      */
@@ -8,7 +8,7 @@ public class Nutrient {
     int proteins;
     int carbohydrates;
     int fats;
-    Nutrient(int totalCalories,int proteins, int carbohydrates, int fats){
+    Nutrients(int totalCalories,int proteins, int carbohydrates, int fats){
         this.totalCalories = totalCalories;
         this.proteins = proteins;
         this.carbohydrates = carbohydrates;
@@ -22,7 +22,7 @@ public class Nutrient {
     public void setTotalCalories(int totalCalories) {
         this.totalCalories = totalCalories;
     }
-
+   
     public int getProteins() {
         return proteins;
     }
