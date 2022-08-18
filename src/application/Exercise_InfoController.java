@@ -38,9 +38,9 @@ public class Exercise_InfoController {
 
 	@FXML
 	public void switchToScene7(ActionEvent event) throws IOException {
-	// Code used for switching scenes:
-	// Date accessed Jul 28, 2022
-	// https://www.youtube.com/watch?v=hcM-R-YOKkQ
+		// Code used for switching scenes:
+		// Date accessed Jul 28, 2022
+		// https://www.youtube.com/watch?v=hcM-R-YOKkQ
 		FXMLLoader loader = new FXMLLoader(getClass().getResource("Final_Result.fxml"));
 		root = loader.load();
 
@@ -52,7 +52,8 @@ public class Exercise_InfoController {
 			stage.setScene(scene);
 			stage.show();
 			setCalorieLabels(s7c);
-			setMacrosLabels(s7c);
+			setRecommendedMacrosLabels(s7c);
+			setCurrentMacrosLabels(s7c);
 		} else {
 			sceneSixErrorLabel.setText("Please pick both of the options before pressing Next.");
 		}
@@ -63,10 +64,10 @@ public class Exercise_InfoController {
 				Integer.parseInt(timeSpentExercising.getValue()), weight);
 		usersExercise.getCaloriesBurnt();
 
-		int netCalories = food.calculateCalories(breakfast,lunch,dinner)[0] - usersExercise.getCaloriesBurnt();
-		//Code used for switching controller:
-		//https://www.youtube.com/watch?v=wxhGKR3PQpo
-		//Date accessed: August 3rd, 2022
+		int netCalories = food.calculateCalories(breakfast, lunch, dinner)[0] - usersExercise.getCaloriesBurnt();
+		// Code used for switching controller:
+		// https://www.youtube.com/watch?v=wxhGKR3PQpo
+		// Date accessed: August 3rd, 2022
 		s7c.netCaloricIntake.setText(netCalories + "");
 		if (recommendedIntake < netCalories) {
 			s7c.caloricDiff.setText("more");
@@ -80,11 +81,20 @@ public class Exercise_InfoController {
 
 	}
 
-	void setMacrosLabels(Final_Result_Controller s7c) {
+	void setCurrentMacrosLabels(Final_Result_Controller s7c) {
+
+		s7c.dailyProtein.setText(String.format(food.calculateCalories(breakfast, lunch, dinner)[1] + " grams"));
+		s7c.dailyCarbs.setText(String.format(food.calculateCalories(breakfast, lunch, dinner)[2] + " grams"));
+		s7c.dailyFats.setText(String.format(food.calculateCalories(breakfast, lunch, dinner)[3] + " grams"));
+
+	}
+
+	void setRecommendedMacrosLabels(Final_Result_Controller s7c) {
 
 		s7c.proteinLabel.setText(String.format("%.1f", (recommendedIntake * 0.4) / 4) + " grams");
 		s7c.carbsLabel.setText(String.format("%.1f", (recommendedIntake * 0.3) / 4) + " grams");
 		s7c.fatsLabel.setText(String.format("%.1f", (recommendedIntake * 0.4) / 9) + " grams");
 
 	}
+
 }
