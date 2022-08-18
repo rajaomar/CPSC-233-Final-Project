@@ -1,6 +1,6 @@
 package application;
 
-public class Nutrient {
+public class Nutrients {
     /**
      * Class that stores the nutrient values of a food.
      */
