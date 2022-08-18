@@ -9,9 +9,9 @@ public class Regular extends Food{
     }
     @Override
     int[] calculateCalories(Breakfast breakfast, Lunch lunch,Dinner dinner) {
-        Nutrient breakfastNutrient = this.Food_Nutrients.get(breakfast.mealName);
-        Nutrient lunchNutrient = this.Food_Nutrients.get(lunch.mealName);
-        Nutrient dinnerNutrient = this.Food_Nutrients.get(dinner.mealName);
+        Nutrients breakfastNutrient = this.Food_Nutrients.get(breakfast.mealName);
+        Nutrients lunchNutrient = this.Food_Nutrients.get(lunch.mealName);
+        Nutrients dinnerNutrient = this.Food_Nutrients.get(dinner.mealName);
         int totalCalories = breakfastNutrient.totalCalories+
                 lunchNutrient.totalCalories+dinnerNutrient.totalCalories;
         int totalProteins = breakfastNutrient.proteins+
