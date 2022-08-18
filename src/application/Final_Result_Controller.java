@@ -22,5 +22,13 @@ public class Final_Result_Controller {
 
 	@FXML
 	public Label caloricDiff;
+	@FXML
+	public Label dailyProtein;
+
+	@FXML
+	public Label dailyCarbs;
+
+	@FXML
+	public Label dailyFats;
 
 }
