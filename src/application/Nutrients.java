@@ -8,7 +8,7 @@ public class Nutrients {
     int proteins;
     int carbohydrates;
     int fats;
-    Nutrient(int totalCalories,int proteins, int carbohydrates, int fats){
+    Nutrients(int totalCalories,int proteins, int carbohydrates, int fats){
         this.totalCalories = totalCalories;
         this.proteins = proteins;
         this.carbohydrates = carbohydrates;
